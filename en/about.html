@@ -1,0 +1,1305 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Sun Aug 24 2025 11:03:42 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="688efc9659637860b9d3553e" data-wf-site="687744ac7f4aefd284fc3f12">
+<head>
+  <meta charset="utf-8">
+  <title>About</title>
+  <meta content="About" property="og:title">
+  <meta content="About" property="twitter:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/calma-website.webflow.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="../images/favicon.jpg" rel="shortcut icon" type="image/x-icon">
+  <link href="../images/webclip.jpg" rel="apple-touch-icon">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
+  <script>
+  // Initialize Lenis on the #scroll-container div
+  const lenis = new Lenis({
+    wrapper: document.querySelector('#scroll-container'),  // your scroll wrapper
+    content: document.querySelector('#scroll-container'),  // your scroll content (same div)
+    duration: 1.2,
+    easing: t => t < 0.5 ? 2*t*t : -1+(4-2*t)*t,
+    smooth: true,
+  });
+  // Tell ScrollTrigger to use #scroll-container as its scroller proxy
+  ScrollTrigger.scrollerProxy("#scroll-container", {
+    scrollTop(value) {
+      if (arguments.length) {
+        lenis.scrollTo(value);
+      }
+      return lenis.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight
+      };
+    }
+  });
+  // Make sure ScrollTrigger uses #scroll-container by default
+  ScrollTrigger.defaults({ scroller: "#scroll-container" });
+  // RAF loop to update Lenis and ScrollTrigger on every frame
+  function raf(time) {
+    lenis.raf(time);
+    ScrollTrigger.update();
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+  // Refresh ScrollTrigger after setup (important)
+  ScrollTrigger.addEventListener("refresh", () => lenis.update());
+  ScrollTrigger.refresh();
+</script>
+  <style>
+  .cta-image-wrapper {
+    transition: transform 0.5s ease, scale 0.5s ease;
+    will-change: transform;
+  }
+  .cta-image-wrapper:hover {
+    transform: scale(1.05) translateY(-5px);
+  }
+</style>
+  <style>
+.projects-stat-div {
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+}
+.bg-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #64523D;
+  z-index: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+  <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+    <div class="navbar-container w-container">
+      <a href="../en/home.html" class="w-nav-brand">
+        <div class="logo-wrapper"><img sizes="(max-width: 767px) 98vw, (max-width: 991px) 727.984375px, 939.984375px" srcset="../images/BRANDMARK_01-p-500.png 500w, ../images/BRANDMARK_01-p-800.png 800w, ../images/BRANDMARK_01-p-1080.png 1080w, ../images/BRANDMARK_01-p-1600.png 1600w, ../images/BRANDMARK_01-p-2000.png 2000w, ../images/BRANDMARK_01.png 2093w" alt="" src="../images/BRANDMARK_01.png" loading="lazy" class="image"></div>
+      </a>
+      <nav role="navigation" class="w-nav-menu">
+        <a href="../en/about.html" aria-current="page" class="navlink w-nav-link w--current">About</a>
+        <a href="../en/projects.html" class="navlink w-nav-link">Projects</a>
+        <a href="../en/contact.html" class="navlink last w-nav-link">Contact</a>
+        <a href="../index.html" class="navlink last w-nav-link">|AE</a>
+      </nav>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <div class="w-layout-blockcontainer container w-container">
+      <div class="mobile-menu-content-wrapper">
+        <a href="../index.html" class="mobile-page-link w-inline-block">
+          <div class="mobile-logo-wrapper"><img src="../images/FULL-LOCKUP-04.png" loading="lazy" alt="" class="image"></div>
+        </a>
+        <div class="mobile-lottie-wrapper">
+          <div data-w-id="beaee686-3cc6-0797-b333-9a47ae74ddff" data-is-ix2-target="1" class="lottie" data-animation-type="lottie" data-src="../documents/Animation---1748768860373.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0" data-duration="0.6666666666666666"></div>
+        </div>
+      </div>
+      <div class="mobile-nav-content-wrapper">
+        <div class="mobile-menu-first-div">
+          <a data-w-id="beaee686-3cc6-0797-b333-9a47ae74de02" href="../en/about.html" aria-current="page" class="section-heading dark nav w--current">About</a>
+          <a data-w-id="beaee686-3cc6-0797-b333-9a47ae74de04" href="../en/projects.html" class="section-heading dark nav padding">Projects</a>
+          <a data-w-id="beaee686-3cc6-0797-b333-9a47ae74de06" href="../en/contact.html" class="section-heading dark nav">Contact</a>
+        </div>
+        <a href="../index.html" class="language-switch-div w-inline-block">
+          <h3 class="language-switch">AE</h3>
+        </a>
+        <div class="line nav"></div>
+        <div class="right-align-div">
+          <div class="mobile-menu-middle-div">
+            <a href="https://calma-website.webflow.io/en/about#ceo-message" class="page-link w-inline-block">
+              <h4 class="mobile-nav-heading">CEO’s Message</h4>
+            </a>
+            <a href="https://calma-website.webflow.io/en/about#leadership" class="page-link w-inline-block">
+              <h4 class="mobile-nav-heading">Leadership</h4>
+            </a>
+            <a href="https://calma-website.webflow.io/en/about#corporate-culture" class="page-link w-inline-block">
+              <h4 class="mobile-nav-heading">Corporate Culture</h4>
+            </a>
+            <a href="../en/guarantees.html" class="page-link w-inline-block">
+              <h4 class="mobile-nav-heading">Guarantees</h4>
+            </a>
+            <a href="../en/financing-options.html" class="page-link w-inline-block">
+              <h4 class="mobile-nav-heading">Financing options</h4>
+            </a>
+          </div>
+        </div>
+        <div class="line nav"></div>
+        <div class="mobile-menu-bottom-div">
+          <a href="tel:920006553" class="mobile-link w-inline-block">
+            <h4 class="mobile-nav-heading light">Unified Number - 920006553</h4>
+          </a>
+          <a href="mailto:info@calma.sa" class="mobile-link w-inline-block">
+            <h4 class="mobile-nav-heading light">Email - info@calma.sa</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-wrapper">
+    <section class="section page-hero">
+      <div class="page-hero-content-wrapper">
+        <h1 class="page-hero-heading">About</h1>
+        <div class="sub-heading hero">Building value, shaping tomorrow.</div>
+      </div>
+      <div class="w-layout-blockcontainer container full hero w-container">
+        <div class="section-hero-image-wrapper"><img src="../images/About-Header.jpg" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="../images/About-Header-p-500.jpg 500w, ../images/About-Header-p-800.jpg 800w, ../images/About-Header-p-1080.jpg 1080w, ../images/About-Header-p-1600.jpg 1600w, ../images/About-Header.jpg 1920w" class="image"></div>
+      </div>
+    </section>
+    <section id="vision" class="section grey no-bottom">
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="section-content-wrapper bottom">
+          <div class="heading-wrapper small">
+            <h2 class="section-heading dark">Leading with purpose, building with vision.</h2>
+          </div>
+          <div class="section-para-wrapper">
+            <p class="paragraph dark">To be the defining force in Saudi Arabia&#x27;s real estate development, where design meets strategy in exceptional places. We create sustainable landmarks that shape the Kingdom&#x27;s future, turning spaces into stories and creating inspiring environments that reflect a sense of belonging and comfort.</p>
+          </div>
+        </div>
+      </div>
+      <div class="projects-stats-main-wrapper">
+        <div class="line"></div>
+        <div class="projects-stat-div">
+          <div class="projects-image-div"><img src="../images/About-Header.jpg" loading="lazy" sizes="(max-width: 1919px) 100vw, 1920px" srcset="../images/About-Header-p-500.jpg 500w, ../images/About-Header-p-800.jpg 800w, ../images/About-Header-p-1080.jpg 1080w, ../images/About-Header-p-1600.jpg 1600w, ../images/About-Header.jpg 1920w" alt="" class="image"></div>
+          <div class="stats-right-div">
+            <h2 class="section-heading dark big">28 Projects</h2>
+            <div class="sub-heading pastle">Across 3 cities successfully delivered</div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="projects-stat-div">
+          <div class="projects-image-div"><img src="../images/Stats-77097-sqm.JPG" loading="lazy" sizes="(max-width: 1919px) 100vw, 1920px" srcset="../images/Stats-77097-sqm-p-500.jpg 500w, ../images/Stats-77097-sqm-p-800.jpg 800w, ../images/Stats-77097-sqm-p-1080.jpg 1080w, ../images/Stats-77097-sqm-p-1600.jpg 1600w, ../images/Stats-77097-sqm.JPG 1920w" alt="" class="image"></div>
+          <div class="stats-right-div">
+            <h2 class="section-heading dark sqm big">77,097+ sqm</h2>
+            <div class="sub-heading pastle">of total land area</div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="projects-stat-div">
+          <div class="projects-image-div"><img src="../images/Stats130000-sqm.JPG" loading="lazy" sizes="(max-width: 1919px) 100vw, 1920px" srcset="../images/Stats130000-sqm-p-500.jpg 500w, ../images/Stats130000-sqm-p-800.jpg 800w, ../images/Stats130000-sqm-p-1080.jpg 1080w, ../images/Stats130000-sqm-p-1600.jpg 1600w, ../images/Stats130000-sqm.JPG 1920w" alt="" class="image"></div>
+          <div class="stats-right-div">
+            <h2 class="section-heading dark sqm big">130,000+ sqm</h2>
+            <div class="sub-heading pastle">of building area</div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="projects-stat-div">
+          <div class="projects-image-div"><img src="../images/dummy_1600x900_ffffff_cccccc_169-3.JPG" loading="lazy" sizes="(max-width: 1919px) 100vw, 1920px" srcset="../images/dummy_1600x900_ffffff_cccccc_169-3-p-500.jpg 500w, ../images/dummy_1600x900_ffffff_cccccc_169-3-p-800.jpg 800w, ../images/dummy_1600x900_ffffff_cccccc_169-3-p-1080.jpg 1080w, ../images/dummy_1600x900_ffffff_cccccc_169-3-p-1600.jpg 1600w, ../images/dummy_1600x900_ffffff_cccccc_169-3.JPG 1920w" alt="" class="image"></div>
+          <div class="stats-right-div">
+            <h2 class="section-heading dark big">700+</h2>
+            <div class="sub-heading pastle">Housing units</div>
+          </div>
+        </div>
+        <div class="line"></div>
+      </div>
+      <div class="center-align-div padding bottom bg">
+        <div class="about-logo-wrapper"><img src="../images/Group-270.png" loading="lazy" alt="" class="image"></div>
+        <div class="center-content-wrapper">
+          <div class="center-align-heading-div">
+            <h2 class="section-heading dark center">Excellence in every square foot.</h2>
+          </div>
+          <div class="center-para-wrapper narrow">
+            <p class="paragraph dark center">We envision a future where architectural excellence and sustainable development converge to transform Saudi Arabia&#x27;s urban horizons.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section ceo">
+      <div class="w-layout-blockcontainer container full w-container">
+        <div id="ceo-message" class="w-layout-layout ceo-quickstack en w-node-_632689d8-ea81-556d-88c6-253cd0d789cf-b9d3553e wf-layout-layout">
+          <div class="w-layout-cell">
+            <div class="ceo-content-wrapper">
+              <div class="ceo-message-wrapper">
+                <h2 class="section-heading dark">CEO’s Message</h2>
+              </div>
+              <div class="sub-heading-div">
+                <h5 class="sub-heading left">Where 2,000 dreams find their address.</h5>
+              </div>
+              <div class="message-wrapper">
+                <div class="rich-text-block ceo w-richtext">
+                  <p class="paragraph dark">Dear Valued Partners and Future Residents,</p>
+                  <p class="paragraph dark ceo"><br>When I founded CALMA, I envisioned more than just a real estate development company. I saw an opportunity to redefine what it means to create spaces that truly matter – spaces where vision takes shape and where potential flourishes.</p>
+                  <p class="paragraph dark ceo">Today, as I reflect on our journey of 28 successfully delivered projects across 3 cities, I&#x27;m reminded that our greatest achievement isn&#x27;t measured in square meters or construction milestones. It&#x27;s measured in the 2,000+ families who now call our developments home, and in the communities we&#x27;ve nurtured that transcend borders while honoring local traditions.</p>
+                  <p class="paragraph dark ceo">At CALMA, our foundation is built on unwavering reliability and proven credibility. Every project, every deadline, every promise – delivered with precision and pride. This commitment to excellence has earned us the trust of people across Saudi Arabia, and it drives everything we do as we expand our footprint across the Kingdom.</p>
+                </div>
+                <p class="paragraph dark ceo">Our approach goes beyond traditional construction. We&#x27;re architecting the future of urban living, integrating cutting-edge sustainability practices that align with Saudi Vision 2030&#x27;s environmental goals. From Riyadh to the wider Saudi Arabia, we&#x27;re building spaces where global citizens feel at home, creating inclusive environments where families thrive and businesses prosper.</p>
+                <p class="paragraph dark ceo">As we look toward the future, CALMA represents the pinnacle of real estate excellence, where visionary development meets uncompromising standards. We&#x27;re not just raising skylines – we&#x27;re elevating lifestyles and setting new benchmarks in luxury development that inspire and endure.</p>
+                <p class="paragraph dark">This is more than real estate; this is the future of refined living. This is CALMA – committed to your calm.</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-layout-cell">
+            <div class="ceo-image-wrapper"><img src="../images/CEO-Image-New.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.984375px, 939.984375px" srcset="../images/CEO-Image-New-p-500.jpg 500w, ../images/CEO-Image-New-p-800.jpg 800w, ../images/CEO-Image-New-p-1080.jpg 1080w, ../images/CEO-Image-New-p-1600.jpg 1600w, ../images/CEO-Image-New.jpg 1920w" alt="" class="image"></div>
+            <div class="ceo-name-wrapper arabic">
+              <div class="ceo-logo-wrapper"><img src="../images/BRANDMARK_2.png" loading="lazy" alt="" class="image"></div>
+              <div>
+                <h3 class="ceo-name">Musab Al-Majed</h3>
+                <h4 class="designation arabic">Chief Executive Officer | CALMA</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="leadership" class="section leadership">
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="center-align-div no-padding bottom-padding">
+          <div class="center-content-wrapper">
+            <div class="section-name-wrapper">
+              <h5 class="section-name dark">leadership</h5>
+            </div>
+            <div class="center-align-heading-div">
+              <h2 class="section-heading dark center">Visionary &amp; progressive leadership.</h2>
+            </div>
+          </div>
+          <div class="sub-heading-div">
+            <h4 class="sub-heading center">Building tomorrow&#x27;s communities today.</h4>
+            <div class="center-para-wrapper center wide">
+              <p class="paragraph dark center">CALMA represents the pinnacle of real estate excellence, where visionary development meets uncompromising standards. Our portfolio of prestigious projects doesn&#x27;t just raise skylines – it elevates lifestyles. As we expand our footprint across the KSA, we&#x27;re setting new benchmarks in luxury development, creating landmarks that inspire and endure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-layout-blockcontainer container no-padding w-container">
+        <div class="leadership-slider-div">
+          <div class="pattern-div main">
+            <div data-poster-url="../videos/Leadership-card-video-poster-00001.jpg" data-video-urls="../videos/Leadership-card-video-transcode.mp4,../videos/Leadership-card-video-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="pattern-div w-background-video w-background-video-atom"><video id="71d56e20-43a0-5542-3c06-713b28c3a093-video" autoplay="" loop="" style="background-image:url(&quot;../videos/Leadership-card-video-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                <source src="../videos/Leadership-card-video-transcode.mp4" data-wf-ignore="true">
+                <source src="../videos/Leadership-card-video-transcode.webm" data-wf-ignore="true">
+              </video>
+              <div class="pattern-heading-div">
+                <h4 class="sub-heading white">Distinctive spaces with vision.</h4>
+              </div>
+              <div class="number-div">
+                <h2 class="section-heading number">04</h2>
+                <h4 class="sub-heading white">core pillars</h4>
+              </div>
+              <div class="pattern-paragraph-wrapper">
+                <p class="paragraph center">Our leadership philosophy centers on four core pillars that define our approach to every project and strategic decision:</p>
+              </div>
+            </div>
+          </div>
+          <div data-delay="4000" data-animation="slide" class="leadership-slider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true" id="w-node-a35283fc-0d59-cb71-1a20-4b70d255f611-b9d3553e">
+            <div class="w-slider-mask">
+              <div class="w-slide">
+                <div data-wf--slider-component--variant="base" class="slider-content-wrapper">
+                  <div class="slider-content-div">
+                    <div class="slider-icon-div"><img src="../images/ELEVATING-MODERN-SAUDI-LIVING.png" loading="lazy" alt="" class="image"></div>
+                    <div class="sub-heading-div">
+                      <h4 class="sub-heading arabic">Elevating modern Saudi living.</h4>
+                    </div>
+                    <div class="slider-para-div">
+                      <p class="paragraph dark">Our leaders combine deep market expertise with forward-thinking innovation, ensuring that every CALMA development not only meets today&#x27;s standards but defines tomorrow&#x27;s possibilities. With over 77,097 sqm of total land area and 130,000+ sqm of building area, we&#x27;re actively shaping Saudi Arabia&#x27;s urban landscape.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-slide">
+                <div data-wf--slider-component--variant="base" class="slider-content-wrapper">
+                  <div class="slider-content-div">
+                    <div class="slider-icon-div"><img src="../images/DESIGNING-FUTURE-READY-LIVING-SPACES.png" loading="lazy" alt="" class="image"></div>
+                    <div class="sub-heading-div">
+                      <h4 class="sub-heading arabic"> Designing Future-Ready Living Spaces</h4>
+                    </div>
+                    <div class="slider-para-div">
+                      <p class="paragraph dark">Through strategic presence in key cities and diverse project portfolios, our leadership team maintains multi-sector expertise while inspiring new destinations. We&#x27;re not just following market trends – we&#x27;re creating them.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-slide">
+                <div data-wf--slider-component--variant="base" class="slider-content-wrapper">
+                  <div class="slider-content-div">
+                    <div class="slider-icon-div"><img src="../images/CRAFTING-DISTINCTIVE-SAUDI-HOMES.png" loading="lazy" alt="" class="image"></div>
+                    <div class="sub-heading-div">
+                      <h4 class="sub-heading arabic">Crafting Distinctive Saudi Homes</h4>
+                    </div>
+                    <div class="slider-para-div">
+                      <p class="paragraph dark">With 700+ housing units delivered and diverse residential offerings, our leadership ensures that every development becomes a living destination where communities flourish and families find their perfect sanctuary.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-slide">
+                <div data-wf--slider-component--variant="base" class="slider-content-wrapper">
+                  <div class="slider-content-div">
+                    <div class="slider-icon-div"><img src="../images/THE-ART-OF-PURPOSEFUL-DESIGN.png" loading="lazy" alt="" class="image"></div>
+                    <div class="sub-heading-div">
+                      <h4 class="sub-heading arabic">The Art Of Purposeful Design</h4>
+                    </div>
+                    <div class="slider-para-div">
+                      <p class="paragraph dark">Our leadership team oversees 500,000 SQM of possibilities unfolding, ensuring that every CALMA development pulses with the energy of progress and possibility. From groundbreaking ceremonies to grand openings, we&#x27;re continuously advancing across Saudi Arabia and beyond. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-left-arrow w-slider-arrow-left"><img loading="lazy" src="../images/Asset-12-3.png" alt="" class="image"></div>
+            <div class="slider-right-arrow w-slider-arrow-right"><img loading="lazy" src="../images/Asset-12-2-1.png" alt="" class="image"></div>
+            <div class="slide-nav-2 w-slider-nav w-slider-nav-invert w-round w-num"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section dark-green alt">
+      <div class="w-layout-blockcontainer container full w-container">
+        <div class="section-content-wrapper padding">
+          <div class="section-name-wrapper padding">
+            <h5 id="corporate-culture" class="section-name dark">Corporate culture</h5>
+          </div>
+          <div class="heading-wrapper box narrow">
+            <h2 class="section-heading dark">Thoughtful spaces,</h2>
+            <h2 class="section-heading zigzag dark">lasting value.</h2>
+          </div>
+        </div>
+        <div id="w-node-a073cc3e-70ac-7557-cdbb-52f4924d3d01-b9d3553e" class="w-layout-layout culture-quicstack wf-layout-layout">
+          <div class="w-layout-cell">
+            <div data-w-id="29d5774c-f70d-a9e7-4e6c-342cbeb93be7" style="-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="corporate-img-wrapper"><img src="../images/dummy_1600x900_ffffff_cccccc_170.JPG" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.984375px, 939.984375px" srcset="../images/dummy_1600x900_ffffff_cccccc_170-p-500.jpg 500w, ../images/dummy_1600x900_ffffff_cccccc_170-p-800.jpg 800w, ../images/dummy_1600x900_ffffff_cccccc_170-p-1080.jpg 1080w, ../images/dummy_1600x900_ffffff_cccccc_170-p-1600.jpg 1600w, ../images/dummy_1600x900_ffffff_cccccc_170.JPG 1920w" alt="" class="image"></div>
+          </div>
+          <div class="w-layout-cell">
+            <div class="corporate-details-div">
+              <div class="sub-heading-div">
+                <h3 class="sub-heading">Where sophistication finds its peace.</h3>
+              </div>
+              <div class="corpoorate-para-wrapper">
+                <p class="paragraph dark">CALMA&#x27;s corporate culture is built on the foundation that excellence isn&#x27;t just an outcome – it&#x27;s a way of being. Our culture transforms the real estate experience from mere development to a state of tranquility, where every team member contributes to creating spaces that inspire and endure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="culture-logo-div">
+          <div class="section-heading-div">
+            <h2 class="section-heading dark">Our Cultural Principles</h2>
+          </div>
+          <div class="culture-logo-wrapper about"><img src="../images/FULL-LOCKUP-04_1.png" loading="lazy" alt="" class="image"></div>
+        </div>
+        <div class="accordion-wrapper">
+          <div class="accordion-item-wrapper---brix tabs-accordion---brix">
+            <div data-w-id="1b92eade-c5a4-2071-7898-b2ef1b4ad3b2" class="accordion-item---brix tabs-accordion---brix">
+              <div class="accordion-trigger---brix">
+                <div class="serial-no">01</div>
+                <div class="faq-question-wrap">
+                  <div class="accordion-item-title---brix">Masterful precision in everything we do.</div>
+                  <div class="open-close-icon-wrapper---brix">
+                    <div style="background-color:rgb(9,29,30)" class="open-close-line---brix"></div>
+                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0)" class="open-close-line---brix second-line---brix"></div>
+                  </div>
+                </div>
+              </div>
+              <div style="height:0px;-webkit-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="accordion-content---brix">
+                <div class="faq-paragraph-wrapper">
+                  <p class="accordion-paragraph---brix">We believe that building distinguished projects requires meticulous attention to quality at every stage of development. Our culture celebrates precision, from initial design concepts to final handover, ensuring that every detail reflects our commitment to excellence.</p>
+                </div>
+                <div class="faq-icon-wrapper"><img loading="lazy" src="../images/Masterful-precision-in-everything-we-do..png" alt="" class="image"></div>
+              </div>
+            </div>
+            <div data-w-id="1b92eade-c5a4-2071-7898-b2ef1b4ad3c2" class="accordion-item---brix tabs-accordion---brix">
+              <div class="accordion-trigger---brix">
+                <div class="serial-no">02</div>
+                <div class="faq-question-wrap">
+                  <div class="accordion-item-title---brix">Exceptional experiences, lasting relationships.</div>
+                  <div class="open-close-icon-wrapper---brix">
+                    <div style="background-color:rgb(9,29,30)" class="open-close-line---brix"></div>
+                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0)" class="open-close-line---brix second-line---brix"></div>
+                  </div>
+                </div>
+              </div>
+              <div style="height:0px;-webkit-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="accordion-content---brix">
+                <div class="faq-paragraph-wrapper">
+                  <p class="accordion-paragraph---brix">Our culture prioritizes exceptional customer experience and tailored solutions delivery. We build long-term relationships not just with our clients, but within our team, creating an environment where collaboration and mutual respect drive extraordinary results.</p>
+                </div>
+                <div class="faq-icon-wrapper"><img loading="lazy" src="../images/Exceptional-experiences-lasting-relationships..png" alt=""></div>
+              </div>
+            </div>
+            <div data-w-id="1b92eade-c5a4-2071-7898-b2ef1b4ad3d2" class="accordion-item---brix tabs-accordion---brix">
+              <div class="accordion-trigger---brix">
+                <div class="serial-no">03</div>
+                <div class="faq-question-wrap">
+                  <div class="accordion-item-title---brix">Responsible stewardship for future generations.</div>
+                  <div class="open-close-icon-wrapper---brix">
+                    <div style="background-color:rgb(9,29,30)" class="open-close-line---brix"></div>
+                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0)" class="open-close-line---brix second-line---brix"></div>
+                  </div>
+                </div>
+              </div>
+              <div style="height:0px;-webkit-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="accordion-content---brix">
+                <div class="faq-paragraph-wrapper">
+                  <p class="accordion-paragraph---brix">Environmental consciousness and Vision 2030 alignment aren&#x27;t just corporate policies – they&#x27;re cultural values that guide our daily decisions. We&#x27;re committed to future-proof solutions and stewarding sustainable practices that benefit our communities.</p>
+                </div>
+                <div class="faq-icon-wrapper"><img loading="lazy" src="../images/Responsible-stewardship-for-future-generations..png" alt=""></div>
+              </div>
+            </div>
+            <div data-w-id="1b92eade-c5a4-2071-7898-b2ef1b4ad3e2" class="accordion-item---brix tabs-accordion---brix">
+              <div class="accordion-trigger---brix">
+                <div class="serial-no">04</div>
+                <div class="faq-question-wrap">
+                  <div class="accordion-item-title---brix">Where perfection meets timelessness.</div>
+                  <div class="open-close-icon-wrapper---brix">
+                    <div style="background-color:rgb(9,29,30)" class="open-close-line---brix"></div>
+                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0)" class="open-close-line---brix second-line---brix"></div>
+                  </div>
+                </div>
+              </div>
+              <div style="height:0px;-webkit-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="accordion-content---brix">
+                <div class="faq-paragraph-wrapper">
+                  <p class="accordion-paragraph---brix">At CALMA, we understand that creating landmarks that inspire and endure requires a culture that values both innovation and tradition. Our team operates with the understanding that we&#x27;re not just building properties – we&#x27;re creating the new standard in real estate excellence.</p>
+                </div>
+                <div class="faq-icon-wrapper"><img loading="lazy" src="../images/Where-perfection-meets-timelessness..png" alt=""></div>
+              </div>
+            </div>
+            <div data-w-id="1b92eade-c5a4-2071-7898-b2ef1b4ad3f2" class="accordion-item---brix tabs-accordion---brix">
+              <div class="accordion-trigger---brix">
+                <div class="serial-no">05</div>
+                <div class="faq-question-wrap">
+                  <div class="accordion-item-title---brix">Advanced data analysis techniques.</div>
+                  <div class="open-close-icon-wrapper---brix">
+                    <div style="background-color:rgb(9,29,30)" class="open-close-line---brix"></div>
+                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0)" class="open-close-line---brix second-line---brix"></div>
+                  </div>
+                </div>
+              </div>
+              <div style="height:0px;-webkit-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="accordion-content---brix">
+                <div class="faq-paragraph-wrapper">
+                  <p class="accordion-paragraph---brix">Our culture embraces strategic site selection and operational optimization through data-driven excellence. We foster an environment where analytical thinking meets creative problem-solving, ensuring that every decision is informed by both insight and intuition.</p>
+                </div>
+                <div class="faq-icon-wrapper"><img loading="lazy" src="../images/Advanced-data-analysis-techniques..png" alt=""></div>
+              </div>
+            </div>
+            <div data-w-id="1b92eade-c5a4-2071-7898-b2ef1b4ad402" class="accordion-item---brix tabs-accordion---brix last-accordion-item---brix">
+              <div class="accordion-trigger---brix">
+                <div class="serial-no">06</div>
+                <div class="faq-question-wrap">
+                  <div class="accordion-item-title---brix">500,000 sqm of possibilities unfolding.</div>
+                  <div class="open-close-icon-wrapper---brix">
+                    <div style="background-color:rgb(9,29,30)" class="open-close-line---brix"></div>
+                    <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(90deg) skew(0, 0)" class="open-close-line---brix second-line---brix"></div>
+                  </div>
+                </div>
+              </div>
+              <div style="height:0px;-webkit-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="accordion-content---brix">
+                <div class="faq-paragraph-wrapper">
+                  <p class="accordion-paragraph---brix">Our corporate culture reflects our scale and ambition. We&#x27;re building vibrant communities where businesses thrive and families flourish, and our internal culture mirrors the same energy of progress and possibility that defines every CALMA development.</p>
+                </div>
+                <div class="faq-icon-wrapper"><img loading="lazy" src="../images/500000-sqm-of-possibilities-unfolding..png" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section data-w-id="af58851a-2dc6-ade9-8910-331882b666b2" class="section full-width-image">
+      <div class="w-layout-blockcontainer container full img w-container">
+        <div class="full-width-img-wrapper"><img src="../images/dummy_1600x900_ffffff_cccccc_171.JPG" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="../images/dummy_1600x900_ffffff_cccccc_171-p-500.jpg 500w, ../images/dummy_1600x900_ffffff_cccccc_171-p-800.jpg 800w, ../images/dummy_1600x900_ffffff_cccccc_171-p-1080.jpg 1080w, ../images/dummy_1600x900_ffffff_cccccc_171-p-1600.jpg 1600w, ../images/dummy_1600x900_ffffff_cccccc_171.JPG 1920w" alt="" class="image parallax"></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="section-content-wrapper">
+          <div class="section-name-wrapper">
+            <h5 class="section-name dark">brand values</h5>
+          </div>
+          <div class="section-heading-div wide">
+            <h2 class="section-heading dark">Calma transforms</h2>
+            <h2 class="section-heading dark zigzag"> the real estate experience</h2>
+            <h2 class="section-heading dark">from mere development </h2>
+            <h2 class="section-heading dark zigzag">to a state of tranquillity.</h2>
+          </div>
+        </div>
+      </div>
+      <div class="w-layout-blockcontainer container left w-container">
+        <div class="right-content-wrapper">
+          <div class="right-image-div">
+            <div class="right-image-wrapper"><img src="../images/Brand-Values-1.JPG" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="../images/Brand-Values-1-p-500.jpg 500w, ../images/Brand-Values-1-p-800.jpg 800w, ../images/Brand-Values-1-p-1080.jpg 1080w, ../images/Brand-Values-1-p-1600.jpg 1600w, ../images/Brand-Values-1.JPG 1920w" alt="" class="image"></div>
+            <div class="brand-value-grid-wrapper">
+              <div class="brand-left-grid">
+                <div class="grid-content-div">
+                  <div data-w-id="cd11c180-8e2e-cf60-4994-dedefe07b28c" class="grid-icon"><img src="../images/Rectangle-33-2.png" loading="lazy" alt="" class="image contain"></div>
+                  <div class="grid-details-wrapper">
+                    <div class="grid-heading-wrapper">
+                      <h4 class="sub-heading left">Masterful Precision</h4>
+                    </div>
+                    <div class="paragraph-wrapper">
+                      <p class="paragraph dark">Building distinguished projects through meticulous attention to quality at every stage of development.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-content-div">
+                  <div data-w-id="7fc97b59-f9d2-e2d1-21b8-fe4f691b06d1" class="grid-icon"><img src="../images/Rectangle-33.png" loading="lazy" alt="" class="image contain"></div>
+                  <div class="grid-details-wrapper">
+                    <div class="grid-heading-wrapper">
+                      <h4 class="sub-heading left">Visionary Leadership</h4>
+                    </div>
+                    <div class="paragraph-wrapper">
+                      <p class="paragraph dark">Pioneering architectural solutions and digital technologies that elevate the real estate development experience.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-content-div">
+                  <div data-w-id="8e435cff-0ce7-c28e-b55c-79c446006211" class="grid-icon"><img src="../images/Rectangle-33-1.png" loading="lazy" alt="" class="image contain"></div>
+                  <div class="grid-details-wrapper">
+                    <div class="grid-heading-wrapper">
+                      <h4 class="sub-heading left">Responsible Stewardship</h4>
+                    </div>
+                    <div class="paragraph-wrapper">
+                      <p class="paragraph dark">Committing to environmentally conscious practices and resource efficiency in alignment with  Vision 2030&#x27;s environmental goals.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-content-div">
+                  <div data-w-id="c2276344-8278-3231-531f-1547909c21e7" class="grid-icon"><img src="../images/Rectangle-34.png" loading="lazy" style="-webkit-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="image"></div>
+                  <div class="grid-details-wrapper">
+                    <div class="grid-heading-wrapper">
+                      <h4 class="sub-heading left">Commanding Standards</h4>
+                    </div>
+                    <div class="paragraph-wrapper">
+                      <p class="paragraph dark">Ensuring transparency and compliance through rigorous internal audit and governance systems.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="brand-logo-div">
+                <div class="brand-logo-wrapper"><img src="../images/FULL-LOCKUP-02.png" loading="lazy" alt="" class="image"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section principals">
+      <div class="w-layout-blockcontainer container full w-container">
+        <div class="center-align-div principales">
+          <div class="section-name-wrapper padding">
+            <h5 class="section-name dark">guiding principles</h5>
+          </div>
+          <div class="center-align-heading-div">
+            <h2 class="section-heading center dark">Crafting distinction, shaping tomorrow.</h2>
+          </div>
+        </div>
+        <div id="w-node-_6061e420-92bf-8387-d132-fdf925dbc5e7-b9d3553e" class="w-layout-layout principal-quick-stack wf-layout-layout">
+          <div class="w-layout-cell">
+            <div class="quick-stack-img-wrapper left"><img src="../images/dummy_1600x900_ffffff_cccccc_172.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="../images/dummy_1600x900_ffffff_cccccc_172-p-500.jpg 500w, ../images/dummy_1600x900_ffffff_cccccc_172-p-800.jpg 800w, ../images/dummy_1600x900_ffffff_cccccc_172-p-1080.jpg 1080w, ../images/dummy_1600x900_ffffff_cccccc_172-p-1600.jpg 1600w, ../images/dummy_1600x900_ffffff_cccccc_172.jpg 1920w" alt="" class="image"></div>
+          </div>
+          <div class="w-layout-cell center-align-cell">
+            <div class="grid-content-div quickstack middle">
+              <div class="guiding-wrapper">
+                <div data-w-id="d9c26a05-9bbd-c75a-7184-0b5ada3022a6" class="grid-icon"><img src="../images/Rectangle-33_1.png" loading="lazy" alt="" class="image contain"></div>
+                <div class="grid-heading-wrapper">
+                  <h4 class="sub-heading">Design Excellence</h4>
+                </div>
+              </div>
+              <div class="paragraph-wrapper">
+                <ul role="list" class="paragraph list dark">
+                  <li>Innovative architectural solution</li>
+                  <li>Nature-inspired creativity</li>
+                  <li>Premium quality standards</li>
+                  <li>Delivering precision in every design detail</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="w-node-f2f7efff-60f4-564b-d5b8-506b626c6363-b9d3553e" class="right-align-div padding">
+          <div id="w-node-d98df23c-006a-16ad-782b-cc8f71f853e6-b9d3553e" class="w-layout-layout principal-quick-stack reverse wf-layout-layout">
+            <div class="w-layout-cell cell">
+              <div class="grid-content-div quickstack">
+                <div class="guiding-wrapper">
+                  <div data-w-id="32bd6bfe-71d0-8671-a74b-50b777cf7f40" class="grid-icon"><img src="../images/Rectangle-35.png" loading="lazy" alt="" class="image contain"></div>
+                  <div class="grid-heading-wrapper">
+                    <h4 class="sub-heading">Technical mastery</h4>
+                  </div>
+                </div>
+                <div class="paragraph-wrapper">
+                  <ul role="list" class="paragraph list dark">
+                    <li>Advanced project management</li>
+                    <li>Digital innovation integration</li>
+                    <li>Comprehensive quality control</li>
+                    <li>Leading through technical innovation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="w-node-d98df23c-006a-16ad-782b-cc8f71f853e8-b9d3553e" class="w-layout-cell">
+              <div class="quick-stack-img-wrapper right"><img src="../images/dummy_1600x900_ffffff_cccccc_169-2.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="../images/dummy_1600x900_ffffff_cccccc_169-2-p-500.jpg 500w, ../images/dummy_1600x900_ffffff_cccccc_169-2-p-800.jpg 800w, ../images/dummy_1600x900_ffffff_cccccc_169-2-p-1080.jpg 1080w, ../images/dummy_1600x900_ffffff_cccccc_169-2-p-1600.jpg 1600w, ../images/dummy_1600x900_ffffff_cccccc_169-2.jpg 1920w" alt="" class="image"></div>
+            </div>
+          </div>
+        </div>
+        <div id="w-node-f329955f-ac03-95ef-5686-c8a8379ed0ca-b9d3553e" class="w-layout-layout principal-quick-stack padding wf-layout-layout">
+          <div class="w-layout-cell">
+            <div class="quick-stack-img-wrapper left"><img src="../images/dummy_1600x900_ffffff_cccccc_169-1.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="../images/dummy_1600x900_ffffff_cccccc_169-1-p-500.jpg 500w, ../images/dummy_1600x900_ffffff_cccccc_169-1-p-800.jpg 800w, ../images/dummy_1600x900_ffffff_cccccc_169-1-p-1080.jpg 1080w, ../images/dummy_1600x900_ffffff_cccccc_169-1-p-1600.jpg 1600w, ../images/dummy_1600x900_ffffff_cccccc_169-1.jpg 1920w" alt="" class="image"></div>
+          </div>
+          <div class="w-layout-cell center-align-cell">
+            <div class="grid-content-div quickstack middle">
+              <div class="guiding-wrapper">
+                <div data-w-id="f329955f-ac03-95ef-5686-c8a8379ed0d0" class="grid-icon"><img src="../images/Rectangle-34_1.png" loading="lazy" style="-webkit-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="image"></div>
+                <div class="grid-heading-wrapper">
+                  <h4 class="sub-heading">Customer Focus</h4>
+                </div>
+              </div>
+              <div class="paragraph-wrapper">
+                <ul role="list" class="paragraph list dark">
+                  <li>Exceptional customer experience</li>
+                  <li>Tailored solutions delivery</li>
+                  <li> Long-term relationship building</li>
+                  <li>Setting the standard for client service</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="w-node-cedbb7b4-3b8f-8c8b-2e85-38112ae54e61-b9d3553e" class="right-align-div padding">
+          <div id="w-node-cedbb7b4-3b8f-8c8b-2e85-38112ae54e62-b9d3553e" class="w-layout-layout principal-quick-stack reverse wf-layout-layout">
+            <div class="w-layout-cell cell">
+              <div class="grid-content-div quickstack">
+                <div class="guiding-wrapper">
+                  <div data-w-id="cedbb7b4-3b8f-8c8b-2e85-38112ae54e65" class="grid-icon"><img src="../images/Rectangle-36.png" loading="lazy" alt="" class="image contain"></div>
+                  <div class="grid-heading-wrapper">
+                    <h4 class="sub-heading">Sustainable Development</h4>
+                  </div>
+                </div>
+                <div class="paragraph-wrapper">
+                  <ul role="list" class="paragraph list dark">
+                    <li>Environmental consciousness</li>
+                    <li>Vision 2030 alignment</li>
+                    <li>Future-proof solutions</li>
+                    <li>Stewarding sustainable practices</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="w-node-cedbb7b4-3b8f-8c8b-2e85-38112ae54e74-b9d3553e" class="w-layout-cell">
+              <div class="quick-stack-img-wrapper right"><img src="../images/dummy_1600x900_ffffff_cccccc_169-3_1.JPG" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="../images/dummy_1600x900_ffffff_cccccc_169-3_1-p-500.jpg 500w, ../images/dummy_1600x900_ffffff_cccccc_169-3_1-p-800.jpg 800w, ../images/dummy_1600x900_ffffff_cccccc_169-3_1-p-1080.jpg 1080w, ../images/dummy_1600x900_ffffff_cccccc_169-3_1-p-1600.jpg 1600w, ../images/dummy_1600x900_ffffff_cccccc_169-3_1.JPG 1920w" alt="" class="image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section cta">
+      <div class="w-layout-blockcontainer container full cta w-container">
+        <div class="cta-grid">
+          <div id="w-node-f0376bd9-54e6-819e-312e-9de4303af10a-303af107" class="cta-left-grid">
+            <div class="section-name-wrapper">
+              <h5 class="section-name dark left">Explore</h5>
+            </div>
+            <div class="cta-content-div">
+              <a href="../en/projects.html" class="cta-link w-inline-block">
+                <h2 class="cta-heading">Projects</h2>
+                <div data-w-id="f0376bd9-54e6-819e-312e-9de4303af112" class="cta-arrow-wrapper"><img src="../images/Asset-12-2-1.png" loading="lazy" data-w-id="f0376bd9-54e6-819e-312e-9de4303af113" alt=""></div>
+              </a>
+            </div>
+          </div>
+          <div id="w-node-f0376bd9-54e6-819e-312e-9de4303af114-303af107" class="cta-right-grid"><img src="../images/CTA_1.JPG" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9874877929688px" srcset="../images/CTA_1-p-500.jpg 500w, ../images/CTA_1-p-800.jpg 800w, ../images/CTA_1-p-1080.jpg 1080w, ../images/CTA_1-p-1600.jpg 1600w, ../images/CTA_1.JPG 1920w" class="image">
+            <div class="cta-image-wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="section footer">
+    <div class="w-layout-blockcontainer container w-container">
+      <div class="footer-up-div arabic">
+        <div class="footer-left-grid arabic">
+          <div id="w-node-_0beb339e-1953-658d-b0ff-7d739ede1b48-9ede1b44" class="download-div arabic">
+            <h5 class="download-heading">Construction updates</h5>
+            <div class="download-element-div arabic">
+              <a href="#" class="page-link w-inline-block">
+                <h5 class="download-text">Project Progress</h5>
+              </a>
+              <a href="#" class="page-link w-inline-block">
+                <h5 class="download-text">Timelines</h5>
+              </a>
+            </div>
+          </div>
+          <div id="w-node-_0beb339e-1953-658d-b0ff-7d739ede1b52-9ede1b44" class="download-div arabic">
+            <h5 class="download-heading">Downloads</h5>
+            <div class="download-element-div arabic">
+              <a href="../brochures.html" class="page-link w-inline-block">
+                <h5 class="download-text">Brochures</h5>
+              </a>
+              <a href="../floorplans.html" class="page-link w-inline-block">
+                <h5 class="download-text">Floorplans</h5>
+              </a>
+              <a href="../factsheets.html" class="page-link w-inline-block">
+                <h5 class="download-text">Factsheets</h5>
+              </a>
+              <a href="../reports.html" class="page-link w-inline-block">
+                <h5 class="download-text">Reports</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-logo-div arabic"><img sizes="(max-width: 616px) 100vw, 616px" srcset="../images/FULL-LOCKUP-06-p-500.png 500w, ../images/FULL-LOCKUP-06.png 616w" alt="" src="../images/FULL-LOCKUP-06.png" loading="lazy" class="image"></div>
+      </div>
+    </div>
+    <div class="line footer"></div>
+    <div class="footer-middle-div">
+      <a href="https://calma-website.webflow.io/en/about#ceo-message" class="footer-text-div w-inline-block">
+        <h4 class="footer-text financing">CEO’s Message</h4>
+      </a>
+      <a href="https://calma-website.webflow.io/en/about#leadership" class="footer-text-div w-inline-block">
+        <h4 class="footer-text">Leadership</h4>
+      </a>
+      <a href="https://calma-website.webflow.io/en/about#corporate-culture" class="footer-text-div w-inline-block">
+        <h4 class="footer-text">Corporate Culture</h4>
+      </a>
+      <a href="../en/guarantees.html" class="footer-text-div w-inline-block">
+        <h4 class="footer-text leadership">Guarantees</h4>
+      </a>
+      <a href="../en/financing-options.html" class="footer-text-div w-inline-block">
+        <h4 class="footer-text ceo">Financing options</h4>
+      </a>
+    </div>
+    <div class="line footer"></div>
+    <div class="footer-bottom-div">
+      <div class="footer-element-wrapper arabic">
+        <div class="copyright-div right">
+          <h5 class="terms-heading">© 2025 calma | Calma . Copyright reserved.</h5>
+        </div>
+        <div class="social-div">
+          <div class="icon-div"><img loading="lazy" src="../images/Vector.png" alt="" class="icon">
+            <a href="https://www.instagram.com/callma_sa/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="../images/Vector-1.png" alt="" class="icon"></a><img loading="lazy" src="../images/Mask-group.png" alt="" class="icon"><img loading="lazy" src="../images/Vector-2.png" alt="" class="icon">
+            <a href="https://www.linkedin.com/company/calmasa/" target="_blank" class="social-link w-inline-block"><img loading="lazy" src="../images/Vector-3.png" alt="" class="icon"></a>
+          </div>
+        </div>
+        <div class="terms-div left">
+          <a href="../privacy-policy.html" class="page-link w-inline-block">
+            <h5 class="terms-heading">Privacy policy</h5>
+          </a>
+          <a href="../terms-of-service.html" class="page-link w-inline-block">
+            <h5 class="terms-heading">Terms of service</h5>
+          </a>
+          <a href="../cookie-policy.html" class="page-link w-inline-block">
+            <h5 class="terms-heading">Cookie policy</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=687744ac7f4aefd284fc3f12" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="../js/webflow.js" type="text/javascript"></script><!--  GSAP + ScrollTrigger  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type@latest"></script>
+  <script type="module">
+  import SplitType from "https://cdn.skypack.dev/split-type";
+  gsap.registerPlugin(ScrollTrigger);
+  // PAGE TRANSITION + ANIMATION SETUP
+  document.addEventListener("DOMContentLoaded", () => {
+    // Create page transition div
+    const transition = document.createElement("div");
+    transition.className = "page-transition";
+    document.body.appendChild(transition);
+    gsap.set(".page-transition", {
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "#D4CFBD",
+      zIndex: 9999,
+      pointerEvents: "none",
+      opacity: 0
+    });
+    // Entry animation (page load)
+    gsap.fromTo(
+      ".page-transition",
+      { opacity: 1 },
+      {
+        opacity: 0,
+        duration: 1.2,
+        ease: "power2.out",
+        onComplete: () => {
+          document.querySelector(".page-transition").style.display = "none";
+          ScrollTrigger.refresh();
+          // Dispatch custom event when transition finishes
+          document.dispatchEvent(new Event("pageTransitionComplete"));
+        }
+      }
+    );
+    // Leave animation (page unload)
+    const links = document.querySelectorAll("a[href]");
+    links.forEach((link) => {
+      if (
+        link.href.indexOf("#") === -1 &&
+        !link.target &&
+        !link.hasAttribute("download")
+      ) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const href = link.href;
+          gsap.to(".page-transition", {
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.inOut",
+            onStart: () => {
+              document.querySelector(".page-transition").style.display = "block";
+            },
+            onComplete: () => {
+              window.location.href = href;
+            }
+          });
+        });
+      }
+    });
+  });
+  // === RUN ANIMATIONS FUNCTION ===
+  let animationsRun = false; // Flag to prevent multiple runs
+  function runAnimations() {
+    if (animationsRun) return;
+    animationsRun = true;
+    // Navbar & hero timeline (runs once, no ScrollTrigger)
+    const tl = gsap.timeline();
+    tl.from(".logo-wrapper", {
+      opacity: 0,
+      y: -30,
+      duration: 0.8,
+      ease: "power2.out"
+    })
+    .from(".navlink", {
+      opacity: 0,
+      y: -20,
+      duration: 0.6,
+      stagger: 0.15,
+      ease: "power2.out"
+    })
+    .from(".hero-logo-div", {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      ease: "power2.out"
+    }, "-=0.3")
+    .from(".hero-heading-div", {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      ease: "power2.out"
+    }, "-=0.5")
+    .from(".hero-image-wrapper", {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out"
+    }, "-=0.5");
+    // Animate Headings with SplitType + ScrollTrigger (once: true)
+    const headingClasses = [
+      "section-name",
+      "section-heading",
+      "pattern-heading",
+      "stats-heading",
+      "status-heading",
+      "cta-heading",
+      "project-grid-name",
+      "stats",
+      "page-hero-heading",
+      "project-heading"
+    ];
+    headingClasses.forEach(cls => {
+      document.querySelectorAll(`.${cls}`).forEach(el => {
+        if (!el.dataset.splitDone) {
+          const split = new SplitType(el, {
+            types: "words",
+            tagName: "span"
+          });
+          el.dataset.splitDone = "true";
+          gsap.from(split.words, {
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none none",
+              once: true // ensure only once
+            },
+            opacity: 0,
+            y: 60,
+            skewY: 6,
+            stagger: 0.05,
+            duration: 1,
+            ease: "power3.out",
+          });
+        }
+      });
+    });
+    // Sequential Fade In for sub-headings, paragraphs, buttons (ScrollTrigger once)
+    const fadeInClasses = [
+      "pattern-sub-heading",
+      "project-sub-heading",
+      "paragraph",
+      "stats-sub-heading",
+      "sub-heading",
+      "button"
+    ];
+    fadeInClasses.forEach(cls => {
+      document.querySelectorAll(`.${cls}`).forEach(el => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            toggleActions: "play none none none",
+            once: true
+          }
+        });
+        tl.from(el, {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          ease: "power2.out",
+        });
+      });
+    });
+    // Logo/Icon Scale Animation (ScrollTrigger once)
+    const zoomClasses = [
+      "center-logo-wrapper",
+      "center-logo-calma",
+      "calma-logo-wrapper",
+      "grid-icon"
+    ];
+    zoomClasses.forEach(cls => {
+      document.querySelectorAll(`.${cls}`).forEach(el => {
+        gsap.from(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none none",
+            once: true
+          },
+          scale: 0.85,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out"
+        });
+      });
+    });
+    // Footer animation timeline
+    let footerTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top 80%",
+        once: true
+      }
+    });
+    footerTimeline
+      .from(".footer-logo-div", { y: 50, opacity: 0, duration: 1, ease: "power2.out" })
+      .from(".footer-left-grid", { y: 50, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.8")
+      .from(".download-heading", { y: 30, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.6")
+      .from(".download-text", { y: 20, opacity: 0, stagger: 0.1, duration: 0.6, ease: "power2.out" }, "-=0.5")
+      .from(".line.footer", { scaleX: 0, transformOrigin: "left", opacity: 0, duration: 0.6, ease: "power2.out" }, "-=0.5")
+      .from(".footer-middle-div", { y: 40, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.4")
+      .from(".footer-text", { y: 20, opacity: 0, stagger: 0.05, duration: 0.6, ease: "power2.out" }, "-=0.4")
+      .from(".footer-bottom-div", { y: 40, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.5")
+      .from(".terms-heading", { y: 20, opacity: 0, stagger: 0.1, duration: 0.6, ease: "power2.out" }, "-=0.5")
+      .from(".icon", { y: 20, opacity: 0, stagger: 0.1, duration: 0.6, ease: "power2.out" }, "-=0.5");
+    // Sequential animation for lines and stats inside 'location stats div'
+    document.querySelectorAll(".location.stats.div").forEach(container => {
+      const lines = container.querySelectorAll(".line");
+      const stats = container.querySelectorAll(".stats");
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: "top 80%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      });
+      const total = Math.max(lines.length, stats.length);
+      for (let i = 0; i < total; i++) {
+        if (lines[i]) {
+          tl.from(lines[i], {
+            opacity: 0,
+            scaleX: 0,
+            transformOrigin: "left center",
+            duration: 0.4,
+            ease: "power2.out"
+          });
+        }
+        if (stats[i]) {
+          tl.from(stats[i], {
+            opacity: 0,
+            y: 30,
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        }
+      }
+    });
+  }
+  // Listen for pageTransitionComplete event to run animations
+  document.addEventListener("pageTransitionComplete", runAnimations);
+  // Optional fallback: Run animations on DOMContentLoaded if pageTransitionComplete never fired
+  document.addEventListener("DOMContentLoaded", () => {
+    if (!window.pageTransitionCompleteFired) {
+      runAnimations();
+    }
+  });
+  // Set flag when pageTransitionComplete fires
+  document.addEventListener("pageTransitionComplete", () => {
+    window.pageTransitionCompleteFired = true;
+  });
+</script>
+  <!--  Your other GSAP ScrollTrigger animations below (keep once:true)  -->
+  <script>
+  gsap.registerPlugin(ScrollTrigger);
+  document.addEventListener("DOMContentLoaded", () => {
+    const sliderImages = document.querySelectorAll(".image-wrapper.slider");
+    gsap.set(sliderImages, {
+      scale: 1.1,
+      filter: "blur(10px)",
+      opacity: 0
+    });
+    gsap.to(sliderImages, {
+      scrollTrigger: {
+        trigger: sliderImages[0],
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true
+      },
+      scale: 1,
+      filter: "blur(0px)",
+      opacity: 1,
+      duration: 1.5,
+      ease: "power3.out",
+      stagger: 0.2
+    });
+  });
+</script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const portraitImage = document.querySelector(".image-wrapper.portrait");
+    const wideImage = document.querySelector(".wide-image-wrapper");
+    if (portraitImage) {
+      gsap.set(portraitImage, {
+        y: 100,
+        scale: 0.9,
+        opacity: 0
+      });
+      gsap.to(portraitImage, {
+        scrollTrigger: {
+          trigger: portraitImage,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true
+        },
+        y: 0,
+        scale: 1,
+        opacity: 1,
+        duration: 1.4,
+        ease: "power3.out"
+      });
+    }
+    if (wideImage) {
+      gsap.set(wideImage, {
+        x: 100,
+        scale: 1.1,
+        opacity: 0
+      });
+      gsap.to(wideImage, {
+        scrollTrigger: {
+          trigger: wideImage,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true
+        },
+        x: 0,
+        scale: 1,
+        opacity: 1,
+        duration: 1.6,
+        ease: "power3.out"
+      });
+    }
+  });
+</script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const ctaImage = document.querySelector(".cta-image-wrapper");
+    if (ctaImage) {
+      gsap.set(ctaImage, {
+        y: 100,
+        scale: 1.1,
+        opacity: 0
+      });
+      gsap.to(ctaImage, {
+        scrollTrigger: {
+          trigger: ".cta-right-grid",
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true
+        },
+        y: 0,
+        scale: 1,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out"
+      });
+    }
+  });
+</script>
+  <script>
+  gsap.from(".section-hero-image-wrapper", {
+    scrollTrigger: {
+      trigger: ".section-hero-image-wrapper",
+      start: "top 80%",
+      toggleActions: "play none none none",
+      once: true
+    },
+    opacity: 0,
+    y: 100,
+    scale: 1.1,
+    duration: 1.2,
+    delay: 0.8,
+    ease: "power4.out",
+  });
+</script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const ceoImage = document.querySelector(".ceo-image-wrapper");
+  if (ceoImage) {
+    // Initial state: shifted right, transparent, slightly scaled down
+    gsap.set(ceoImage, {
+      x: 100,       // start 100px right
+      opacity: 0,
+      scale: 0.95
+    });
+    // Animate in when scrolled into view
+    gsap.to(ceoImage, {
+      scrollTrigger: {
+        trigger: ceoImage,
+        start: "top 85%",
+        toggleActions: "play none none none",
+        once: true
+      },
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      duration: 1.3,
+      ease: "power3.out"
+    });
+  }
+});
+</script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const imageWrappers = [
+    ".right-image-wrapper",
+    ".brand-logo-wrapper",
+    ".quick-stack-img-wrapper",
+    ".residential-slider-image-wrap",
+    ".grid-image-wrapper",
+    ".commercial-project-img-wrapper"
+  ];
+  imageWrappers.forEach((selector) => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((el) => {
+      gsap.set(el, {
+        y: 80,         // start 80px below
+        opacity: 0
+      });
+      gsap.to(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out"
+      });
+    });
+  });
+});
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const statDivs = document.querySelectorAll(".projects-stat-div");
+    statDivs.forEach((div) => {
+      const bgOverlay = document.createElement("div");
+      bgOverlay.classList.add("bg-overlay");
+      div.style.position = "relative";
+      div.appendChild(bgOverlay);
+      const imageDiv = div.querySelector(".projects-image-div");
+      const sectionHeading = div.querySelector(".section-heading");
+      const subHeading = div.querySelector(".sub-heading.pastle");
+      // Set initial states
+      gsap.set(bgOverlay, {
+        position: "absolute",
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        backgroundColor: "#64523D",
+        transformOrigin: "right",
+        scaleX: 0,
+        zIndex: 0,
+        pointerEvents: "none",
+      });
+      div.addEventListener("mouseenter", () => {
+        // Animate background wipe
+        gsap.to(bgOverlay, {
+          scaleX: 1,
+          duration: 0.6,
+          ease: "power2.out",
+        });
+        // Show image
+        imageDiv.style.display = "block";
+        gsap.fromTo(imageDiv, {
+          opacity: 0,
+        }, {
+          opacity: 1,
+          duration: 0.5,
+          delay: 0.1,
+        });
+        // Change text colors
+        gsap.to(sectionHeading, {
+          color: "#ffffff",
+          duration: 0.3,
+          delay: 0.1,
+        });
+        gsap.to(subHeading, {
+          color: "#ffffff",
+          duration: 0.3,
+          delay: 0.2,
+        });
+      });
+      div.addEventListener("mouseleave", () => {
+        // Reverse background wipe
+        gsap.to(bgOverlay, {
+          scaleX: 0,
+          duration: 0.6,
+          ease: "power2.in",
+        });
+        // Hide image
+        gsap.to(imageDiv, {
+          opacity: 0,
+          duration: 0.4,
+          onComplete: () => {
+            imageDiv.style.display = "none";
+          }
+        });
+        // Revert text colors
+        gsap.to(sectionHeading, {
+          color: "#091d1e",
+          duration: 0.3,
+        });
+        gsap.to(subHeading, {
+          color: "#64523d",
+          duration: 0.3,
+        });
+      });
+    });
+  });
+</script>
+</body>
+</html>
