@@ -10,7 +10,15 @@
 .language-switch-div,
 .page-link,
 .footer-text-div,
-.download-text {
+.download-text,
+.w-slider-arrow-left,
+.w-slider-arrow-right,
+.slider-left-arrow,
+.slider-right-arrow,
+.left-arrow-2,
+.right-arrow-2,
+.left-arrow-3,
+.right-arrow-3 {
   min-height: 44px;
   min-width: 44px;
   display: flex;
@@ -30,6 +38,32 @@
   padding: 12px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
+  /* Ensure visibility on all backgrounds */
+  color: #091d1e !important;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(9, 29, 30, 0.1);
+}
+
+/* Large screen specific styles for better contrast */
+@media screen and (min-width: 992px) {
+  .w-nav-button {
+    color: #091d1e !important;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(9, 29, 30, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .w-nav-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    border-color: rgba(9, 29, 30, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .w-nav-button.w--open {
+    background-color: #091d1e;
+    color: #ffffff !important;
+    border-color: #091d1e;
+  }
 }
 
 /* ===== TOUCH FEEDBACK STATES ===== */
@@ -38,10 +72,71 @@
 .button:active,
 .mobile-page-link:active,
 .language-switch-div:active,
-.page-link:active {
+.page-link:active,
+.w-slider-arrow-left:active,
+.w-slider-arrow-right:active,
+.slider-left-arrow:active,
+.slider-right-arrow:active,
+.left-arrow-2:active,
+.right-arrow-2:active,
+.left-arrow-3:active,
+.right-arrow-3:active {
   transform: scale(0.98);
   opacity: 0.8;
   transition: all 0.1s ease;
+}
+
+/* ===== SLIDER ARROW ENHANCEMENTS ===== */
+/* Enhanced slider arrows for better touch interaction */
+.w-slider-arrow-left,
+.w-slider-arrow-right,
+.slider-left-arrow,
+.slider-right-arrow,
+.left-arrow-2,
+.right-arrow-2,
+.left-arrow-3,
+.right-arrow-3 {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  padding: 12px;
+  margin: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Slider arrow hover states for desktop */
+@media (hover: hover) and (pointer: fine) {
+  .w-slider-arrow-left:hover,
+  .w-slider-arrow-right:hover,
+  .slider-left-arrow:hover,
+  .slider-right-arrow:hover,
+  .left-arrow-2:hover,
+  .right-arrow-2:hover,
+  .left-arrow-3:hover,
+  .right-arrow-3:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Touch-specific slider arrow styling */
+@media (hover: none) and (pointer: coarse) {
+  .w-slider-arrow-left,
+  .w-slider-arrow-right,
+  .slider-left-arrow,
+  .slider-right-arrow,
+  .left-arrow-2,
+  .right-arrow-2,
+  .left-arrow-3,
+  .right-arrow-3 {
+    background-color: rgba(0, 0, 0, 0.8);
+    min-height: 48px;
+    min-width: 48px;
+    padding: 14px;
+  }
 }
 
 /* Touch-friendly hover states that work on mobile */
@@ -63,7 +158,9 @@
   }
   
   .w-nav-button:hover {
-    background-color: rgba(100, 82, 61, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    border-color: rgba(9, 29, 30, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 }
 

@@ -116,6 +116,10 @@
       setupSwipeToClose(mobileMenu);
     }
 
+    // Enhanced slider swipe navigation
+    const sliders = document.querySelectorAll('.w-slider');
+    sliders.forEach(setupSliderSwipe);
+
     // Image gallery swipe navigation
     const imageGalleries = document.querySelectorAll('.cta-image-wrapper, .grid-image-wrapper');
     imageGalleries.forEach(setupImageSwipe);
@@ -213,6 +217,99 @@
 
       isDragging = false;
     }, { passive: true });
+  }
+
+  /**
+   * Setup enhanced slider swipe navigation
+   */
+  function setupSliderSwipe(slider) {
+    let startX = 0;
+    let startY = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let isVerticalScroll = false;
+    
+    const sliderMask = slider.querySelector('.w-slider-mask');
+    const leftArrow = slider.querySelector('.w-slider-arrow-left');
+    const rightArrow = slider.querySelector('.w-slider-arrow-right');
+    
+    if (!sliderMask) return;
+
+    // Enhanced touch start
+    slider.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isDragging = true;
+      isVerticalScroll = false;
+      
+      // Disable slider autoplay during touch
+      if (slider.getAttribute('data-autoplay') === 'true') {
+        slider.setAttribute('data-temp-autoplay', 'true');
+        slider.setAttribute('data-autoplay', 'false');
+      }
+    }, { passive: true });
+
+    // Enhanced touch move with better scroll detection
+    slider.addEventListener('touchmove', function(e) {
+      if (!isDragging) return;
+      
+      currentX = e.touches[0].clientX;
+      const currentY = e.touches[0].clientY;
+      const diffX = Math.abs(currentX - startX);
+      const diffY = Math.abs(currentY - startY);
+      
+      // Determine if this is vertical scrolling
+      if (diffY > diffX && diffY > 10) {
+        isVerticalScroll = true;
+        return;
+      }
+      
+      // Prevent default only for horizontal swipes
+      if (diffX > 10 && !isVerticalScroll) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    // Enhanced touch end with improved swipe detection
+    slider.addEventListener('touchend', function(e) {
+      if (!isDragging || isVerticalScroll) {
+        resetSliderTouch();
+        return;
+      }
+      
+      const endX = e.changedTouches[0].clientX;
+      const diffX = endX - startX;
+      const swipeThreshold = 50;
+      const swipeVelocityThreshold = 0.5;
+      
+      // Calculate swipe velocity
+      const timeDiff = Date.now() - (slider._touchStartTime || Date.now());
+      const velocity = Math.abs(diffX) / timeDiff;
+      
+      // Trigger navigation based on swipe direction and velocity
+      if (Math.abs(diffX) > swipeThreshold || velocity > swipeVelocityThreshold) {
+        if (diffX > 0) {
+          // Swipe right - previous slide
+          if (leftArrow) leftArrow.click();
+        } else {
+          // Swipe left - next slide
+          if (rightArrow) rightArrow.click();
+        }
+      }
+      
+      resetSliderTouch();
+    }, { passive: true });
+    
+    function resetSliderTouch() {
+      isDragging = false;
+      isVerticalScroll = false;
+      
+      // Restore autoplay if it was temporarily disabled
+      if (slider.getAttribute('data-temp-autoplay') === 'true') {
+        slider.setAttribute('data-autoplay', 'true');
+        slider.removeAttribute('data-temp-autoplay');
+      }
+    }
   }
 
   /**

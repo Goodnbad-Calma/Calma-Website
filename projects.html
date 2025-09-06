@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Sun Aug 24 2025 11:03:42 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Sun Aug 24 2025 11:03:42 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="687b562833b231556d19fcb6" data-wf-site="687744ac7f4aefd284fc3f12">
 <head>
   <meta charset="utf-8">
@@ -10,14 +10,16 @@
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/calma-website.webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/touch-optimizations.css" rel="stylesheet" type="text/css">
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
   <link href="images/favicon.jpg" rel="shortcut icon" type="image/x-icon">
-  <link href="images/webclip.jpg" rel="apple-touch-icon">  <script defer src="https://cdn.vercel-insights.com/v1/script.debug.js"></script>  <script type="module">    import { inject } from 'https://cdn.skypack.dev/@vercel/speed-insights';   inject();  </script>
+  <link href="images/webclip.jpg" rel="apple-touch-icon">
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
   <script>
-  // Initialize Lenis on the #scroll-container div
-  const lenis = new Lenis({
-    wrapper: document.querySelector('#scroll-container'),  // your scroll wrapper
+  // Initialize Lenis on the #scroll-container div with error handling
+  try {
+    const lenis = new Lenis({
+      wrapper: document.querySelector('#scroll-container'),  // your scroll wrapper
     content: document.querySelector('#scroll-container'),  // your scroll content (same div)
     duration: 1.2,
     easing: t => t < 0.5 ? 2*t*t : -1+(4-2*t)*t,
@@ -52,6 +54,9 @@
   // Refresh ScrollTrigger after setup (important)
   ScrollTrigger.addEventListener("refresh", () => lenis.update());
   ScrollTrigger.refresh();
+  } catch (error) {
+    console.warn('Lenis initialization failed:', error);
+  }
 </script>
   <style>
   .cta-image-wrapper {
@@ -135,7 +140,7 @@
     <section class="section page-hero">
       <div class="page-hero-content-wrapper">
         <h1 class="page-hero-heading">المشاريع</h1>
-        <div class="sub-heading hero"> .مشروعًا28 . مدينتين. رؤية واحدة نحو الجودة </div>
+        <div class="sub-heading hero">28 مشروعًا. مدينتين. رؤية واحدة نحو الجودة.</div>
       </div>
       <div class="w-layout-blockcontainer container full hero w-container">
         <div class="section-hero-image-wrapper"><img src="images/Header.JPG" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/Header-p-500.jpg 500w, images/Header-p-800.jpg 800w, images/Header-p-1080.jpg 1080w, images/Header-p-1600.jpg 1600w, images/Header.JPG 1920w" class="image"></div>
@@ -145,10 +150,10 @@
       <div class="w-layout-blockcontainer container w-container">
         <div class="center-align-div center">
           <div class="center-align-heading-div">
-            <h2 class="section-heading dark center">.تصميم مساحات جاهزة للمستقبل</h2>
+            <h2 class="section-heading dark center">تصميم مساحات جاهزة للمستقبل.</h2>
           </div>
           <div class="center-para-wrapper projects">
-            <p class="paragraph dark center">بصفتها المطور العقاري الأبرز في المملكة العربية السعودية، تجسد كالما إرثًا من التفرد الذي يظهر في كل متر نطوره. من خلال  ٢٨ مشروعاً رائدًا نُعيد تعريف المشهد المدني في المملكة وقريباً في أسواق الخليج، نثبت خبرتنا الراسخة على أرض الواقع. ومع أكثر من ٢٠٠٠ عائلة تم اختيار مشاريعنا لتكون موطنهم المنشود،  في كالما لا نكتفي ببناء العقارات بل نضع معايير جديدة لتطوير العقار في المملكة والمنطقة</p>
+            <p class="paragraph dark center">بصفتها المطور العقاري الأبرز في المملكة العربية السعودية، تجسد كالما إرثًا من التفرد الذي يظهر في كل متر نطوره. من خلال ٢٨ مشروعاً رائدًا نُعيد تعريف المشهد المدني في المملكة وقريباً في أسواق الخليج، نثبت خبرتنا الراسخة على أرض الواقع. ومع أكثر من ٢٠٠٠ عائلة تم اختيار مشاريعنا لتكون موطنهم المنشود، في كالما لا نكتفي ببناء العقارات بل نضع معايير جديدة لتطوير العقار في المملكة والمنطقة.</p>
           </div>
           <div class="project-logo-wrapper"><img src="images/BRANDMARK_2.png" loading="lazy" alt="" class="image"></div>
           <div class="project-stats-grid">
@@ -242,9 +247,9 @@
             <div id="w-node-a53a405e-029d-9dbc-90ba-7bbd9f84761f-6d19fcb6" class="w-layout-cell">
               <div class="project-details-div arabic">
                 <h3 class="project-heading">NR100 - شقق سكنية</h3>
-                <h4 class="project-sub-heading"> الموقع: حي النرجس، كالما ١٠</h4>
+                <h4 class="project-sub-heading">الموقع: حي النرجس، كالما ١٠</h4>
                 <div class="project-para-wrapper">
-                  <p class="paragraph dark arabic"> كالما NR100 هو أحد أبرز المعالم السكنية في حي النرجس الراقي، ويتميز بموقع استراتيجي بالقرب من طريق الملك سلمان الحيوي. يمتد هذا المشروع السكني على نطاق واسع ليضم ١١٢ وحدة سكنية، جميعها مصممة بمعايير عالية من الجودة في البناء ودقة في التشطيبات وواجهات معمارية أنيقة.</p>
+                  <p class="paragraph dark arabic">كالما NR100 هو أحد أبرز المعالم السكنية في حي النرجس الراقي، ويتميز بموقع استراتيجي بالقرب من طريق الملك سلمان الحيوي. يمتد هذا المشروع السكني على نطاق واسع ليضم ١١٢ وحدة سكنية، جميعها مصممة بمعايير عالية من الجودة في البناء ودقة في التشطيبات وواجهات معمارية أنيقة.</p>
                 </div>
               </div>
             </div>
@@ -255,7 +260,7 @@
                 <h3 class="project-heading">RM110 - شقق سكنية</h3>
                 <h4 class="project-sub-heading">الموقع: حي الرمال</h4>
                 <div class="project-para-wrapper">
-                  <p class="paragraph dark arabic"> كالما RM110 يقدم تجربة سكنية مختلفة في حي الرمال ويتميز بموقعه المثالي بالقرب من طريق الثُمامة الحيوي. يضم هذا المشروع المدروس بعناية ٨٠ وحدة سكنية تعكس أعلى معايير الجودة في البناء ودقة في التشطيبات وواجهات أنيقة تعزز من جمال المجمع.</p>
+                  <p class="paragraph dark arabic">كالما RM110 يقدم تجربة سكنية مختلفة في حي الرمال ويتميز بموقعه المثالي بالقرب من طريق الثُمامة الحيوي. يضم هذا المشروع المدروس بعناية ٨٠ وحدة سكنية تعكس أعلى معايير الجودة في البناء ودقة في التشطيبات وواجهات أنيقة تعزز من جمال المجمع.</p>
                 </div>
               </div>
             </div>
@@ -305,7 +310,7 @@
             </div>
             <div id="w-node-e7fa9bb8-08c6-9c0a-b81e-3628b3694770-6d19fcb6" class="w-layout-cell">
               <div class="project-details-div arabic">
-                <h3 class="project-heading">DR120 - شقق سكنية </h3>
+                <h3 class="project-heading">DR120 - شقق سكنية</h3>
                 <h4 class="project-sub-heading">الموقع: حي الفيحاء، جدة</h4>
                 <div class="project-para-wrapper">
                   <p class="paragraph dark arabic">كالما DR120 يقدم فرصة سكنية مميزة في حي الفيحاء الراقي بمدينة جدة، من خلال ٢٢ وحدة سكنية مصممة بعناية وفق أعلى معايير الجودة في البناء ودقة التشطيبات. يتميز هذا المشروع البوتيكي بواجهاته المعمارية الأنيقة وقد صُمم خصيصًا ليمنح السكان تجربة معيشية راقية وفريدة من نوعها.</p>

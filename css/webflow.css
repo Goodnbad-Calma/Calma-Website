@@ -1659,13 +1659,27 @@ textarea.w-select {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   tap-highlight-color: rgba(0, 0, 0, 0);
   user-select: none;
+  color: #000000;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease;
 }
 .w-nav-button:focus {
   outline: 0;
 }
 .w-nav-button.w--open {
-  background-color: #C8C8C8;
-  color: white;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.w-nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
+
+.w-nav-button.w--open:hover {
+  background-color: #333333;
+  color: #ffffff;
 }
 .w-nav[data-collapse='all'] .w-nav-menu {
   display: none;

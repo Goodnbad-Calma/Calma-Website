@@ -2358,7 +2358,9 @@
 }
 
 .right-arrow-2, .left-arrow-2 {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-details-div {
@@ -2438,7 +2440,9 @@
 }
 
 .right-arrow-3, .left-arrow-3 {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .commercial-project-details-wrapper {
