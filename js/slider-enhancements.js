@@ -168,7 +168,7 @@
       nextIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
     }
     
-    // Trigger Webflow's slider navigation
+    // Trigger slider navigation
     const targetSlide = slides[nextIndex];
     if (targetSlide) {
       // Remove current class from all slides
