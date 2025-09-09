@@ -28,9 +28,22 @@
 
 /* Navigation touch improvements */
 .navlink {
-  padding: 12px 16px;
+  padding: 12px 20px;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Enhanced touch feedback for navigation */
+.navlink:active {
+  transform: scale(0.98) translateY(1px);
+  transition: all 0.1s ease;
+}
+
+.w-nav-brand:active {
+  transform: scale(0.98);
+  transition: all 0.1s ease;
 }
 
 /* Mobile menu burger button optimization */
@@ -73,21 +86,19 @@
 .mobile-page-link:active,
 .language-switch-div:active,
 .page-link:active,
-.w-slider-arrow-left:active,
-.w-slider-arrow-right:active,
-.slider-left-arrow:active,
-.slider-right-arrow:active,
-.left-arrow-2:active,
-.right-arrow-2:active,
-.left-arrow-3:active,
-.right-arrow-3:active {
+/* Removed slider arrow active states since arrows are hidden */
+.navlink:active,
+.button:active,
+.mobile-page-link:active,
+.language-switch-div:active,
+.page-link:active {
   transform: scale(0.98);
   opacity: 0.8;
   transition: all 0.1s ease;
 }
 
 /* ===== SLIDER ARROW ENHANCEMENTS ===== */
-/* Enhanced slider arrows for better touch interaction */
+/* Hide all slider arrows except for speaker slider */
 .w-slider-arrow-left,
 .w-slider-arrow-right,
 .slider-left-arrow,
@@ -96,47 +107,41 @@
 .right-arrow-2,
 .left-arrow-3,
 .right-arrow-3 {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 50%;
-  padding: 12px;
-  margin: 8px;
+  display: none !important;
+}
+
+/* Show arrows only for speaker slider */
+.speaker-slider .w-slider-arrow-left,
+.speaker-slider .w-slider-arrow-right {
+  display: block !important;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+/* Speaker slider arrow styling */
+.speaker-slider .speaker-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
-/* Slider arrow hover states for desktop */
-@media (hover: hover) and (pointer: fine) {
-  .w-slider-arrow-left:hover,
-  .w-slider-arrow-right:hover,
-  .slider-left-arrow:hover,
-  .slider-right-arrow:hover,
-  .left-arrow-2:hover,
-  .right-arrow-2:hover,
-  .left-arrow-3:hover,
-  .right-arrow-3:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
+.speaker-slider .speaker-arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
 }
 
-/* Touch-specific slider arrow styling */
-@media (hover: none) and (pointer: coarse) {
-  .w-slider-arrow-left,
-  .w-slider-arrow-right,
-  .slider-left-arrow,
-  .slider-right-arrow,
-  .left-arrow-2,
-  .right-arrow-2,
-  .left-arrow-3,
-  .right-arrow-3 {
-    background-color: rgba(0, 0, 0, 0.8);
-    min-height: 48px;
-    min-width: 48px;
-    padding: 14px;
-  }
+.speaker-slider .speaker-arrow.left {
+  left: 20px;
+}
+
+.speaker-slider .speaker-arrow:not(.left) {
+  right: 20px;
 }
 
 /* Touch-friendly hover states that work on mobile */
