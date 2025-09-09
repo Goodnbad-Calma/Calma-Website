@@ -665,43 +665,109 @@
 }
 
 .navbar {
-  background-color: #ddd0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(9, 29, 30, 0.08);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
   position: fixed;
-  inset: 2% 0% auto;
+  inset: 0% 0% auto;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar-container {
   max-width: 100%;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
 .navlink {
   font-family: var(--font-family);
   color: #091d1e;
-  letter-spacing: 3.84px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 600;
   line-height: 100%;
   text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.navlink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #64523D 0%, #8B6F47 100%);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.navlink:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navlink:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(100, 82, 61, 0.3);
 }
 
 .navlink.w--current {
-  color: #091d1e;
+  color: #ffffff;
+  background: linear-gradient(135deg, #64523D 0%, #8B6F47 100%);
+  box-shadow: 0 4px 15px rgba(100, 82, 61, 0.25);
+}
+
+.navlink.w--current::before {
+  transform: scaleX(1);
 }
 
 .navlink.last {
-  padding-right: 0;
+  padding-right: 20px;
+  margin-left: 8px;
+  border-left: 1px solid rgba(9, 29, 30, 0.1);
+  padding-left: 28px;
 }
 
 .navlink.last.w--current {
-  color: #091d1e;
+  color: #ffffff;
 }
 
 .logo-wrapper {
-  width: 52px;
-  height: 53px;
+  width: 60px;
+  height: 61px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px;
+}
+
+.logo-wrapper:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.logo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
 }
 
 .about-quickstack {
@@ -3009,19 +3075,36 @@
     font-size: .833vw;
   }
 
+  .navbar {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(9, 29, 30, 0.12);
+    box-shadow: 0 6px 35px rgba(0, 0, 0, 0.08);
+  }
+
   .navbar-container {
-    padding-left: 3vw;
-    padding-right: 3vw;
+    padding: 1rem 3vw;
   }
 
   .navlink {
-    padding: 1.389vw;
-    font-size: .833vw;
+    padding: 1.2vw 1.8vw;
+    font-size: .8vw;
+    letter-spacing: 2.2px;
+  }
+
+  .navlink:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(100, 82, 61, 0.25);
   }
 
   .logo-wrapper {
-    width: 3.611vw;
-    height: 3.681vw;
+    width: 3.8vw;
+    height: 3.9vw;
+  }
+
+  .logo-wrapper:hover {
+    transform: scale(1.03) translateY(-1px);
   }
 
   .image-wrapper.slider {
@@ -4257,18 +4340,58 @@
     display: block;
     position: fixed;
     inset: 0% 0% auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(9, 29, 30, 0.1);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
   }
 
   .mobile-menu-content-wrapper {
     z-index: 9999;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     position: relative;
+    padding: 1.5rem 2rem;
   }
 
-  .mobile-logo-wrapper, .mobile-lottie-wrapper {
+  .mobile-logo-wrapper {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-logo-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .mobile-logo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .mobile-lottie-wrapper {
     width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 8px;
+    background: rgba(100, 82, 61, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-lottie-wrapper:hover {
+    background: rgba(100, 82, 61, 0.2);
+    transform: scale(1.05);
   }
 
   .lottie {
@@ -5905,52 +6028,4 @@
 }
 
 
-@font-face {
-  font-family: 'Spicaarabic';
-  src: url('../fonts/SpicaArabic-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Spicaarabic';
-  src: url('../fonts/SpicaArabic-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Spicaarabic Book';
-  src: url('../fonts/SpicaArabic-Book.otf') format('opentype'), url('../fonts/SpicaArabic-Book.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Bluteauarabicsans Book';
-  src: url('../fonts/BluteauArabicSans-Book.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Bluteauarabicsans';
-  src: url('../fonts/BluteauArabicSans-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Bluteauarabicsans';
-  src: url('../fonts/BluteauArabicSans-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Bluteauarabicsans';
-  src: url('../fonts/BluteauArabicSans-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
+/* Duplicate font-face declarations removed - using original declarations at top of file */
