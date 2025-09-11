@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Sun Aug 24 2025 11:03:42 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="687b562833b231556d19fcb6" data-wf-site="687744ac7f4aefd284fc3f12">
 <head>
   <meta charset="utf-8">
@@ -6,17 +6,18 @@
   <meta content="المشاريع" property="og:title">
   <meta content="المشاريع" property="twitter:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  
-  <link href="css/normalize.css" rel="stylesheet" type="text/css"><link href="css/touch-optimizations.css" rel="stylesheet" type="text/css">
-  
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/calma-website.webflow.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
   <link href="images/favicon.jpg" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.jpg" rel="apple-touch-icon">
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
   <script>
-  // Initialize Lenis on the #scroll-container div with error handling
-  try {
-    const lenis = new Lenis({
-      wrapper: document.querySelector('#scroll-container'),  // your scroll wrapper
+  // Initialize Lenis on the #scroll-container div
+  const lenis = new Lenis({
+    wrapper: document.querySelector('#scroll-container'),  // your scroll wrapper
     content: document.querySelector('#scroll-container'),  // your scroll content (same div)
     duration: 1.2,
     easing: t => t < 0.5 ? 2*t*t : -1+(4-2*t)*t,
@@ -51,9 +52,6 @@
   // Refresh ScrollTrigger after setup (important)
   ScrollTrigger.addEventListener("refresh", () => lenis.update());
   ScrollTrigger.refresh();
-  } catch (error) {
-    console.warn('Lenis initialization failed:', error);
-  }
 </script>
   <style>
   .cta-image-wrapper {
@@ -66,14 +64,14 @@
 </style>
 </head>
 <body>
-  <div data-wf--navbar-main--variant="arabic" data-animation="default" data-collapse="medium" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+  <div data-wf--navbar-main--variant="arabic" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
     <div class="navbar-container w-container">
       <a href="index.html" class="w-nav-brand">
         <div class="logo-wrapper"><img src="images/BRANDMARK_01.png" loading="lazy" sizes="(max-width: 767px) 98vw, (max-width: 991px) 95vw, 939.9874877929688px" srcset="images/BRANDMARK_01-p-500.png 500w, images/BRANDMARK_01-p-800.png 800w, images/BRANDMARK_01-p-1080.png 1080w, images/BRANDMARK_01-p-1600.png 1600w, images/BRANDMARK_01-p-2000.png 2000w, images/BRANDMARK_01.png 2093w" alt="" class="image"></div>
       </a>
       <nav role="navigation" class="w-nav-menu">
         <a href="contact.html" class="navlink w-nav-link">تواصل معنا</a>
-        <a href="projects.html" aria-current="page" class="navlink w-nav-link">المشاريع</a>
+        <a href="projects.html" aria-current="page" class="navlink w-nav-link w--current">المشاريع</a>
         <a href="about.html" class="navlink last w-nav-link">عن كالـما</a>
         <a href="en/home.html" class="navlink last w-nav-link">|EN</a>
       </nav>
@@ -85,48 +83,48 @@
   <div class="mobile-menu arabic">
     <div class="w-layout-blockcontainer container w-container">
       <div class="mobile-menu-content-wrapper">
-        <a href="index.html" class="mobile-page-link">
+        <a href="index.html" class="mobile-page-link w-inline-block">
           <div class="mobile-logo-wrapper"><img loading="lazy" src="images/FULL-LOCKUP-04.png" alt="" class="image"></div>
         </a>
         <div class="mobile-lottie-wrapper">
-          <div class="lottie"></div>
+          <div data-w-id="a64f6b58-a022-2bc4-d0c6-9fbd259e7439" data-is-ix2-target="1" class="lottie" data-animation-type="lottie" data-src="documents/Animation---1748768860373.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0" data-duration="0.6666666666666666"></div>
         </div>
       </div>
       <div class="mobile-nav-content-wrapper arabic">
         <div class="mobile-menu-first-div">
-          <a href="about.html" class="section-heading dark nav">عن كالـما</a>
-          <a href="projects.html" aria-current="page" class="section-heading dark nav padding">المشاريع</a>
-          <a href="contact.html" class="section-heading dark nav">تواصل معنا</a>
+          <a data-w-id="a64f6b58-a022-2bc4-d0c6-9fbd259e743c" href="about.html" class="section-heading dark nav">عن كالـما</a>
+          <a data-w-id="a64f6b58-a022-2bc4-d0c6-9fbd259e743e" href="projects.html" aria-current="page" class="section-heading dark nav padding w--current">المشاريع</a>
+          <a data-w-id="a64f6b58-a022-2bc4-d0c6-9fbd259e7440" href="contact.html" class="section-heading dark nav">تواصل معنا</a>
         </div>
-        <a href="en/home.html" class="language-switch-div">
+        <a href="en/home.html" class="language-switch-div w-inline-block">
           <h3 class="language-switch">EN</h3>
         </a>
         <div class="line nav"></div>
         <div class="right-align-div">
           <div class="mobile-menu-middle-div">
-            <a href="about.html#ceo-message" class="page-link">
+            <a href="https://calma-website.webflow.io/about#ceo-message" class="page-link w-inline-block">
               <h4 class="mobile-nav-heading arabic">كلمة رئيس مجلس الإدارة</h4>
             </a>
-            <a href="about.html#leadership" class="page-link">
+            <a href="https://calma-website.webflow.io/about#leadership" class="page-link w-inline-block">
               <h4 class="mobile-nav-heading arabic">القيادة</h4>
             </a>
-            <a href="about.html#corporate-culture" class="page-link">
+            <a href="https://calma-website.webflow.io/about#corporate-culture" class="page-link w-inline-block">
               <h4 class="mobile-nav-heading arabic">ثقافة الشركة</h4>
             </a>
-            <a href="guarantees.html" class="page-link">
+            <a href="guarantees.html" class="page-link w-inline-block">
               <h4 class="mobile-nav-heading arabic"> الضمانات</h4>
             </a>
-            <a href="financing-options.html" class="page-link">
+            <a href="financing-options.html" class="page-link w-inline-block">
               <h4 class="mobile-nav-heading arabic"> خيارات التمويل</h4>
             </a>
           </div>
         </div>
         <div class="line nav"></div>
         <div class="mobile-menu-bottom-div">
-          <a href="tel:920006553" class="mobile-link">
+          <a href="tel:920006553" class="mobile-link w-inline-block">
             <h4 class="mobile-nav-heading light">Unified Number - 920006553</h4>
           </a>
-          <a href="mailto:info@calma.sa" class="mobile-link">
+          <a href="mailto:info@calma.sa" class="mobile-link w-inline-block">
             <h4 class="mobile-nav-heading light">Email - info@calma.sa</h4>
           </a>
         </div>
@@ -137,7 +135,7 @@
     <section class="section page-hero">
       <div class="page-hero-content-wrapper">
         <h1 class="page-hero-heading">المشاريع</h1>
-        <div class="sub-heading hero">28 مشروعًا. مدينتين. رؤية واحدة نحو الجودة.</div>
+        <div class="sub-heading hero"> .مشروعًا28 . مدينتين. رؤية واحدة نحو الجودة </div>
       </div>
       <div class="w-layout-blockcontainer container full hero w-container">
         <div class="section-hero-image-wrapper"><img src="images/Header.JPG" loading="lazy" alt="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/Header-p-500.jpg 500w, images/Header-p-800.jpg 800w, images/Header-p-1080.jpg 1080w, images/Header-p-1600.jpg 1600w, images/Header.JPG 1920w" class="image"></div>
@@ -147,10 +145,10 @@
       <div class="w-layout-blockcontainer container w-container">
         <div class="center-align-div center">
           <div class="center-align-heading-div">
-            <h2 class="section-heading dark center">تصميم مساحات جاهزة للمستقبل.</h2>
+            <h2 class="section-heading dark center">.تصميم مساحات جاهزة للمستقبل</h2>
           </div>
           <div class="center-para-wrapper projects">
-            <p class="paragraph dark center">بصفتها المطور العقاري الأبرز في المملكة العربية السعودية، تجسد كالما إرثًا من التفرد الذي يظهر في كل متر نطوره. من خلال ٢٨ مشروعاً رائدًا نُعيد تعريف المشهد المدني في المملكة وقريباً في أسواق الخليج، نثبت خبرتنا الراسخة على أرض الواقع. ومع أكثر من ٢٠٠٠ عائلة تم اختيار مشاريعنا لتكون موطنهم المنشود، في كالما لا نكتفي ببناء العقارات بل نضع معايير جديدة لتطوير العقار في المملكة والمنطقة.</p>
+            <p class="paragraph dark center">بصفتها المطور العقاري الأبرز في المملكة العربية السعودية، تجسد كالما إرثًا من التفرد الذي يظهر في كل متر نطوره. من خلال  ٢٨ مشروعاً رائدًا نُعيد تعريف المشهد المدني في المملكة وقريباً في أسواق الخليج، نثبت خبرتنا الراسخة على أرض الواقع. ومع أكثر من ٢٠٠٠ عائلة تم اختيار مشاريعنا لتكون موطنهم المنشود،  في كالما لا نكتفي ببناء العقارات بل نضع معايير جديدة لتطوير العقار في المملكة والمنطقة</p>
           </div>
           <div class="project-logo-wrapper"><img src="images/BRANDMARK_2.png" loading="lazy" alt="" class="image"></div>
           <div class="project-stats-grid">
@@ -176,8 +174,8 @@
             </div>
           </div>
           <div class="project-button-wrapper">
-            <a href="#residential" class="button grey arabic">المشاريع السكنية</a>
-            <a href="#commercial" class="button grey arabic">المشاريع التجارية</a>
+            <a href="#residential" data-w-id="dcb2b708-6a63-81ca-f643-63531d73b31a" class="button grey arabic w-button">المشاريع السكنية</a>
+            <a data-w-id="f8dfa573-fa0b-133f-b8ad-20a9a0c3bd2b" href="#commercial" class="button grey arabic w-button">المشاريع التجارية</a>
           </div>
         </div>
       </div>
@@ -202,7 +200,7 @@
             </div>
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img src="images/Asset-5_1.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9874877929688px" srcset="images/Asset-5_1-p-500.jpg 500w, images/Asset-5_1-p-800.jpg 800w, images/Asset-5_1-p-1080.jpg 1080w, images/Asset-5_1-p-1600.jpg 1600w, images/Asset-5_1.jpg 1920w" alt="" class="image"></div>
@@ -225,7 +223,7 @@
           <div id="w-node-a53a405e-029d-9dbc-90ba-7bbd9f847611-6d19fcb6" class="w-layout-layout residential-quick-stack wf-layout-layout">
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img src="images/Asset-12.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9874877929688px" srcset="images/Asset-12-p-500.jpg 500w, images/Asset-12-p-800.jpg 800w, images/Asset-12-p-1080.jpg 1080w, images/Asset-12-p-1600.jpg 1600w, images/Asset-12.jpg 1920w" alt="" class="image"></div>
@@ -244,9 +242,9 @@
             <div id="w-node-a53a405e-029d-9dbc-90ba-7bbd9f84761f-6d19fcb6" class="w-layout-cell">
               <div class="project-details-div arabic">
                 <h3 class="project-heading">NR100 - شقق سكنية</h3>
-                <h4 class="project-sub-heading">الموقع: حي النرجس، كالما ١٠</h4>
+                <h4 class="project-sub-heading"> الموقع: حي النرجس، كالما ١٠</h4>
                 <div class="project-para-wrapper">
-                  <p class="paragraph dark arabic">كالما NR100 هو أحد أبرز المعالم السكنية في حي النرجس الراقي، ويتميز بموقع استراتيجي بالقرب من طريق الملك سلمان الحيوي. يمتد هذا المشروع السكني على نطاق واسع ليضم ١١٢ وحدة سكنية، جميعها مصممة بمعايير عالية من الجودة في البناء ودقة في التشطيبات وواجهات معمارية أنيقة.</p>
+                  <p class="paragraph dark arabic"> كالما NR100 هو أحد أبرز المعالم السكنية في حي النرجس الراقي، ويتميز بموقع استراتيجي بالقرب من طريق الملك سلمان الحيوي. يمتد هذا المشروع السكني على نطاق واسع ليضم ١١٢ وحدة سكنية، جميعها مصممة بمعايير عالية من الجودة في البناء ودقة في التشطيبات وواجهات معمارية أنيقة.</p>
                 </div>
               </div>
             </div>
@@ -257,13 +255,13 @@
                 <h3 class="project-heading">RM110 - شقق سكنية</h3>
                 <h4 class="project-sub-heading">الموقع: حي الرمال</h4>
                 <div class="project-para-wrapper">
-                  <p class="paragraph dark arabic">كالما RM110 يقدم تجربة سكنية مختلفة في حي الرمال ويتميز بموقعه المثالي بالقرب من طريق الثُمامة الحيوي. يضم هذا المشروع المدروس بعناية ٨٠ وحدة سكنية تعكس أعلى معايير الجودة في البناء ودقة في التشطيبات وواجهات أنيقة تعزز من جمال المجمع.</p>
+                  <p class="paragraph dark arabic"> كالما RM110 يقدم تجربة سكنية مختلفة في حي الرمال ويتميز بموقعه المثالي بالقرب من طريق الثُمامة الحيوي. يضم هذا المشروع المدروس بعناية ٨٠ وحدة سكنية تعكس أعلى معايير الجودة في البناء ودقة في التشطيبات وواجهات أنيقة تعزز من جمال المجمع.</p>
                 </div>
               </div>
             </div>
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img src="images/dummy_400x300_ffffff_cccccc_43-1.JPG" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/dummy_400x300_ffffff_cccccc_43-1-p-500.jpg 500w, images/dummy_400x300_ffffff_cccccc_43-1-p-800.jpg 800w, images/dummy_400x300_ffffff_cccccc_43-1-p-1080.jpg 1080w, images/dummy_400x300_ffffff_cccccc_43-1-p-1600.jpg 1600w, images/dummy_400x300_ffffff_cccccc_43-1.JPG 1920w" alt="" class="image"></div>
@@ -286,7 +284,7 @@
           <div id="w-node-e7fa9bb8-08c6-9c0a-b81e-3628b3694766-6d19fcb6" class="w-layout-layout residential-quick-stack wf-layout-layout">
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img src="images/dummy_400x300_ffffff_cccccc_43-3.JPG" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/dummy_400x300_ffffff_cccccc_43-3-p-500.jpg 500w, images/dummy_400x300_ffffff_cccccc_43-3-p-800.jpg 800w, images/dummy_400x300_ffffff_cccccc_43-3-p-1080.jpg 1080w, images/dummy_400x300_ffffff_cccccc_43-3-p-1600.jpg 1600w, images/dummy_400x300_ffffff_cccccc_43-3.JPG 1920w" alt="" class="image"></div>
@@ -307,7 +305,7 @@
             </div>
             <div id="w-node-e7fa9bb8-08c6-9c0a-b81e-3628b3694770-6d19fcb6" class="w-layout-cell">
               <div class="project-details-div arabic">
-                <h3 class="project-heading">DR120 - شقق سكنية</h3>
+                <h3 class="project-heading">DR120 - شقق سكنية </h3>
                 <h4 class="project-sub-heading">الموقع: حي الفيحاء، جدة</h4>
                 <div class="project-para-wrapper">
                   <p class="paragraph dark arabic">كالما DR120 يقدم فرصة سكنية مميزة في حي الفيحاء الراقي بمدينة جدة، من خلال ٢٢ وحدة سكنية مصممة بعناية وفق أعلى معايير الجودة في البناء ودقة التشطيبات. يتميز هذا المشروع البوتيكي بواجهاته المعمارية الأنيقة وقد صُمم خصيصًا ليمنح السكان تجربة معيشية راقية وفريدة من نوعها.</p>
@@ -327,7 +325,7 @@
             </div>
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img src="images/Asset-14.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9874877929688px" srcset="images/Asset-14-p-500.jpg 500w, images/Asset-14-p-800.jpg 800w, images/Asset-14-p-1080.jpg 1080w, images/Asset-14-p-1600.jpg 1600w, images/Asset-14.jpg 1920w" alt="" class="image"></div>
@@ -350,7 +348,7 @@
           <div id="w-node-b37da1bd-b960-4cfc-c026-65c4ae40d7ed-6d19fcb6" class="w-layout-layout residential-quick-stack wf-layout-layout">
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img src="images/Asset-5.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/Asset-5-p-500.jpg 500w, images/Asset-5-p-800.jpg 800w, images/Asset-5-p-1080.jpg 1080w, images/Asset-5-p-1600.jpg 1600w, images/Asset-5.jpg 1920w" alt="" class="image"></div>
@@ -391,7 +389,7 @@
             </div>
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img src="images/Asset-2.JPG" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/Asset-2-p-500.jpg 500w, images/Asset-2-p-800.jpg 800w, images/Asset-2-p-1080.jpg 1080w, images/Asset-2-p-1600.jpg 1600w, images/Asset-2.JPG 1920w" alt="" class="image"></div>
@@ -414,7 +412,7 @@
           <div id="w-node-b57c80b3-ae9d-d005-c8de-3ddd92730db5-6d19fcb6" class="w-layout-layout residential-quick-stack wf-layout-layout">
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img src="images/villa160Asset-6.JPG" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9750366210938px" srcset="images/villa160Asset-6-p-500.jpg 500w, images/villa160Asset-6-p-800.jpg 800w, images/villa160Asset-6-p-1080.jpg 1080w, images/villa160Asset-6-p-1600.jpg 1600w, images/villa160Asset-6.JPG 1844w" alt="" class="image"></div>
@@ -455,7 +453,7 @@
             </div>
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img src="images/YS170--╪º┘ä┘è╪º╪│┘à┘è┘å-1.JPG" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9874877929688px" srcset="images/YS170--╪º┘ä┘è╪º╪│┘à┘è┘å-1-p-500.jpg 500w, images/YS170--╪º┘ä┘è╪º╪│┘à┘è┘å-1-p-800.jpg 800w, images/YS170--╪º┘ä┘è╪º╪│┘à┘è┘å-1-p-1080.jpg 1080w, images/YS170--╪º┘ä┘è╪º╪│┘à┘è┘å-1-p-1600.jpg 1600w, images/YS170--╪º┘ä┘è╪º╪│┘à┘è┘å-1.JPG 1920w" alt="" class="image"></div>
@@ -478,7 +476,7 @@
           <div id="w-node-_8a16e64f-aa62-1512-b804-75c41bfb6c34-6d19fcb6" class="w-layout-layout residential-quick-stack wf-layout-layout">
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9750366210938px" srcset="images/Asset-4-p-500.jpg 500w, images/Asset-4-p-800.jpg 800w, images/Asset-4-p-1080.jpg 1080w, images/Asset-4-p-1600.jpg 1600w, images/Asset-4.JPG 1920w" alt="" src="images/Asset-4.JPG" loading="lazy" class="image"></div>
@@ -522,7 +520,7 @@
             </div>
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/YS200--KALMA-2-1-1-p-500.jpg 500w, images/YS200--KALMA-2-1-1-p-800.jpg 800w, images/YS200--KALMA-2-1-1-p-1080.jpg 1080w, images/YS200--KALMA-2-1-1-p-1600.jpg 1600w, images/YS200--KALMA-2-1-1.JPG 1920w" alt="" src="images/YS200--KALMA-2-1-1.JPG" loading="lazy" class="image"></div>
@@ -551,7 +549,7 @@
           <div id="w-node-_17a6d0f9-213f-eebb-4414-673a3a1f0366-6d19fcb6" class="w-layout-layout residential-quick-stack wf-layout-layout">
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9874877929688px" srcset="images/HT210---╪¡╪╖┘è┘å-1-p-500.jpg 500w, images/HT210---╪¡╪╖┘è┘å-1-p-800.jpg 800w, images/HT210---╪¡╪╖┘è┘å-1-p-1080.jpg 1080w, images/HT210---╪¡╪╖┘è┘å-1.JPG 1279w" alt="" src="images/HT210---╪¡╪╖┘è┘å-1.JPG" loading="lazy" class="image"></div>
@@ -592,7 +590,7 @@
             </div>
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/GH210-GH220-p-500.jpg 500w, images/GH210-GH220-p-800.jpg 800w, images/GH210-GH220-p-1080.jpg 1080w, images/GH210-GH220.JPG 1280w" alt="" src="images/GH210-GH220.JPG" loading="lazy" class="image"></div>
@@ -618,7 +616,7 @@
           <div id="w-node-a0d4f50c-a6c2-e629-ec9a-3011bd46b96b-6d19fcb6" class="w-layout-layout residential-quick-stack wf-layout-layout">
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/YS230-dragged-2-p-500.jpg 500w, images/YS230-dragged-2-p-800.jpg 800w, images/YS230-dragged-2-p-1080.jpg 1080w, images/YS230-dragged-2-p-1600.jpg 1600w, images/YS230-dragged-2.jpg 1920w" alt="" src="images/YS230-dragged-2.jpg" loading="lazy" class="image"></div>
@@ -656,7 +654,7 @@
             </div>
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9874877929688px" srcset="images/RM240--╪╡┘ê╪▒-2-p-500.jpg 500w, images/RM240--╪╡┘ê╪▒-2-p-800.jpg 800w, images/RM240--╪╡┘ê╪▒-2-p-1080.jpg 1080w, images/RM240--╪╡┘ê╪▒-2.JPG 1279w" alt="" src="images/RM240--╪╡┘ê╪▒-2.JPG" loading="lazy" class="image"></div>
@@ -679,7 +677,7 @@
           <div id="w-node-_88528fe4-e4ca-e936-f02b-1dfa2a316a47-6d19fcb6" class="w-layout-layout residential-quick-stack wf-layout-layout">
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/صور-NK250-dragged-p-500.jpg 500w, images/صور-NK250-dragged-p-800.jpg 800w, images/صور-NK250-dragged-p-1080.jpg 1080w, images/صور-NK250-dragged-p-1600.jpg 1600w, images/صور-NK250-dragged.jpg 1920w" alt="" src="images/صور-NK250-dragged.jpg" loading="lazy" class="image"></div>
@@ -717,7 +715,7 @@
             </div>
             <div class="w-layout-cell">
               <div class="residential-slider-wrapper">
-                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+                <div data-delay="4000" data-animation="slide" class="residential-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                   <div class="mask w-slider-mask">
                     <div class="w-slide">
                       <div class="residential-slider-image-wrap"><img sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/حطين---HT260-dragged-p-500.jpg 500w, images/حطين---HT260-dragged-p-800.jpg 800w, images/حطين---HT260-dragged-p-1080.jpg 1080w, images/حطين---HT260-dragged-p-1600.jpg 1600w, images/حطين---HT260-dragged.jpg 1920w" alt="" src="images/حطين---HT260-dragged.jpg" loading="lazy" class="image"></div>
@@ -758,32 +756,32 @@
                   </div>
                 </div>
                 <div class="location-stats-div arabic">
-                  <div style="width:0%" class="line"></div>
+                  <div data-w-id="1f2f2deb-eb07-40cf-9629-85d440d168bb" style="width:0%" class="line"></div>
                   <div class="project-stat-wrapper">
                     <h4 class="stats normal arabic">موقع مميز</h4>
                   </div>
-                  <div style="width:0%" class="line"></div>
+                  <div data-w-id="1f2f2deb-eb07-40cf-9629-85d440d168bf" style="width:0%" class="line"></div>
                   <div class="project-stat-wrapper">
                     <h4 class="stats normal arabic">تصميم مميز</h4>
                   </div>
-                  <div style="width:0%" class="line"></div>
+                  <div data-w-id="1f2f2deb-eb07-40cf-9629-85d440d168c3" style="width:0%" class="line"></div>
                   <div class="project-stat-wrapper">
                     <h4 class="stats normal arabic">مساحات واسعة</h4>
                   </div>
-                  <div style="width:0%" class="line"></div>
+                  <div data-w-id="1f2f2deb-eb07-40cf-9629-85d440d168c7" style="width:0%" class="line"></div>
                   <div class="project-stat-wrapper">
                     <h4 class="stats normal arabic"> نماذج مكاتب متعددة ومتنوعة</h4>
                   </div>
-                  <div style="width:0%" class="line"></div>
+                  <div data-w-id="1f2f2deb-eb07-40cf-9629-85d440d168cb" style="width:0%" class="line"></div>
                   <div class="project-stat-wrapper">
                     <h4 class="stats normal arabic">تصميم معماري مستدام يتماشى مع تطورات المدن الذكية</h4>
                   </div>
-                  <div style="width:0%" class="line"></div>
+                  <div data-w-id="9ea671a3-00d5-8419-b9a6-a769d1130bfc" style="width:0%" class="line"></div>
                 </div>
               </div>
             </div>
             <div id="w-node-_1f2f2deb-eb07-40cf-9629-85d440d168b0-6d19fcb6" class="w-layout-cell">
-              <div data-delay="4000" data-animation="slide" class="commercial-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+              <div data-delay="4000" data-animation="slide" class="commercial-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                 <div class="w-slider-mask">
                   <div class="w-slide">
                     <div class="commercial-project-img-wrapper"><img src="images/Calma_KSR_ex01_Final02_2025-05-28.JPG" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 939.9874877929688px" srcset="images/Calma_KSR_ex01_Final02_2025-05-28-p-500.jpg 500w, images/Calma_KSR_ex01_Final02_2025-05-28-p-800.jpg 800w, images/Calma_KSR_ex01_Final02_2025-05-28-p-1080.jpg 1080w, images/Calma_KSR_ex01_Final02_2025-05-28-p-1600.jpg 1600w, images/Calma_KSR_ex01_Final02_2025-05-28.JPG 1920w" alt="" class="image"></div>
@@ -804,7 +802,7 @@
           </div>
           <div id="w-node-f0859eeb-813b-b112-8782-02770030b0a0-6d19fcb6" class="w-layout-layout commercial-project-quick-stack arabic wf-layout-layout">
             <div class="w-layout-cell">
-              <div data-delay="4000" data-animation="slide" class="commercial-slider w-slider" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-infinite="true">
+              <div data-delay="4000" data-animation="slide" class="commercial-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                 <div class="w-slider-mask">
                   <div class="w-slide">
                     <div class="commercial-project-img-wrapper"><img src="images/dummy_400x300_ffffff_cccccc_43-1_1.JPG" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/dummy_400x300_ffffff_cccccc_43-1_1-p-500.jpg 500w, images/dummy_400x300_ffffff_cccccc_43-1_1-p-800.jpg 800w, images/dummy_400x300_ffffff_cccccc_43-1_1-p-1080.jpg 1080w, images/dummy_400x300_ffffff_cccccc_43-1_1-p-1600.jpg 1600w, images/dummy_400x300_ffffff_cccccc_43-1_1.JPG 1920w" alt="" class="image"></div>
@@ -834,23 +832,23 @@
                   </div>
                 </div>
                 <div class="location-stats-div arabic">
-                  <div style="width:0%" class="line"></div>
+                  <div data-w-id="cbc7a970-8283-a7b7-df6a-51841b6e59dd" style="width:0%" class="line"></div>
                   <div class="project-stat-wrapper">
                     <h4 class="stats arabic">مرافق عصرية تشمل صالة فاخرة، نادٍ صحي، ومسبح بإطلالة بانورامية</h4>
                   </div>
-                  <div style="width:0%" class="line"></div>
+                  <div data-w-id="e32e60f4-ac19-2773-d9c6-82a6c292a01d" style="width:0%" class="line"></div>
                   <div class="project-stat-wrapper">
                     <h4 class="stats arabic">أنظمة ذكية لإدارة الإضاءة والتهوية وكفاءة الطاقة</h4>
                   </div>
-                  <div style="width:0%" class="line"></div>
+                  <div data-w-id="a530db05-cb58-ede7-39e6-51c04bde9c67" style="width:0%" class="line"></div>
                   <div class="project-stat-wrapper">
                     <h4 class="stats arabic">بيئة متكاملة تلبي احتياجات السكن وأسلوب الحياة العصري والترفيه</h4>
                   </div>
-                  <div style="width:0%" class="line"></div>
+                  <div data-w-id="90d52fa5-5dda-9762-55c6-15fb091531b9" style="width:0%" class="line"></div>
                   <div class="project-stat-wrapper">
                     <h4 class="stats arabic">موقع استراتيجي يربطك بأهم وجهات المدينة</h4>
                   </div>
-                  <div style="width:0%" class="line"></div>
+                  <div data-w-id="a83ba787-c1c6-214c-4678-c34d7c9575c1" style="width:0%" class="line"></div>
                   <div class="project-stat-wrapper"></div>
                 </div>
               </div>
@@ -870,8 +868,8 @@
               <h5 class="section-name dark arabic">استكشاف</h5>
             </div>
             <div class="cta-content-div arabic">
-              <a href="contact.html" class="cta-link arabic">
-                <div class="cta-arrow-wrapper"><img loading="lazy" src="images/Asset-12-2-1.png" alt="" class="arrow arabic"></div>
+              <a href="contact.html" class="cta-link arabic w-inline-block">
+                <div data-w-id="86fb1d63-5333-6a98-8cc8-314d7dc18092" class="cta-arrow-wrapper"><img loading="lazy" src="images/Asset-12-2-1.png" alt="" class="arrow arabic"></div>
                 <h2 class="cta-heading">تواصل معنا</h2>
               </a>
             </div>
@@ -887,10 +885,10 @@
           <div id="w-node-_576b0759-ea02-42c4-d4d8-a56649a13191-49a1317f" class="download-div arabic w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">
             <h5 class="download-heading w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d"> تحديثات البناء</h5>
             <div class="download-element-div arabic w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">
-              <a href="#" class="page-link">
+              <a href="#" class="page-link w-inline-block">
                 <h5 class="download-text w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">تحديثات المشاريع</h5>
               </a>
-              <a href="#" class="page-link">
+              <a href="#" class="page-link w-inline-block">
                 <h5 class="download-text w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">الجدول الزمني</h5>
               </a>
             </div>
@@ -898,16 +896,16 @@
           <div id="w-node-_576b0759-ea02-42c4-d4d8-a56649a13185-49a1317f" class="download-div arabic w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">
             <h5 class="download-heading w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d"> التنزيلات</h5>
             <div class="download-element-div arabic w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">
-              <a href="brochures.html" class="page-link">
+              <a href="brochures.html" class="page-link w-inline-block">
                 <h5 class="download-text w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">كتيبات تعريفية</h5>
               </a>
-              <a href="floorplans.html" class="page-link">
+              <a href="floorplans.html" class="page-link w-inline-block">
                 <h5 class="download-text w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">مخططات الوحدات</h5>
               </a>
-              <a href="factsheets.html" class="page-link">
+              <a href="factsheets.html" class="page-link w-inline-block">
                 <h5 class="download-text w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">نشرات كالما</h5>
               </a>
-              <a href="reports.html" class="page-link">
+              <a href="reports.html" class="page-link w-inline-block">
                 <h5 class="download-text w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">التقارير</h5>
               </a>
             </div>
@@ -918,19 +916,19 @@
     </div>
     <div class="line footer"></div>
     <div class="footer-middle-div w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">
-      <a href="financing-options.html" class="footer-text-div">
+      <a href="financing-options.html" class="footer-text-div w-inline-block">
         <h4 class="footer-text w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d financing"> خيارات التمويل</h4>
       </a>
-      <a href="guarantees.html" class="footer-text-div">
+      <a href="guarantees.html" class="footer-text-div w-inline-block">
         <h4 class="footer-text w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d"> الضمانات</h4>
       </a>
-      <a href="about.html#corporate-culture" class="footer-text-div">
+      <a href="https://calma-website.webflow.io/about#corporate-culture" class="footer-text-div w-inline-block">
         <h4 class="footer-text w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">ثقافة الشركة</h4>
       </a>
-      <a href="about.html#leadership" class="footer-text-div">
+      <a href="https://calma-website.webflow.io/about#leadership" class="footer-text-div w-inline-block">
         <h4 class="footer-text w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d leadership">القيادة</h4>
       </a>
-      <a href="about.html#ceo-message" class="footer-text-div">
+      <a href="https://calma-website.webflow.io/about#ceo-message" class="footer-text-div w-inline-block">
         <h4 class="footer-text w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d ceo">كلمة رئيس مجلس الإدارة</h4>
       </a>
     </div>
@@ -942,18 +940,18 @@
         </div>
         <div class="social-div w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">
           <div class="icon-div w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d"><img src="images/Vector.png" loading="lazy" alt="" class="icon w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">
-            <a href="https://www.instagram.com/callma_sa/" target="_blank" class="social-link"><img src="images/Vector-1.png" loading="lazy" alt="" class="icon w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d"></a><img src="images/Mask-group.png" loading="lazy" alt="" class="icon w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d"><img src="images/Vector-2.png" loading="lazy" alt="" class="icon w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">
-            <a href="https://www.linkedin.com/company/calmasa/" target="_blank" class="social-link"><img src="images/Vector-3.png" loading="lazy" alt="" class="icon w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d"></a>
+            <a href="https://www.instagram.com/callma_sa/" target="_blank" class="social-link w-inline-block"><img src="images/Vector-1.png" loading="lazy" alt="" class="icon w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d"></a><img src="images/Mask-group.png" loading="lazy" alt="" class="icon w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d"><img src="images/Vector-2.png" loading="lazy" alt="" class="icon w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">
+            <a href="https://www.linkedin.com/company/calmasa/" target="_blank" class="social-link w-inline-block"><img src="images/Vector-3.png" loading="lazy" alt="" class="icon w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d"></a>
           </div>
         </div>
         <div class="terms-div w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d left">
-          <a href="privacy-policy.html" class="page-link">
+          <a href="privacy-policy.html" class="page-link w-inline-block">
             <h5 class="terms-heading w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">    سياسة ملفات تعريف الارتباط (الكوكيز)</h5>
           </a>
-          <a href="terms-of-service.html" class="page-link">
+          <a href="terms-of-service.html" class="page-link w-inline-block">
             <h5 class="terms-heading w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">شروط الاستخدام</h5>
           </a>
-          <a href="cookie-policy.html" class="page-link">
+          <a href="cookie-policy.html" class="page-link w-inline-block">
             <h5 class="terms-heading w-variant-a9356c2d-7d5c-d892-b6ac-befbbf58de0d">سياسة الخصوصية</h5>
           </a>
         </div>
@@ -961,7 +959,7 @@
     </div>
   </section>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=687744ac7f4aefd284fc3f12" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  
+  <script src="js/webflow.js" type="text/javascript"></script><!--  GSAP + ScrollTrigger  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/split-type@latest"></script>
@@ -1394,6 +1392,5 @@
   });
 });
 </script>
-<script src="js/slider-enhancements.js"></script>
 </body>
 </html>
