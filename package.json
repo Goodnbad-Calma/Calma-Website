@@ -1,0 +1,21 @@
+{
+  "name": "calma-website",
+  "version": "1.0.0",
+  "description": "Calma Real Estate Website",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "dev": "echo 'Use live server or similar for development'"
+  },
+  "keywords": [
+    "real-estate",
+    "calma",
+    "website"
+  ],
+  "author": "Calma",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0"
+  }
+}
