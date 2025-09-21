@@ -61,6 +61,29 @@
   .cta-image-wrapper:hover {
     transform: scale(1.05) translateY(-5px);
   }
+  
+  /* Zoho CRM Form Styling */
+  #crmWebToEntityForm {
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+  }
+  
+  .zcwf_row {
+    margin: 15px 0 !important;
+    width: 100% !important;
+  }
+  
+  .zcwf_col_fld {
+    width: 100% !important;
+  }
+  
+  .zcwf_lblTopBottom .zcwf_col_fld input[type="text"],
+  .zcwf_lblTopBottom .zcwf_col_fld textarea,
+  .zcwf_lblTopBottom .zcwf_col_fld select {
+    width: 100% !important;
+    float: none !important;
+  }
 </style>
 </head>
 <body>
@@ -157,32 +180,182 @@
         </div>
         <div class="contact-form-wrapper">
           <div class="contact-form w-form">
-            <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="687b968e22f3e5bc200c0440" data-wf-element-id="b9970a4a-7b33-d2b1-1431-6e3f13cef6ab">
-              <div class="form-wrapper arabic"><input class="text-field arabic w-input" maxlength="256" name="Name" data-name="Name" placeholder="اسمك" type="text" id="Name" required=""><input class="text-field arabic w-input" maxlength="256" name="Phone-no" data-name="Phone no" placeholder="رقم الهاتف" type="tel" id="Phone-no" required=""><input class="text-field arabic w-input" maxlength="256" name="email" data-name="Email" placeholder="عنوان البريد الإلكتروني" type="email" id="email" required=""></div>
-              <div class="form-wrapper"><select id="field" name="field" data-name="Field" required="" class="text-field drop-down w-select">
-                  <option value="">Purpose of Purchase</option>
-                  <option value="First">First choice</option>
-                  <option value="Second">Second choice</option>
-                  <option value="Third">Third choice</option>
-                </select><select id="Purchase-Method" name="Purchase-Method" data-name="Purchase Method" class="text-field w-select">
-                  <option value="">Purchase Method</option>
-                  <option value="First">First choice</option>
-                  <option value="Second">Second choice</option>
-                  <option value="Third">Third choice</option>
-                </select><select id="field" name="field" data-name="Field" class="text-field w-select">
-                  <option value="">Interested Project</option>
-                  <option value="First">First choice</option>
-                  <option value="Second">Second choice</option>
-                  <option value="Third">Third choice</option>
-                </select></div>
-              <div class="text-box-wrapper"><textarea placeholder="رسالة مخصصة" maxlength="5000" id="field-2" name="field-2" data-name="Field 2" class="text-field message arabic w-input"></textarea></div>
-              <div class="right-align-div btn arabic"><input type="submit" data-wait="Please wait..." data-w-id="b9970a4a-7b33-d2b1-1431-6e3f13cef6b2" class="button contact arabic w-button" value="إرسال"></div>
-            </form>
-            <div class="w-form-done">
-              <div>Thank you! Your submission has been received!</div>
-            </div>
-            <div class="w-form-fail">
-              <div>Oops! Something went wrong while submitting the form.</div>
+            <!-- Zoho CRM Web-to-Lead Form -->
+            <div id='crmWebToEntityForm' class='zcwf_lblTopBottom crmWebToEntityForm' style='background-color: transparent;color: black;max-width: 100%;'>
+              <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+              <META HTTP-EQUIV='content-type' CONTENT='text/html;charset=UTF-8'>
+              <form id='webform7227000000731766' action='https://crm.zoho.sa/crm/WebToLeadForm' name=WebToLeads7227000000731766 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory7227000000731766()' accept-charset='UTF-8' class="form">
+                <input type='text' style='display:none;' name='xnQsjsdp' value='66ce2e6aaf37e35d120b0801beb24c83dfb9931631d1e3eb845cc293a7756c5f'>
+                <input type='hidden' name='zc_gad' id='zc_gad' value=''>
+                <input type='text' style='display:none;' name='xmIwtLD' value='c743aa38a1a31e1ebe75bdbb72942a0dd14b10763d24b35cea9f54a3cd8f0a9ffc1b6f1e0baf407234558d1b6d1de4e3'>
+                <input type='text' style='display:none;' name='actionType' value='TGVhZHM='>
+                <input type='text' style='display:none;' name='returnURL' value='null'>
+                
+                <!-- Form Fields -->
+                <div class='zcwf_row'>
+                  <div class='zcwf_col_fld'>
+                    <input type='text' id='First_Name' aria-required='true' aria-label='First Name' name='First Name' aria-valuemax='40' maxlength='40' class="text-field arabic w-input" placeholder="الأسم الأول">
+                  </div>
+                </div>
+                
+                <div class='zcwf_row'>
+                  <div class='zcwf_col_fld'>
+                    <input type='text' id='Last_Name' aria-required='true' aria-label='Last Name' name='Last Name' aria-valuemax='80' maxlength='80' class="text-field arabic w-input" placeholder="العائلة">
+                  </div>
+                </div>
+                
+                <div class='zcwf_row'>
+                  <div class='zcwf_col_fld'>
+                    <input type='text' id='Phone' aria-required='true' aria-label='Phone' name='Phone' aria-valuemax='30' maxlength='30' class="text-field arabic w-input" placeholder="رقم الجوال">
+                  </div>
+                </div>
+                
+                <div class='zcwf_row'>
+                  <div class='zcwf_col_fld'>
+                    <input type='text' ftype='email' autocomplete='false' id='Email' aria-required='false' aria-label='Email' name='Email' aria-valuemax='100' crmlabel='' maxlength='100' class="text-field arabic w-input" placeholder="الايميل">
+                  </div>
+                </div>
+                
+                <div class='zcwf_row'>
+                  <div class='zcwf_col_fld'>
+                    <input type='text' id='LEADCF5' aria-required='true' aria-label='LEADCF5' name='LEADCF5' aria-valuemax='255' maxlength='255' class="text-field arabic w-input" placeholder="اسم المشروع المهتم به">
+                  </div>
+                </div>
+                
+                <div class='zcwf_row'>
+                  <div class='zcwf_col_fld'>
+                    <input type='text' id='LEADCF3' aria-required='true' aria-label='LEADCF3' name='LEADCF3' aria-valuemax='255' maxlength='255' class="text-field arabic w-input" placeholder="نوع الوحدة">
+                  </div>
+                </div>
+                
+                <div class='zcwf_row'>
+                  <div class='zcwf_col_fld'>
+                    <input type='text' id='City' aria-required='true' aria-label='City' name='City' aria-valuemax='100' maxlength='100' class="text-field arabic w-input" placeholder="المدينة">
+                  </div>
+                </div>
+                
+                <div class='zcwf_row'>
+                  <div class='zcwf_col_fld'>
+                    <input type='text' id='LEADCF6' aria-required='true' aria-label='LEADCF6' name='LEADCF6' aria-valuemax='255' maxlength='255' class="text-field arabic w-input" placeholder="آلية الشراء">
+                  </div>
+                </div>
+                
+                <div class='zcwf_row'>
+                  <div class='zcwf_col_fld'>
+                    <select class='text-field drop-down w-select' role='combobox' aria-expanded='false' aria-haspopup='listbox' id='Lead_Source' onChange='addAriaSelected7227000000731766()' aria-required='true' aria-label='Lead Source' name='Lead Source'>
+                      <option value='-None-'>كيف عرفت عن كالما ؟</option>
+                      <option value='إعلان في مواقع التواصل الاجتماعى'>إعلان في مواقع التواصل الاجتماعى</option>
+                      <option value='لوحات المشاريع'>لوحات المشاريع</option>
+                      <option value='الأهل والأصدقاء'>الأهل والأصدقاء</option>
+                      <option value='عميل سابق'>عميل سابق</option>
+                      <option value='مواقع التواصل الاجتماعي'>مواقع التواصل الاجتماعي</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class='zcwf_row'>
+                  <div class='zcwf_col_fld'>
+                    <textarea style='font-family: Arial, sans-serif;' aria-multiline='true' id='Description' aria-required='false' aria-label='Description' name='Description' class="text-field message arabic w-input" placeholder="الملاحظات"></textarea>
+                  </div>
+                </div>
+                
+                <input type='text' type='hidden' style='display: none;' name='aG9uZXlwb3Q' value=''/>
+                
+                <div class='zcwf_row'>
+                  <div class='zcwf_col_fld'>
+                    <div class="right-align-div btn arabic">
+                      <input type='submit' id='formsubmit' role='button' class='button contact arabic w-button' value='إرسال' aria-label='Submit' title='Submit'>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Zoho CRM Scripts -->
+                <script>
+                  function addAriaSelected7227000000731766(){
+                    var optionElem = event.target;
+                    var previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
+                    if(previousSelectedOption){
+                      previousSelectedOption.removeAttribute('aria-selected');
+                    }
+                    optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
+                  }
+                  
+                  function validateEmail7227000000731766(){
+                    var form = document.forms['WebToLeads7227000000731766'];
+                    var emailFld = form.querySelectorAll('[ftype=email]');
+                    var i;
+                    for(i = 0; i < emailFld.length; i++){
+                      var emailVal = emailFld[i].value;
+                      if((emailVal.replace(/^\s+|\s+$/g,'')).length != 0){
+                        var atpos = emailVal.indexOf('@');
+                        var dotpos = emailVal.lastIndexOf('.');
+                        if(atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length){
+                          alert('Please enter a valid email address.');
+                          emailFld[i].focus();
+                          return false;
+                        }
+                      }
+                    }
+                    return true;
+                  }
+                  
+                  function checkMandatory7227000000731766(){
+                    var mndFileds = new Array('First Name','Last Name','Phone','Lead Source','City','LEADCF3','LEADCF5','LEADCF6');
+                    var fldLangVal = new Array('\u0627\u0644\u0623\u0633\u0645\x20\u0627\u0644\u0623\u0648\u0644','\u0627\u0644\u0639\u0627\u0626\u0644\u0629','\u0631\u0642\u0645\x20\u0627\u0644\u062C\u0648\u0627\u0644','\u0643\u064A\u0641\x20\u0639\u0631\u0641\u062A\x20\u0639\u0646\x20\u0643\u0627\u0644\u0645\u0627\x20\u061F','\u0627\u0644\u0645\u062F\u064A\u0646\u0629','\u0646\u0648\u0639\x20\u0627\u0644\u0648\u062D\u062F\u0629','\u0627\u0633\u0645\x20\u0627\u0644\u0645\u0634\u0631\u0648\u0639\x20\x20\u0627\u0644\u0645\u0647\u062A\u0645\x20\u0628\u0647','\u0622\u0644\u064A\u0629\x20\u0627\u0644\u0634\u0631\u0627\u0621');
+                    for(i = 0; i < mndFileds.length; i++){
+                      var fieldObj = document.forms['WebToLeads7227000000731766'][mndFileds[i]];
+                      if(fieldObj){
+                        if(((fieldObj.value).replace(/^\s+|\s+$/g,'')).length == 0){
+                          if(fieldObj.type == 'file'){
+                            alert('Please select a file to upload.');
+                            fieldObj.focus();
+                            return false;
+                          }
+                          alert(fldLangVal[i] + ' cannot be empty.');
+                          fieldObj.focus();
+                          return false;
+                        }
+                        else if(fieldObj.nodeName == 'SELECT'){
+                          if(fieldObj.options[fieldObj.selectedIndex].value == '-None-'){
+                            alert(fldLangVal[i] + ' cannot be none.');
+                            fieldObj.focus();
+                            return false;
+                          }
+                        }
+                        else if(fieldObj.type == 'checkbox'){
+                          if(fieldObj.checked == false){
+                            alert('Please accept ' + fldLangVal[i]);
+                            fieldObj.focus();
+                            return false;
+                          }
+                        }
+                        try{
+                          if(fieldObj.name == 'Last Name'){
+                            name = fieldObj.value;
+                          }
+                        } catch(e){}
+                      }
+                    }
+                    if(!validateEmail7227000000731766()){
+                      return false;
+                    }
+                    var urlparams = new URLSearchParams(window.location.search);
+                    if(urlparams.has('service') && (urlparams.get('service') === 'smarturl')){
+                      var webform = document.getElementById('webform7227000000731766');
+                      var service = urlparams.get('service');
+                      var smarturlfield = document.createElement('input');
+                      smarturlfield.setAttribute('type','hidden');
+                      smarturlfield.setAttribute('value',service);
+                      smarturlfield.setAttribute('name','service');
+                      webform.appendChild(smarturlfield);
+                    }
+                    document.querySelector('.crmWebToEntityForm .button').setAttribute('disabled',true);
+                  }
+                </script>
+                
+                <!-- Analytics Tracking code -->
+                <script id='wf_anal' src='https://crm.zohopublic.sa/crm/WebFormAnalyticsServeServlet?rid=e86c392cd821ced307e466cc3a8fb1996410820251bd1e547f1aa6594fe81561eb0bb131970389da32d4cbd42e032accgid6a24db5b0f710b27a60bc9f8dafca6a55add56ebd71d451b89855771e10b00fagid083a200062ce58226e1876f03fae3a7a3ff9accf16420abf98ba0972b38d03c1gidaedac7e259f985d6d57dc81520a6d03e5cbbdd5df300458f6d013a3d4c5d2ce7&tw=f87a9403a4e34ada5bba4d91ab970cdb271516f5487f74d1c1da9f9e8b7f0d46'></script>
+              </form>
             </div>
           </div>
         </div>
