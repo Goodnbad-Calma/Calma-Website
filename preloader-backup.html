@@ -1,0 +1,209 @@
+<!-- ✅ ENHANCED SAUDI NATIONAL DAY PRELOADER WITH STARS - BACKUP FOR ROLLBACK -->
+<!-- Use this code to replace the preloader section in index.html after 2 weeks -->
+<!-- Replace lines 69-272 in index.html with this content -->
+
+<div class="preloader w-embed w-script"><!--  ✅ SAUDI NATIONAL DAY PRELOADER - TEMPORARY (ROLLBACK AFTER 2 WEEKS)  -->
+  <div id="preloader">
+    <!-- Animated decorative stars -->
+    <div class="stars-container">
+      <div class="star star-1">✨</div>
+      <div class="star star-2">✨</div>
+      <div class="star star-3">✨</div>
+      <div class="star star-4">✨</div>
+      <div class="star star-5">✨</div>
+      <div class="star star-6">✨</div>
+      <div class="star star-7">✨</div>
+    </div>
+    
+    <div class="preloader-content">
+      <img src="images/BRANDMARK_2.png" alt="Calma Logo" id="preloader-logo">
+      <img src="images/saudi-banner.png" alt="Saudi National Day 95" id="saudi-banner">
+    </div>
+  </div>
+  <style>
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #091D1E 0%, #0a2a2c 50%, #091D1E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101000;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Ensure preloader stays behind mobile menu on mobile devices */
+@media (max-width: 991px) {
+  #preloader {
+    z-index: 10000;
+  }
+}
+
+/* Animated decorative stars */
+.stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  font-size: 12px;
+  opacity: 0.7;
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+.star-1 {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: 15%;
+  right: 20%;
+  animation-delay: 0.5s;
+}
+
+.star-3 {
+  top: 35%;
+  left: 25%;
+  animation-delay: 1s;
+}
+
+.star-4 {
+  bottom: 30%;
+  right: 15%;
+  animation-delay: 1.5s;
+}
+
+.star-5 {
+  bottom: 25%;
+  left: 10%;
+  animation-delay: 2s;
+}
+
+.star-6 {
+  top: 30%;
+  right: 25%;
+  animation-delay: 0.8s;
+}
+
+.star-7 {
+  bottom: 35%;
+  left: 30%;
+  animation-delay: 1.2s;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s ease;
+  z-index: 2;
+  position: relative;
+}
+
+#preloader-logo {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+#saudi-banner {
+  max-width: 300px;
+  width: 90vw;
+  height: auto;
+  border-radius: 8px;
+  filter: drop-shadow(0 4px 12px rgba(0, 108, 53, 0.3));
+  animation: bannerGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes bannerGlow {
+  0% { filter: drop-shadow(0 4px 12px rgba(0, 108, 53, 0.3)); }
+  100% { filter: drop-shadow(0 6px 16px rgba(0, 168, 107, 0.5)); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #preloader-logo {
+    width: 100px;
+  }
+  
+  #saudi-banner {
+    max-width: 250px;
+  }
+  
+  .preloader-content {
+    gap: 1.5rem;
+  }
+  
+  .star {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #preloader-logo {
+    width: 80px;
+  }
+  
+  #saudi-banner {
+    max-width: 200px;
+  }
+  
+  .preloader-content {
+    gap: 1rem;
+  }
+}
+</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+window.addEventListener("load", () => {
+  const tl = gsap.timeline();
+  tl.to(".preloader-content", {
+    opacity: 1,
+    scale: 1,
+    duration: 1.2,
+    ease: "power3.out"
+  })
+  .to("#preloader", {
+    opacity: 0,
+    duration: 1,
+    delay: 1,
+    ease: "power2.inOut",
+    onComplete: () => {
+      document.getElementById("preloader").style.display = "none";
+    }
+  });
+});
+</script>
+</div>
