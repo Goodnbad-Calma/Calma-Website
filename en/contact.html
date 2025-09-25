@@ -160,60 +160,42 @@
         </div>
         <div class="contact-form-wrapper">
           <div class="contact-form w-form">
-            <form action='https://crm.zoho.sa/crm/WebToLeadForm' name=WebToLeads7227000000731766 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory7227000000731766()' accept-charset='UTF-8' class="form">
-              <input type=hidden name=xnQsjsdp value='961d05c77c32b161c9f1dd2221c18ef94fbdaf7040a2c68b687efea2366ba4ba4'>
+            <form action='https://crm.zoho.sa/crm/WebToLeadForm' name=WebToLeads7227000000731766 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory7227000000731766()' accept-charset='UTF-8' class="form" id='webform7227000000731766' data-wf-page-id="688efcc0fe3196fa99fa94d6" data-wf-element-id="b9970a4a-7b33-d2b1-1431-6e3f13cef6ab">
+              <!-- Critical Zoho CRM hidden fields - DO NOT REMOVE -->
+              <input type=hidden name=xnQsjsdp value='d890771b9ec64014b6b16834bf29fb21542fedfa866e75cee8d90dca5c53fa95b'>
               <input type=hidden name='zc_gad' id=zc_gad value=''>
-              <input type=hidden name=xmIwtLD value='76c2bb0895da1655743e6459add36a1cd6901a13b5a60f694587b07622d60ae8'>
+              <input type=hidden name=xmIwtLD value='b14bad7fd83406db6daa6e2cbd6a3247448c496fe7617f4adaca2d72a8b90a744767214dd443a8588f8c75a6245ee349'>
               <input type=hidden name=actionType value='TGVhZHM='>
               <input type=hidden name=returnURL value='https://calma.sa/en/contact.html' >
+              <!-- Honeypot field for spam protection - DO NOT REMOVE -->
+              <input type='text' style='display: none;' name='aG9uZXlwb3Q' value=''/>
               
               <div class="form-wrapper">
-                <input class="text-field w-input" maxlength="256" name="First Name" placeholder="First Name" type="text" id="First_Name" required="">
-                <input class="text-field w-input" maxlength="256" name="Last Name" placeholder="Last Name" type="text" id="Last_Name" required="">
-                <input class="text-field w-input" maxlength="256" name="Phone" placeholder="Phone Number" type="tel" id="Phone" required="">
+                <input class="text-field w-input" maxlength="40" name="First Name" placeholder="First Name" type="text" id="First_Name" required="">
+                <input class="text-field w-input" maxlength="80" name="Last Name" placeholder="Last Name" type="text" id="Last_Name" required="">
+                <input class="text-field w-input" maxlength="30" name="Phone" placeholder="Phone Number" type="tel" id="Phone" required="">
               </div>
               <div class="form-wrapper">
-                <input class="text-field w-input" maxlength="256" name="Email" placeholder="Email Address" type="email" id="Email" required="">
-                <select name="LEADCF1" class="text-field drop-down w-select" required="">
-                  <option value="">Project Name</option>
-                  <option value="Calma">Calma</option>
-                  <option value="Other">Other</option>
-                </select>
-                <select name="LEADCF2" class="text-field drop-down w-select" required="">
-                  <option value="">Unit Type</option>
-                  <option value="Studio">Studio</option>
-                  <option value="1 Bedroom">1 Bedroom</option>
-                  <option value="2 Bedroom">2 Bedroom</option>
-                  <option value="3 Bedroom">3 Bedroom</option>
-                  <option value="Penthouse">Penthouse</option>
-                </select>
+                <input class="text-field w-input" maxlength="100" name="Email" placeholder="Email Address" type="email" ftype="email" id="Email" required="">
+                <input class="text-field w-input" maxlength="255" name="LEADCF5" placeholder="Project Name" type="text" id="LEADCF5">
+                <input class="text-field w-input" maxlength="255" name="LEADCF3" placeholder="Unit Type" type="text" id="LEADCF3">
               </div>
               <div class="form-wrapper">
-                <select name="City" class="text-field drop-down w-select" required="">
-                  <option value="">City</option>
-                  <option value="Riyadh">Riyadh</option>
-                  <option value="Jeddah">Jeddah</option>
-                  <option value="Dammam">Dammam</option>
-                  <option value="Mecca">Mecca</option>
-                  <option value="Medina">Medina</option>
-                  <option value="Other">Other</option>
-                </select>
-                <select name="LEADCF3" class="text-field drop-down w-select" required="">
-                  <option value="">Purchase Method</option>
-                  <option value="Cash">Cash</option>
-                  <option value="Mortgage">Mortgage</option>
-                  <option value="Installment">Installment</option>
-                </select>
-                <select name="Lead Source" class="text-field drop-down w-select">
-                  <option value="">Lead Source</option>
+                <input class="text-field w-input" maxlength="100" name="City" placeholder="City" type="text" id="City">
+                <input class="text-field w-input" maxlength="255" name="LEADCF6" placeholder="Purchase Method" type="text" id="LEADCF6">
+                <select class="text-field drop-down w-select" id="Lead_Source" onChange="addAriaSelected7227000000731766()" name="Lead Source">
+                  <option value="-None-">Lead Source</option>
                   <option value="Website">Website</option>
                   <option value="Social Media">Social Media</option>
                   <option value="Referral">Referral</option>
                   <option value="Advertisement">Advertisement</option>
                 </select>
               </div>
+              <div class="text-box-wrapper">
+                <textarea placeholder="Custom Message" maxlength="2000" id="Description" name="Description" class="text-field message w-input"></textarea>
+              </div>
               <div class="right-align-div btn">
-                <input type="submit" class="button contact w-button" value="Submit">
+                <input type="submit" data-wait="Please wait..." data-w-id="b9970a4a-7b33-d2b1-1431-6e3f13cef6b2" class="button contact w-button" value="Submit">
               </div>
             </form>
             <div class="w-form-done">
@@ -225,6 +207,7 @@
           </div>
         </div>
         
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
           function addAriaSelected7227000000731766(element) {
             var selectedOption = element.options[element.selectedIndex];
@@ -253,8 +236,8 @@
           }
           
           function checkMandatory7227000000731766() {
-            var mndFileds = new Array('First Name', 'Last Name', 'Phone', 'Email', 'LEADCF1', 'LEADCF2', 'City', 'LEADCF3');
-            var fldLangVal = new Array('First Name', 'Last Name', 'Phone', 'Email', 'Project Name', 'Unit Type', 'City', 'Purchase Method');
+            var mndFileds = new Array('Last Name');
+            var fldLangVal = new Array('Last Name');
             for (i = 0; i < mndFileds.length; i++) {
               var fieldObj = document.forms['WebToLeads7227000000731766'][mndFileds[i]];
               if (fieldObj) {
@@ -302,6 +285,34 @@
             document.querySelector('#zc_gad').value = getGAClientId();
             return true;
           }
+
+          // AJAX form submission
+          $(document).ready(function() {
+            $('form[name="WebToLeads7227000000731766"]').on('submit', function(e) {
+              e.preventDefault();
+              
+              if (!checkMandatory7227000000731766()) {
+                return false;
+              }
+              
+              var formData = $(this).serialize();
+              
+              $.ajax({
+                url: 'https://crm.zoho.sa/crm/WebToLeadForm',
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                  $('.w-form-done').show();
+                  $('.w-form-fail').hide();
+                  $('form[name="WebToLeads7227000000731766"]')[0].reset();
+                },
+                error: function() {
+                  $('.w-form-fail').show();
+                  $('.w-form-done').hide();
+                }
+              });
+            });
+          });
           
           function getGAClientId() {
             try {
