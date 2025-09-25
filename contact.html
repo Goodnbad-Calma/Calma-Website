@@ -186,11 +186,11 @@
           <div class="contact-form w-form">
             <form action='https://crm.zoho.sa/crm/WebToLeadForm' name=WebToLeads7227000000731766 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory7227000000731766()' accept-charset='UTF-8' class="form" id='webform7227000000731766' data-wf-page-id="688efcc0fe3196fa99fa94d6" data-wf-element-id="b9970a4a-7b33-d2b1-1431-6e3f13cef6ab">
               <!-- Critical Zoho CRM hidden fields - DO NOT REMOVE -->
-              <input type=hidden name=xnQsjsdp value='d890771b9ec64014b6b16834bf29fb21542fedfa866e75cee8d90dca5c53fa95b'>
-              <input type=hidden name='zc_gad' id=zc_gad value=''>
-              <input type=hidden name=xmIwtLD value='b14bad7fd83406db6daa6e2cbd6a3247448c496fe7617f4adaca2d72a8b90a744767214dd443a8588f8c75a6245ee349'>
-              <input type=hidden name=actionType value='TGVhZHM='>
-              <input type=hidden name=returnURL value='https://calma.sa/contact.html' >
+              <input type='text' style='display:none;' name='xnQsjsdp' value='18906a22fae16aa23a1bd5a21e3142fa83a5db95b2ccf531c79b76037284e009'>
+              <input type='hidden' name='zc_gad' id='zc_gad' value=''>
+              <input type='text' style='display:none;' name='xmIwtLD' value='584bc5768e9197caf1e8fcf4feb5a30bd6837fb534df5f3e541576d0390164ac20893c8dc24563161597aaaa124e4739'>
+              <input type='text' style='display:none;' name='actionType' value='TGVhZHM='>
+              <input type='text' style='display:none;' name='returnURL' value='null'>
               <!-- Honeypot field for spam protection - DO NOT REMOVE -->
               <input type='text' style='display: none;' name='aG9uZXlwb3Q' value=''/>
               
@@ -264,8 +264,8 @@
                   }
                   
                   function checkMandatory7227000000731766(){
-                    var mndFileds = new Array('Last Name');
-                    var fldLangVal = new Array('\u0627\u0644\u0639\u0627\u0626\u0644\u0629');
+                    var mndFileds = new Array('First Name', 'Last Name', 'Phone', 'Lead Source', 'City', 'LEADCF3', 'LEADCF5', 'LEADCF6');
+                    var fldLangVal = new Array('\u0627\u0644\u0623\u0633\u0645\x20\u0627\u0644\u0623\u0648\u0644', '\u0627\u0644\u0639\u0627\u0626\u0644\u0629', '\u0631\u0642\u0645\x20\u0627\u0644\u062C\u0648\u0627\u0644', '\u0643\u064A\u0641\x20\u0639\u0631\u0641\u062A\x20\u0639\u0646\x20\u0643\u0627\u0644\u0645\u0627\x20\u061F', '\u0627\u0644\u0645\u062F\u064A\u0646\u0629', '\u0646\u0648\u0639\x20\u0627\u0644\u0648\u062D\u062F\u0629', '\u0627\u0633\u0645\x20\u0627\u0644\u0645\u0634\u0631\u0648\u0639\x20\x20\u0627\u0644\u0645\u0647\u062A\u0645\x20\u0628\u0647', '\u0622\u0644\u064A\u0629\x20\u0627\u0644\u0634\u0631\u0627\u0621');
                     for(i = 0; i < mndFileds.length; i++){
                       var fieldObj = document.forms['WebToLeads7227000000731766'][mndFileds[i]];
                       if(fieldObj){
@@ -314,7 +314,7 @@
                       smarturlfield.setAttribute('name', 'service');
                       webform.appendChild(smarturlfield);
                     }
-                    document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+                    document.querySelector('.button.contact').setAttribute('disabled', true);
                     return true;
                   }
                   

@@ -162,11 +162,11 @@
           <div class="contact-form w-form">
             <form action='https://crm.zoho.sa/crm/WebToLeadForm' name=WebToLeads7227000000731766 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory7227000000731766()' accept-charset='UTF-8' class="form" id='webform7227000000731766' data-wf-page-id="688efcc0fe3196fa99fa94d6" data-wf-element-id="b9970a4a-7b33-d2b1-1431-6e3f13cef6ab">
               <!-- Critical Zoho CRM hidden fields - DO NOT REMOVE -->
-              <input type=hidden name=xnQsjsdp value='d890771b9ec64014b6b16834bf29fb21542fedfa866e75cee8d90dca5c53fa95b'>
-              <input type=hidden name='zc_gad' id=zc_gad value=''>
-              <input type=hidden name=xmIwtLD value='b14bad7fd83406db6daa6e2cbd6a3247448c496fe7617f4adaca2d72a8b90a744767214dd443a8588f8c75a6245ee349'>
-              <input type=hidden name=actionType value='TGVhZHM='>
-              <input type=hidden name=returnURL value='https://calma.sa/en/contact.html' >
+              <input type='text' style='display:none;' name='xnQsjsdp' value='18906a22fae16aa23a1bd5a21e3142fa83a5db95b2ccf531c79b76037284e009'>
+              <input type='hidden' name='zc_gad' id='zc_gad' value=''>
+              <input type='text' style='display:none;' name='xmIwtLD' value='584bc5768e9197caf1e8fcf4feb5a30bd6837fb534df5f3e541576d0390164ac20893c8dc24563161597aaaa124e4739'>
+              <input type='text' style='display:none;' name='actionType' value='TGVhZHM='>
+              <input type='text' style='display:none;' name='returnURL' value='null'>
               <!-- Honeypot field for spam protection - DO NOT REMOVE -->
               <input type='text' style='display: none;' name='aG9uZXlwb3Q' value=''/>
               
@@ -236,8 +236,8 @@
           }
           
           function checkMandatory7227000000731766() {
-            var mndFileds = new Array('Last Name');
-            var fldLangVal = new Array('Last Name');
+            var mndFileds = new Array('First Name', 'Last Name', 'Phone', 'Lead Source', 'City', 'LEADCF3', 'LEADCF5', 'LEADCF6');
+            var fldLangVal = new Array('First Name', 'Last Name', 'Phone', 'Lead Source', 'City', 'Unit Type', 'Project Name', 'Purchase Method');
             for (i = 0; i < mndFileds.length; i++) {
               var fieldObj = document.forms['WebToLeads7227000000731766'][mndFileds[i]];
               if (fieldObj) {
@@ -283,6 +283,19 @@
               return false;
             }
             document.querySelector('#zc_gad').value = getGAClientId();
+            
+            // Add service parameter if present in URL
+            var webform = document.forms['WebToLeads7227000000731766'];
+            var service = getUrlParam('service');
+            if (service) {
+              var smarturlfield = document.createElement('input');
+              smarturlfield.setAttribute('type', 'hidden');
+              smarturlfield.setAttribute('name', 'LEADCF7');
+              smarturlfield.setAttribute('value', service);
+              webform.appendChild(smarturlfield);
+            }
+            
+            document.querySelector('.button.contact').setAttribute('disabled', true);
             return true;
           }
 
@@ -313,6 +326,11 @@
               });
             });
           });
+          
+          function getUrlParam(name) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+          }
           
           function getGAClientId() {
             try {
