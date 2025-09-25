@@ -184,60 +184,43 @@
         </div>
         <div class="contact-form-wrapper">
           <div class="contact-form w-form">
-            <form action='https://crm.zoho.sa/crm/WebToLeadForm' name=WebToLeads7227000000731766 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory7227000000731766()' accept-charset='UTF-8' class="form">
-              <input type=hidden name=xnQsjsdp value='961d05c77c32b161c9f1dd2221c18ef94fbdaf7040a2c68b687efea2366ba4ba4'>
+            <form action='https://crm.zoho.sa/crm/WebToLeadForm' name=WebToLeads7227000000731766 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory7227000000731766()' accept-charset='UTF-8' class="form" id='webform7227000000731766' data-wf-page-id="688efcc0fe3196fa99fa94d6" data-wf-element-id="b9970a4a-7b33-d2b1-1431-6e3f13cef6ab">
+              <!-- Critical Zoho CRM hidden fields - DO NOT REMOVE -->
+              <input type=hidden name=xnQsjsdp value='d890771b9ec64014b6b16834bf29fb21542fedfa866e75cee8d90dca5c53fa95b'>
               <input type=hidden name='zc_gad' id=zc_gad value=''>
-              <input type=hidden name=xmIwtLD value='76c2bb0895da1655743e6459add36a1cd6901a13b5a60f694587b07622d60ae8'>
+              <input type=hidden name=xmIwtLD value='b14bad7fd83406db6daa6e2cbd6a3247448c496fe7617f4adaca2d72a8b90a744767214dd443a8588f8c75a6245ee349'>
               <input type=hidden name=actionType value='TGVhZHM='>
               <input type=hidden name=returnURL value='https://calma.sa/contact.html' >
+              <!-- Honeypot field for spam protection - DO NOT REMOVE -->
+              <input type='text' style='display: none;' name='aG9uZXlwb3Q' value=''/>
               
               <div class="form-wrapper">
-                <input class="text-field w-input" maxlength="256" name="First Name" placeholder="الأسم الأول" type="text" id="First_Name" required="">
-                <input class="text-field w-input" maxlength="256" name="Last Name" placeholder="العائلة" type="text" id="Last_Name" required="">
-                <input class="text-field w-input" maxlength="256" name="Phone" placeholder="رقم الجوال" type="tel" id="Phone" required="">
+                <input class="text-field arabic w-input" maxlength="40" name="First Name" placeholder="الأسم الأول" type="text" id="First_Name" required="">
+                <input class="text-field arabic w-input" maxlength="80" name="Last Name" placeholder="العائلة" type="text" id="Last_Name" required="">
+                <input class="text-field arabic w-input" maxlength="30" name="Phone" placeholder="رقم الجوال" type="tel" id="Phone" required="">
               </div>
               <div class="form-wrapper">
-                <input class="text-field w-input" maxlength="256" name="Email" placeholder="الايميل" type="email" id="Email" required="">
-                <select name="LEADCF1" class="text-field drop-down w-select" required="">
-                  <option value="">اسم المشروع</option>
-                  <option value="Calma">كالما</option>
-                  <option value="Other">أخرى</option>
-                </select>
-                <select name="LEADCF2" class="text-field drop-down w-select" required="">
-                  <option value="">نوع الوحدة</option>
-                  <option value="Studio">استوديو</option>
-                  <option value="1 Bedroom">غرفة نوم واحدة</option>
-                  <option value="2 Bedroom">غرفتين نوم</option>
-                  <option value="3 Bedroom">ثلاث غرف نوم</option>
-                  <option value="Penthouse">بنتهاوس</option>
-                </select>
+                <input class="text-field arabic w-input" maxlength="100" name="Email" placeholder="الايميل" type="email" ftype="email" id="Email" required="">
+                <input class="text-field arabic w-input" maxlength="255" name="LEADCF5" placeholder="اسم المشروع المهتم به" type="text" id="LEADCF5">
+                <input class="text-field arabic w-input" maxlength="255" name="LEADCF3" placeholder="نوع الوحدة" type="text" id="LEADCF3">
               </div>
               <div class="form-wrapper">
-                <select name="City" class="text-field drop-down w-select" required="">
-                  <option value="">المدينة</option>
-                  <option value="Riyadh">الرياض</option>
-                  <option value="Jeddah">جدة</option>
-                  <option value="Dammam">الدمام</option>
-                  <option value="Mecca">مكة</option>
-                  <option value="Medina">المدينة</option>
-                  <option value="Other">أخرى</option>
+                <input class="text-field arabic w-input" maxlength="100" name="City" placeholder="المدينة" type="text" id="City">
+                <input class="text-field arabic w-input" maxlength="255" name="LEADCF6" placeholder="آلية الشراء" type="text" id="LEADCF6">
+                <select class="text-field drop-down arabic w-select" id="Lead_Source" onChange="addAriaSelected7227000000731766()" name="Lead Source">
+                  <option value="-None-">مصدر العميل</option>
+                  <option value="إعلان في مواقع التواصل الإجتماعى">إعلان في مواقع التواصل الإجتماعى</option>
+                  <option value="لوحات المشاريع">لوحات المشاريع</option>
+                  <option value="الأهل والأصدقاء">الأهل والأصدقاء</option>
+                  <option value="عميل سابق">عميل سابق</option>
+                  <option value="مواقع التواصل الإجتماعي">مواقع التواصل الإجتماعي</option>
                 </select>
-                <select name="LEADCF3" class="text-field drop-down w-select" required="">
-                  <option value="">آلية الشراء</option>
-                  <option value="Cash">نقداً</option>
-                  <option value="Mortgage">تمويل عقاري</option>
-                  <option value="Installment">أقساط</option>
-                </select>
-                <select name="Lead Source" class="text-field drop-down w-select">
-                  <option value="">كيف عرفت عن كالما؟</option>
-                  <option value="Website">الموقع الإلكتروني</option>
-                  <option value="Social Media">وسائل التواصل الاجتماعي</option>
-                  <option value="Referral">إحالة</option>
-                  <option value="Advertisement">إعلان</option>
-                </select>
+              </div>
+              <div class="text-box-wrapper">
+                <textarea placeholder="رسالة مخصصة" maxlength="2000" id="Description" name="Description" class="text-field message arabic w-input"></textarea>
               </div>
               <div class="right-align-div btn">
-                <input type="submit" class="button contact w-button" value="إرسال">
+                <input type="submit" data-wait="يرجى الانتظار..." data-w-id="b9970a4a-7b33-d2b1-1431-6e3f13cef6b2" class="button contact w-button" value="إرسال">
               </div>
             </form>
             <div class="w-form-done">
@@ -250,6 +233,7 @@
         </div>
                  
                  <!-- Zoho CRM Scripts -->
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script>
                   function addAriaSelected7227000000731766(){
                     var optionElem = event.target;
@@ -280,8 +264,8 @@
                   }
                   
                   function checkMandatory7227000000731766(){
-                    var mndFileds = new Array('First Name','Last Name','Phone','Lead Source','City','LEADCF3','LEADCF5','LEADCF6');
-                    var fldLangVal = new Array('\u0627\u0644\u0623\u0633\u0645\x20\u0627\u0644\u0623\u0648\u0644','\u0627\u0644\u0639\u0627\u0626\u0644\u0629','\u0631\u0642\u0645\x20\u0627\u0644\u062C\u0648\u0627\u0644','\u0643\u064A\u0641\x20\u0639\u0631\u0641\u062A\x20\u0639\u0646\x20\u0643\u0627\u0644\u0645\u0627\x20\u061F','\u0627\u0644\u0645\u062F\u064A\u0646\u0629','\u0646\u0648\u0639\x20\u0627\u0644\u0648\u062D\u062F\u0629','\u0627\u0633\u0645\x20\u0627\u0644\u0645\u0634\u0631\u0648\u0639\x20\x20\u0627\u0644\u0645\u0647\u062A\u0645\x20\u0628\u0647','\u0622\u0644\u064A\u0629\x20\u0627\u0644\u0634\u0631\u0627\u0621');
+                    var mndFileds = new Array('Last Name');
+                    var fldLangVal = new Array('\u0627\u0644\u0639\u0627\u0626\u0644\u0629');
                     for(i = 0; i < mndFileds.length; i++){
                       var fieldObj = document.forms['WebToLeads7227000000731766'][mndFileds[i]];
                       if(fieldObj){
@@ -331,7 +315,52 @@
                       webform.appendChild(smarturlfield);
                     }
                     document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+                    return true;
                   }
+                  
+                  $(document).ready(function(){
+                    $('#webform7227000000731766').submit(function(e){
+                      var ismandatory = checkMandatory7227000000731766();
+                      e.preventDefault();
+                      if(ismandatory){
+                        if(typeof _wfa_track != 'undefined' && _wfa_track.wfa_submit){
+                          _wfa_track.wfa_submit(e);
+                        }
+                        var formData = new FormData(this);
+                        $.ajax({
+                          url:'https://crm.zoho.sa/crm/WebToLeadForm',
+                          type:'POST',
+                          data:formData,
+                          cache: false,
+                          contentType: false,
+                          processData: false,
+                          success: function(data){
+                            var splashinfodom = document.getElementById('wf_splash_info');
+                            if(splashinfodom) {
+                              splashinfodom.innerText = data.actionvalue;
+                            }
+                            var splashdom = document.getElementById('wf_splash');
+                            document.getElementById('webform7227000000731766').reset();
+                            if(splashdom) {
+                              splashdom.style.display = '';
+                              setTimeout(function(){
+                                splashdom.style.display = 'none';
+                              }, 5000);
+                            } else {
+                              // Show success message using Webflow's success div
+                              document.querySelector('.w-form-done').style.display = 'block';
+                              document.querySelector('.w-form').style.display = 'none';
+                            }
+                            document.querySelector('.crmWebToEntityForm .formsubmit').removeAttribute('disabled');
+                          },
+                          error: function(data){
+                            alert('حدث خطأ أثناء إرسال النموذج');
+                            document.querySelector('.crmWebToEntityForm .formsubmit').removeAttribute('disabled');
+                          }
+                        });
+                      }
+                    });
+                  });
                   
                   function tooltipShow7227000000731766(el){
                     var tooltip = el.nextElementSibling;
@@ -350,7 +379,7 @@
                 </script>
                 
                 <!-- Do not remove this --- Analytics Tracking code starts -->
-                <script id='wf_anal' src='https://crm.zohopublic.sa/crm/WebFormAnalyticsServeServlet?rid=961d05c77c32b161c9f1dd2221c18ef94fbdaf7040a2c68b687efea2366ba4ba421b88db42d39477e2a53bf8642c33d3gidc82b4f435ab24ecca56bd2cd05883fc3383dbfc3803d7c2e99290e1ebb7217b5gid10b4cc8a5cca4f135c554abb9ba85df623b9f1784f351c2cd8cce33dab1b09f2gid58bd1558b7abb19e38297e8c1fc51916edb9c6060e7b8d69092b682d9bcfd54b&tw=76c2bb0895da1655743e6459add36a1cd6901a13b5a60f694587b07622d60ae8'></script>
+                <script id='wf_anal' src='https://crm.zohopublic.sa/crm/WebFormAnalyticsServeServlet?rid=d890771b9ec64014b6b16834bf29fb21542fedfa866e75cee8d90dca5c53fa95b14bad7fd83406db6daa6e2cbd6a3247gid448c496fe7617f4adaca2d72a8b90a744767214dd443a8588f8c75a6245ee349gid36889ae7355a0b336c4b43cc84d45b3f841ef0edbd4b8d6c26fa9a3b739cd518gid00787b1f1752652540cbf20016bbac55c8271468c987171e2780441d803a7172&tw=0fd650d153add9e4c4d98603c0bcb3e38e268e45e3a0fa83c348f8d7c71a456b'></script>
                 <!-- Do not remove this --- Analytics Tracking code ends. -->
       </div>
     </section>
