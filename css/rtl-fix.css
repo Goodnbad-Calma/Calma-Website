@@ -1,0 +1,121 @@
+/* RTL text fixes for Arabic content */
+[dir="rtl"] {
+  unicode-bidi: embed;
+  text-align: right;
+}
+
+/* Global RTL fixes */
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Fix for stretched Arabic text */
+[lang="ar"] .paragraph,
+[lang="ar"] .section-heading,
+[lang="ar"] .sub-heading,
+[lang="ar"] .mobile-nav-heading,
+[lang="ar"] .page-hero-heading,
+[lang="ar"] h1, 
+[lang="ar"] h2, 
+[lang="ar"] h3, 
+[lang="ar"] h4, 
+[lang="ar"] h5, 
+[lang="ar"] h6, 
+[lang="ar"] p {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: normal;
+  direction: rtl;
+  text-align: right !important;
+}
+
+/* Ensure proper text alignment for Arabic content */
+.arabic {
+  text-align: right !important;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  direction: rtl;
+}
+
+/* Fix for container width issues */
+.section-content-wrapper,
+.section-para-wrapper,
+.heading-wrapper,
+.projects-stat-div,
+.stats-right-div {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix for hero section alignment */
+.hero-heading-div {
+  text-align: right;
+}
+
+/* Fix for specific alignment issues */
+.hero-quickstack.arabic .w-layout-cell {
+  direction: rtl;
+}
+
+.hero-left-div._1.arabic,
+.hero-project-details-wrapper.arabic,
+.section-heading-wrapper.arabic,
+.mobile-nav-content-wrapper.arabic {
+  text-align: right !important;
+}
+
+/* Fix for slider elements */
+.about-slider.w-slider,
+.speaker-slider.w-slider {
+  direction: ltr; /* Keep slider controls in correct position */
+}
+
+.about-slider.w-slider .w-slide,
+.speaker-slider.w-slider .w-slide {
+  direction: rtl; /* Content inside slides should be RTL */
+  text-align: right;
+}
+
+/* Projects section specific fixes */
+.section.platinum .speaker-slide-content {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section.platinum .speaker-info {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.section.platinum .clip-text.speaker-headding {
+  text-align: right;
+}
+
+/* Fix slider navigation arrows position */
+.speaker-arrow.left {
+  left: auto;
+  right: 10px;
+}
+
+.speaker-arrow:not(.left) {
+  right: auto;
+  left: 10px;
+}
+
+/* Fix for flexbox containers in RTL */
+[dir="rtl"] .w-container {
+  direction: rtl;
+}
+
+/* Fix for navigation elements */
+.w-nav-menu {
+  direction: rtl;
+  text-align: right;
+}

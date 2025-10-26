@@ -205,20 +205,24 @@
                 <input class="text-field arabic w-input" maxlength="30" name="Phone" placeholder="رقم الجوال" type="tel" id="Phone" required="">
               </div>
               <div class="form-wrapper">
-                <input class="text-field arabic w-input" maxlength="100" name="Email" placeholder="الايميل" type="email" ftype="email" id="Email" required="">
-                <input class="text-field arabic w-input" maxlength="255" name="LEADCF5" placeholder="اسم المشروع المهتم به" type="text" id="LEADCF5">
-                <input class="text-field arabic w-input" maxlength="255" name="LEADCF3" placeholder="نوع الوحدة" type="text" id="LEADCF3">
+                <input class="text-field arabic w-input" maxlength="100" name="Email" placeholder="الايميل" type="email" ftype="email" id="Email">
+                <input class="text-field arabic w-input" maxlength="255" name="LEADCF5" placeholder="اسم المشروع المهتم به" type="text" id="LEADCF5" required="">
+                <input class="text-field arabic w-input" maxlength="255" name="LEADCF3" placeholder="نوع الوحدة" type="text" id="LEADCF3" required="">
               </div>
               <div class="form-wrapper">
-                <input class="text-field arabic w-input" maxlength="100" name="City" placeholder="المدينة" type="text" id="City">
-                <input class="text-field arabic w-input" maxlength="255" name="LEADCF6" placeholder="آلية الشراء" type="text" id="LEADCF6">
+                <input class="text-field arabic w-input" maxlength="100" name="City" placeholder="المدينة" type="text" id="City" required="">
+                <input class="text-field arabic w-input" maxlength="255" name="LEADCF6" placeholder="آلية الشراء" type="text" id="LEADCF6" required="">
                 <select class="text-field drop-down arabic w-select" id="Lead_Source" onChange="addAriaSelected7227000000731766()" name="Lead Source">
                   <option value="-None-">مصدر العميل</option>
-                  <option value="إعلان في مواقع التواصل الإجتماعى">إعلان في مواقع التواصل الإجتماعى</option>
+                  <option value="تطبيق عقار">تطبيق عقار</option>
                   <option value="لوحات المشاريع">لوحات المشاريع</option>
                   <option value="الأهل والأصدقاء">الأهل والأصدقاء</option>
+                  <option value="Website">Website</option>
+                  <option value="Snapchat">Snapchat</option>
+                  <option value="Meta">Meta</option>
+                  <option value="Tiktok">Tiktok</option>
+                  <option value="Google Ads">Google Ads</option>
                   <option value="عميل سابق">عميل سابق</option>
-                  <option value="مواقع التواصل الإجتماعي">مواقع التواصل الإجتماعي</option>
                 </select>
               </div>
               <div class="text-box-wrapper">
@@ -269,8 +273,8 @@
                   }
                   
                   function checkMandatory7227000000731766(){
-                    var mndFileds = new Array('First Name', 'Last Name', 'Phone', 'Lead Source', 'City', 'LEADCF3', 'LEADCF5', 'LEADCF6');
-                    var fldLangVal = new Array('\u0627\u0644\u0623\u0633\u0645\x20\u0627\u0644\u0623\u0648\u0644', '\u0627\u0644\u0639\u0627\u0626\u0644\u0629', '\u0631\u0642\u0645\x20\u0627\u0644\u062C\u0648\u0627\u0644', '\u0643\u064A\u0641\x20\u0639\u0631\u0641\u062A\x20\u0639\u0646\x20\u0643\u0627\u0644\u0645\u0627\x20\u061F', '\u0627\u0644\u0645\u062F\u064A\u0646\u0629', '\u0646\u0648\u0639\x20\u0627\u0644\u0648\u062D\u062F\u0629', '\u0627\u0633\u0645\x20\u0627\u0644\u0645\u0634\u0631\u0648\u0639\x20\x20\u0627\u0644\u0645\u0647\u062A\u0645\x20\u0628\u0647', '\u0622\u0644\u064A\u0629\x20\u0627\u0644\u0634\u0631\u0627\u0621');
+                    var mndFileds = new Array('First Name', 'Last Name', 'Phone', 'LEADCF5', 'LEADCF3', 'City', 'LEADCF6');
+                    var fldLangVal = new Array('\u0627\u0644\u0623\u0633\u0645\x20\u0627\u0644\u0623\u0648\u0644', '\u0627\u0644\u0639\u0627\u0626\u0644\u0629', '\u0631\u0642\u0645\x20\u0627\u0644\u062C\u0648\u0627\u0644', '\u0627\u0633\u0645\x20\u0627\u0644\u0645\u0634\u0631\u0648\u0639\x20\x20\u0627\u0644\u0645\u0647\u062A\u0645\x20\u0628\u0647', '\u0646\u0648\u0639\x20\u0627\u0644\u0648\u062D\u062F\u0629', '\u0627\u0644\u0645\u062F\u064A\u0646\u0629', '\u0622\u0644\u064A\u0629\x20\u0627\u0644\u0634\u0631\u0627\u0621');
                     for(i = 0; i < mndFileds.length; i++){
                       var fieldObj = document.forms['WebToLeads7227000000731766'][mndFileds[i]];
                       if(fieldObj){
