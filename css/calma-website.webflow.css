@@ -1103,7 +1103,9 @@
   padding: 10px;
   display: flex;
   position: absolute;
-  inset: auto 0% -10% 34%;
+  /* Center the info box horizontally within the slide */
+  inset: auto auto -10% 50%;
+  transform: translateX(-50%);
 }
 
 .speaker-image-cover {
@@ -3194,7 +3196,10 @@
     width: 23.819vw;
     height: 9.931vw;
     padding: .694vw;
-    left: 34%;
+    /* Center the info box horizontally on larger screens */
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
   }
 
   .slide-arrow {

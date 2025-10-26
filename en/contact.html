@@ -178,19 +178,24 @@
                 <input class="text-field w-input" maxlength="30" name="Phone" placeholder="Phone Number" type="tel" id="Phone" required="">
               </div>
               <div class="form-wrapper">
-                <input class="text-field w-input" maxlength="100" name="Email" placeholder="Email Address" type="email" ftype="email" id="Email" required="">
-                <input class="text-field w-input" maxlength="255" name="LEADCF5" placeholder="Project Name" type="text" id="LEADCF5">
-                <input class="text-field w-input" maxlength="255" name="LEADCF3" placeholder="Unit Type" type="text" id="LEADCF3">
+                <input class="text-field w-input" maxlength="100" name="Email" placeholder="Email Address" type="email" ftype="email" id="Email">
+                <input class="text-field w-input" maxlength="255" name="LEADCF5" placeholder="Project Name" type="text" id="LEADCF5" required="">
+                <input class="text-field w-input" maxlength="255" name="LEADCF3" placeholder="Unit Type" type="text" id="LEADCF3" required="">
               </div>
               <div class="form-wrapper">
-                <input class="text-field w-input" maxlength="100" name="City" placeholder="City" type="text" id="City">
-                <input class="text-field w-input" maxlength="255" name="LEADCF6" placeholder="Purchase Method" type="text" id="LEADCF6">
+                <input class="text-field w-input" maxlength="100" name="City" placeholder="City" type="text" id="City" required="">
+                <input class="text-field w-input" maxlength="255" name="LEADCF6" placeholder="Purchase Method" type="text" id="LEADCF6" required="">
                 <select class="text-field drop-down w-select" id="Lead_Source" onChange="addAriaSelected7227000000731766()" name="Lead Source">
                   <option value="-None-">Lead Source</option>
+                  <option value="تطبيق عقار">Aqar App</option>
+                  <option value="لوحات المشاريع">Project Boards</option>
+                  <option value="الأهل والأصدقاء">Family & Friends</option>
                   <option value="Website">Website</option>
-                  <option value="Social Media">Social Media</option>
-                  <option value="Referral">Referral</option>
-                  <option value="Advertisement">Advertisement</option>
+                  <option value="Snapchat">Snapchat</option>
+                  <option value="Meta">Meta</option>
+                  <option value="Tiktok">Tiktok</option>
+                  <option value="Google Ads">Google Ads</option>
+                  <option value="عميل سابق">Previous Client</option>
                 </select>
               </div>
               <div class="text-box-wrapper">
@@ -238,8 +243,8 @@
           }
           
           function checkMandatory7227000000731766() {
-            var mndFileds = new Array('First Name', 'Last Name', 'Phone', 'Lead Source', 'City', 'LEADCF3', 'LEADCF5', 'LEADCF6');
-            var fldLangVal = new Array('First Name', 'Last Name', 'Phone', 'Lead Source', 'City', 'Unit Type', 'Project Name', 'Purchase Method');
+            var mndFileds = new Array('First Name', 'Last Name', 'Phone', 'LEADCF5', 'LEADCF3', 'City', 'LEADCF6');
+            var fldLangVal = new Array('First Name', 'Last Name', 'Phone', 'Project Name', 'Unit Type', 'City', 'Purchase Method');
             for (i = 0; i < mndFileds.length; i++) {
               var fieldObj = document.forms['WebToLeads7227000000731766'][mndFileds[i]];
               if (fieldObj) {
