@@ -1278,27 +1278,48 @@
 }
 
 .member-image.four {
-  background-image: url('../images/dummy_1600x900_ffffff_cccccc_169.JPG');
+  background-image: url('../images/Projects/SA230 الصفا/نسخة من 01.png');
   background-position: 50% 0;
 }
 
 .member-image.six {
-  background-image: url('../images/dummy_1600x900_ffffff_cccccc_169.JPG');
+  background-image: url('../images/Projects/GH220 الغدير/IMG_1621.jpg');
   background-position: 50%;
 }
 
 .member-image.two {
-  background-image: url('../images/YS200--KALMA-2-1-1.JPG');
+  background-image: url('../images/Projects/RM240 الرمال/01.png');
 }
 
 .member-image.three {
-  background-image: url('../images/YS170--╪º┘ä┘è╪º╪│┘à┘è┘å-1.JPG');
+  background-image: url('../images/Projects/النــخـيل NK250/nk250-1.png');
   background-position: 50%;
   margin-right: 0;
 }
 
 .member-image.one {
-  background-image: url('../images/Asset-9.JPG');
+  background-image: url('../images/Projects/HT210 حطين/HT210_-__1_Page_1.png');
+}
+
+/* Additional slides for ongoing projects */
+.member-image.five {
+  background-image: url('../images/Projects/YS190 اداور الياسمين/Artboard 1.png');
+  background-position: 50%;
+}
+
+.member-image.seven {
+  background-image: url('../images/Projects/الياسـمين YS200/KALMA DAY (4)-3.png');
+  background-position: 50%;
+}
+
+.member-image.eight {
+  background-image: url('../images/Projects/JN130 الجنادرية/jn130-1.png');
+  background-position: 50%;
+}
+
+.member-image.nine {
+  background-image: url('../images/Projects/HT260 ادوار حطين/حطين - HT260-1.png');
+  background-position: 50%;
 }
 
 .building-name {

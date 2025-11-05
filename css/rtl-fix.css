@@ -109,6 +109,24 @@ html[dir="rtl"] body {
   left: 10px;
 }
 
+/* Arabic Projects page: spacing and slider direction fixes */
+html[dir="rtl"] .commercial-project-details-wrapper.arabic {
+  padding: 16px 20px; /* prevent text hugging */
+}
+
+html[dir="rtl"] .commercial-project-div.arabic {
+  margin-bottom: 12px; /* add breathing room between lines */
+}
+
+html[dir="rtl"] .commercial-slider.w-slider {
+  direction: ltr; /* ensure arrows/dots behave correctly */
+}
+
+html[dir="rtl"] .commercial-slider .w-slide {
+  direction: rtl; /* keep slide content RTL */
+  text-align: right;
+}
+
 /* Fix for flexbox containers in RTL */
 [dir="rtl"] .w-container {
   direction: rtl;
