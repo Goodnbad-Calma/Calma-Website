@@ -119,3 +119,37 @@ html[dir="rtl"] body {
   direction: rtl;
   text-align: right;
 }
+/* Arabic compact spacing to mirror English density */
+html[dir="rtl"] .section.dark-green .w-container,
+html[dir="rtl"] .section.platinum .w-container,
+html[dir="rtl"] .section.pastel-gray .w-container {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+html[dir="rtl"] .section .section-name-wrapper,
+html[dir="rtl"] .section .heading-wrapper,
+html[dir="rtl"] .section .center-para-wrapper {
+  margin-bottom: 12px;
+}
+
+html[dir="rtl"] .section .section-name-wrapper.padding {
+  padding-bottom: 8px;
+}
+
+/* Tighten paragraph line-height for Arabic to match EN feel */
+html[dir="rtl"] .paragraph.dark.arabic,
+html[dir="rtl"] .mobile-nav-heading.arabic {
+  line-height: 1.6;
+}
+
+/* Reduce extra spacing in carousel wrappers */
+html[dir="rtl"] .container.carousel .center-align-div.carousel {
+  margin-top: 16px;
+}
+
+/* Compact footer spacing for consistency */
+html[dir="rtl"] .footer .w-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

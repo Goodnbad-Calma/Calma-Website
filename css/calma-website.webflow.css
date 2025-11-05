@@ -2610,10 +2610,17 @@
 .hero-project-details-wrapper.arabic {
   flex-flow: column;
   justify-content: flex-start;
-  align-items: flex-end;
-  padding-left: 0;
-  padding-right: 40px;
+  /* Anchor content block to the left and shrink width to content */
+  align-items: flex-start;
+  padding-left: 40px;
+  padding-right: 0;
   display: flex;
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  width: max-content;
+  box-sizing: border-box;
 }
 
 .hero-sub-heading {
@@ -3618,6 +3625,16 @@
   .hero-project-details-wrapper {
     padding-bottom: 2.778vw;
     padding-left: 2.778vw;
+  }
+  .hero-project-details-wrapper.arabic {
+    padding-left: 2.778vw;
+    padding-right: 0;
+    align-items: flex-start;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    width: max-content;
+    box-sizing: border-box;
   }
 
   .hero-sub-heading, .hero-sub-heading.arabic {
