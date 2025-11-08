@@ -2,7 +2,7 @@
 <html data-wf-page="688efe022ee6b3760aae306c" data-wf-site="687744ac7f4aefd284fc3f12">
 <head>
   <meta charset="utf-8">
-  <title>Home</title>
+  <title>كالما - Calma</title>
   <meta content="https://cdn.prod.website-files.com/687744ac7f4aefd284fc3f12/68a6f4b3b7b128d571ca4934_Abou-1.JPG" property="og:image">
   <meta content="https://cdn.prod.website-files.com/687744ac7f4aefd284fc3f12/68a6f4b3b7b128d571ca4934_Abou-1.JPG" property="twitter:image">
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -56,10 +56,26 @@
   }
   requestAnimationFrame(raf);
   // Refresh ScrollTrigger after setup (important)
-  ScrollTrigger.addEventListener("refresh", () => lenis.update());
+// Remove invalid update call; Lenis v1 exposes raf(time), not update
+ScrollTrigger.addEventListener("refresh", () => {});
   ScrollTrigger.refresh();
 </script>
   <style>
+    /* Stabilize EN mobile nav: hard-anchor overlay to viewport */
+    @media screen and (max-width: 991px) {
+      .mobile-nav-content-wrapper {
+        position: fixed !important; /* anchor to viewport */
+        inset: 0 !important; /* top right bottom left */
+        right: 0 !important; left: 0 !important;
+        transform: translate3d(100%, 0, 0) !important; /* start offscreen right */
+        transition: transform 280ms ease-out !important;
+        will-change: transform;
+        overflow-y: auto; /* allow scrolling inside drawer */
+      }
+      .mobile-nav-content-wrapper.open {
+        transform: translate3d(0, 0, 0) !important; /* visible and fixed */
+      }
+    }
   .cta-image-wrapper {
     transition: transform 0.5s ease, scale 0.5s ease;
     will-change: transform;
@@ -516,7 +532,7 @@
                 <div class="speaker-slide w-slide">
                   <div class="speaker-slide-content">
                     <div class="slide-image">
-                      <img src="../images/Projects/النــخـيل NK250/nk250-1.png" alt="NK250" loading="lazy" class="slide-photo">
+            <img sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="../images/صور-NK250-dragged-p-500.jpg 500w, ../images/صور-NK250-dragged-p-800.jpg 800w, ../images/صور-NK250-dragged-p-1080.jpg 1080w, ../images/صور-NK250-dragged-p-1600.jpg 1600w, ../images/صور-NK250-dragged.jpg 1920w" src="../images/صور-NK250-dragged.jpg" alt="NK250" loading="lazy" class="slide-photo">
                       <div style="display:block" class="speaker-image-cover"></div>
                     </div>
                     <div class="speaker-info">
@@ -547,7 +563,7 @@
                 <div class="speaker-slide w-slide">
                   <div class="speaker-slide-content">
                     <div class="slide-image">
-                      <img src="../images/Projects/YS190 اداور الياسمين/Artboard 1.png" alt="YS190" loading="lazy" class="slide-photo">
+<img src="../images/Projects/YS190 اداور الياسمين/Artboard 1 copy 3.png" alt="YS190" loading="lazy" class="slide-photo">
                       <div style="display:block" class="speaker-image-cover"></div>
                     </div>
                     <div class="speaker-info">
@@ -577,7 +593,7 @@
                 <div class="speaker-slide w-slide">
                   <div class="speaker-slide-content">
                     <div class="slide-image">
-                      <img src="../images/Projects/JN130 الجنادرية/jn130-1.png" alt="JN130" loading="lazy" class="slide-photo">
+<img src="../images/Projects/JN130 الجنادرية/jn130-2.png" alt="JN130" loading="lazy" class="slide-photo">
                       <div style="display:block" class="speaker-image-cover"></div>
                     </div>
                     <div class="speaker-info">
@@ -592,7 +608,7 @@
                 <div class="speaker-slide w-slide">
                   <div class="speaker-slide-content">
                     <div class="slide-image">
-                      <img src="../images/Projects/HT260 ادوار حطين/حطين - HT260-1.png" alt="HT260" loading="lazy" class="slide-photo">
+<img src="../images/Projects/HT260 ادوار حطين/حطين - HT260-3 copy.png" alt="HT260" loading="lazy" class="slide-photo">
                       <div style="display:block" class="speaker-image-cover"></div>
                     </div>
                     <div class="speaker-info">
@@ -1185,6 +1201,92 @@
   <script type="module">
     import { inject } from '@vercel/analytics';
     inject();
+  </script>
+  <!-- Smooothy active slide gentle zoom (match AR index without structure changes) -->
+  <style>
+    .section.platinum .speaker-slider.w-slider .w-slide .speaker-slide-content {
+      transition: transform 350ms ease;
+      transform: scale(1);
+      will-change: transform;
+    }
+    .section.platinum .speaker-slider.w-slider .w-slide.is-active .speaker-slide-content {
+      transform: scale(1.02);
+    }
+    /* Hide overlay cover globally to ensure image visibility */
+    .section.platinum .speaker-image-cover { display: none !important; }
+    /* Mobile/tablet: make the info card compact and keep image unobstructed */
+    @media screen and (max-width: 767px) {
+      .section.platinum .slide-image { position: relative; overflow: hidden; }
+      .section.platinum .slide-photo { position:absolute; inset:0; width:100%; height:100%; object-fit: cover; display:block; }
+      .section.platinum .speaker-image-cover { display: none !important; }
+      .section.platinum .clip-text.speaker-headding { text-align: center; }
+      .section.platinum .speaker-info {
+        position: absolute;
+        inset: auto auto -30px 50%; /* push card slightly below image */
+        transform: translateX(-50%);
+        width: clamp(160px, 50vw, 220px);
+        max-width: 80vw;
+        padding: clamp(6px, 1.8vw, 10px);
+        border-radius: clamp(8px, 2vw, 12px);
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .section.platinum .speaker-info .speaker-name { font-size: clamp(12px, 3vw, 15px); line-height: 1.2; }
+      .section.platinum .speaker-info, .section.platinum .speaker-info * { font-size: clamp(10px, 2.8vw, 13px); }
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      .section.platinum .speaker-image-cover { display: none !important; }
+      .section.platinum .slide-image { position: relative; overflow: hidden; }
+      .section.platinum .slide-photo { position:absolute; inset:0; width:100%; height:100%; object-fit: cover; display:block; }
+      .section.platinum .speaker-info {
+        position: absolute;
+        inset: auto auto -26px 50%; /* push card slightly below image */
+        transform: translateX(-50%);
+        width: clamp(220px, 36vw, 300px);
+        max-width: 70vw;
+        padding: clamp(8px, 1.8vw, 12px);
+        border-radius: clamp(10px, 1.8vw, 14px);
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .section.platinum .speaker-info .speaker-name { font-size: clamp(15px, 2.4vw, 19px); line-height: 1.2; }
+      .section.platinum .speaker-info, .section.platinum .speaker-info * { font-size: clamp(12px, 2.2vw, 16px); }
+    }
+  </style>
+  <!-- Smooothy passive enhancement: keep Webflow slider behavior unchanged -->
+  <script src="../node_modules/smooothy/dist/smooothy.min.js"></script>
+  <script>
+    // Mark the visible Webflow slide as active to enable subtle CSS effects
+    // without altering core slider behavior.
+    (function(){
+      function enhance(){
+        var slider = document.querySelector('.section.platinum .speaker-slider.w-slider');
+        if (!slider) return;
+        var mask = slider.querySelector('.speaker-slide-mask.w-slider-mask');
+        if (!mask) return;
+        var slides = Array.from(mask.children);
+
+        function updateActive(){
+          var active = slides.find(function(s){ return s.getAttribute('aria-hidden') === 'false'; }) || slides[0];
+          slides.forEach(function(s){ s.classList.toggle('is-active', s === active); });
+        }
+
+        updateActive();
+
+        var obs = new MutationObserver(function(){ updateActive(); });
+        slides.forEach(function(s){ obs.observe(s, { attributes: true, attributeFilter: ['aria-hidden'] }); });
+
+        var left = slider.querySelector('.w-slider-arrow-left');
+        var right = slider.querySelector('.w-slider-arrow-right');
+        var nav = slider.querySelector('.w-slider-nav');
+        function queue(){ requestAnimationFrame(updateActive); }
+        if (left) left.addEventListener('click', queue);
+        if (right) right.addEventListener('click', queue);
+        if (nav) nav.addEventListener('click', queue);
+      }
+      if (document.readyState === 'complete') enhance();
+      else window.addEventListener('load', enhance);
+    })();
   </script>
 </body>
 </html>

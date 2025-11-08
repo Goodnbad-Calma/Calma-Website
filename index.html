@@ -30,44 +30,52 @@ Author: @Goodnbad.exe
   <script defer src="/_vercel/speed-insights/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
   <script>
-  // Initialize Lenis on the #scroll-container div
-  const lenis = new Lenis({
-    wrapper: document.querySelector('#scroll-container'),  // your scroll wrapper
-    content: document.querySelector('#scroll-container'),  // your scroll content (same div)
-    duration: 1.2,
-    easing: t => t < 0.5 ? 2*t*t : -1+(4-2*t)*t,
-    smooth: true,
-  });
-  // Tell ScrollTrigger to use #scroll-container as its scroller proxy
-  ScrollTrigger.scrollerProxy("#scroll-container", {
-    scrollTop(value) {
-      if (arguments.length) {
-        lenis.scrollTo(value);
+  // Guarded Lenis setup (body scroll) + GSAP Sync for reliability
+  (function(){
+    function init(){
+      try {
+        if (typeof Lenis === 'undefined') return;
+        const lenis = new Lenis({
+          // Faster, more responsive scrolling
+          duration: 0.7,
+          easing: function(t){ return t; }, // linear easing for speed
+          smooth: true,
+          smoothWheel: false, // disable wheel smoothing
+          smoothTouch: false,
+          touchMultiplier: 1.2
+        });
+        function setupGSAP(){
+          if (typeof ScrollTrigger === 'undefined') return false;
+          // Keep ScrollTrigger synced with Lenis without scrollerProxy
+          lenis.on('scroll', function(){ ScrollTrigger.update(); });
+          function raf(time){
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+          }
+          requestAnimationFrame(raf);
+// Remove invalid update call; Lenis v1 uses raf, not update
+ScrollTrigger.addEventListener('refresh', function(){});
+          ScrollTrigger.refresh();
+          return true;
+        }
+        if (!setupGSAP()){
+          var tries = 0;
+          var iv = setInterval(function(){
+            tries++;
+            if (setupGSAP() || tries > 50){ clearInterval(iv); }
+          }, 100);
+        }
+      } catch(e) {
+        // no-op
       }
-      return lenis.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight
-      };
     }
-  });
-  // Make sure ScrollTrigger uses #scroll-container by default
-  ScrollTrigger.defaults({ scroller: "#scroll-container" });
-  // RAF loop to update Lenis and ScrollTrigger on every frame
-  function raf(time) {
-    lenis.raf(time);
-    ScrollTrigger.update();
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-  // Refresh ScrollTrigger after setup (important)
-  ScrollTrigger.addEventListener("refresh", () => lenis.update());
-  ScrollTrigger.refresh();
-</script>
+    if (document.readyState === 'complete' || document.readyState === 'interactive'){
+      init();
+    } else {
+      document.addEventListener('DOMContentLoaded', init);
+    }
+  })();
+  </script>
   <style>
   .cta-image-wrapper {
     transition: transform 0.5s ease, scale 0.5s ease;
@@ -76,6 +84,10 @@ Author: @Goodnbad.exe
   .cta-image-wrapper:hover {
     transform: scale(1.05) translateY(-5px);
   }
+  /* Ongoing Projects (Arabic): force image fill and hide overlay */
+  .section.platinum .slide-image { position: relative; overflow: hidden; }
+  .section.platinum .slide-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .section.platinum .speaker-image-cover { display: none !important; }
 </style>
 </head>
 <body class="body">
@@ -510,7 +522,7 @@ Author: @Goodnbad.exe
                 <div class="speaker-slide w-slide">
                   <div class="speaker-slide-content">
                     <div class="slide-image">
-                      <img src="images/Projects/النــخـيل NK250/nk250-1.png" alt="NK250" loading="lazy" class="slide-photo">
+            <img sizes="(max-width: 767px) 100vw, (max-width: 991px) 95vw, 940px" srcset="images/صور-NK250-dragged-p-500.jpg 500w, images/صور-NK250-dragged-p-800.jpg 800w, images/صور-NK250-dragged-p-1080.jpg 1080w, images/صور-NK250-dragged-p-1600.jpg 1600w, images/صور-NK250-dragged.jpg 1920w" src="images/صور-NK250-dragged.jpg" alt="NK250" loading="lazy" class="slide-photo">
                       <div style="display:block" class="speaker-image-cover"></div>
                     </div>
                     <div class="speaker-info">
@@ -541,7 +553,7 @@ Author: @Goodnbad.exe
                 <div class="speaker-slide w-slide">
                   <div class="speaker-slide-content">
                     <div class="slide-image">
-                      <img src="images/Projects/YS190 اداور الياسمين/Artboard 1.png" alt="YS190" loading="lazy" class="slide-photo">
+<img src="images/Projects/YS190 اداور الياسمين/Artboard 1 copy 3.png" alt="YS190" loading="lazy" class="slide-photo">
                       <div style="display:block" class="speaker-image-cover"></div>
                     </div>
                     <div class="speaker-info">
@@ -571,7 +583,7 @@ Author: @Goodnbad.exe
                 <div class="speaker-slide w-slide">
                   <div class="speaker-slide-content">
                     <div class="slide-image">
-                      <img src="images/Projects/JN130 الجنادرية/jn130-1.png" alt="JN130" loading="lazy" class="slide-photo">
+<img src="images/Projects/JN130 الجنادرية/jn130-2.png" alt="JN130" loading="lazy" class="slide-photo">
                       <div style="display:block" class="speaker-image-cover"></div>
                     </div>
                     <div class="speaker-info">
@@ -586,7 +598,7 @@ Author: @Goodnbad.exe
                 <div class="speaker-slide w-slide">
                   <div class="speaker-slide-content">
                     <div class="slide-image">
-                      <img src="images/Projects/HT260 ادوار حطين/حطين - HT260-1.png" alt="HT260" loading="lazy" class="slide-photo">
+<img src="images/Projects/HT260 ادوار حطين/حطين - HT260-3 copy.png" alt="HT260" loading="lazy" class="slide-photo">
                       <div style="display:block" class="speaker-image-cover"></div>
                     </div>
                     <div class="speaker-info">
@@ -1175,9 +1187,52 @@ Author: @Goodnbad.exe
   });
 });
 </script>
-  <script type="module">
-    import { inject } from '@vercel/analytics';
-    inject();
+  <script>
+    // Graceful load of Vercel Analytics on static preview without module errors
+    (function(){
+      try{
+        var s=document.createElement('script');
+        s.src='https://cdn.jsdelivr.net/npm/@vercel/analytics@1.1.0/dist/analytics.umd.min.js';
+        s.async=true;
+        s.onload=function(){
+          try{ if (window.VercelAnalytics && window.VercelAnalytics.inject) { window.VercelAnalytics.inject(); } }catch(e){}
+        };
+        document.head.appendChild(s);
+      }catch(e){}
+    })();
+  </script>
+  <script src="node_modules/smooothy/dist/smooothy.min.js"></script>
+  <script>
+    // Minimal enhancement: mark the visible Webflow slide as active
+    // to enable a gentle zoom via CSS. No behavior changes.
+    window.addEventListener('load', function(){
+      var slider = document.querySelector('.section.platinum .speaker-slider.w-slider');
+      if (!slider) return;
+      var mask = slider.querySelector('.speaker-slide-mask.w-slider-mask');
+      if (!mask) return;
+      var slides = Array.from(mask.children);
+
+      function updateActive(){
+        var active = slides.find(function(s){ return s.getAttribute('aria-hidden') === 'false'; }) || slides[0];
+        slides.forEach(function(s){ s.classList.toggle('is-active', s === active); });
+      }
+
+      // Initial state
+      updateActive();
+
+      // Observe aria-hidden changes applied by Webflow to update active slide
+      var obs = new MutationObserver(function(){ updateActive(); });
+      slides.forEach(function(s){ obs.observe(s, { attributes: true, attributeFilter: ['aria-hidden'] }); });
+
+      // Also update after arrow/nav interaction
+      var left = slider.querySelector('.w-slider-arrow-left');
+      var right = slider.querySelector('.w-slider-arrow-right');
+      var nav = slider.querySelector('.w-slider-nav');
+      function queue(){ setTimeout(updateActive, 350); }
+      if (left) left.addEventListener('click', queue);
+      if (right) right.addEventListener('click', queue);
+      if (nav) nav.addEventListener('click', queue);
+    });
   </script>
 </body>
 </html>

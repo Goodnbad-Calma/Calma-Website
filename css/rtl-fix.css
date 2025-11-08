@@ -98,6 +98,79 @@ html[dir="rtl"] body {
   padding-right: 20px; /* original offset spacing */
 }
 
+/* Mobile: anchor info box to bottom-right instead of centered */
+@media screen and (max-width: 767px) {
+  /* Keep desktop structure: overlay card centered at bottom */
+  .section.platinum .speaker-slide-content {
+    flex-direction: row-reverse; /* image right, text left (RTL) */
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .section.platinum .speaker-info {
+    position: absolute !important;
+    inset: auto auto -30px 50% !important; /* top right bottom left */
+    transform: translateX(-50%) !important; /* center horizontally */
+    width: clamp(170px, 54vw, 240px);
+    max-width: 80vw;
+    height: auto;
+    padding: clamp(6px, 2vw, 10px);
+    border-radius: clamp(8px, 2vw, 12px);
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .section.platinum .speaker-info .speaker-name {
+    font-size: clamp(13px, 3.3vw, 16px);
+    line-height: 1.2;
+  }
+  .section.platinum .speaker-info, .section.platinum .speaker-info * {
+    font-size: clamp(11px, 3vw, 14px);
+  }
+
+  .section.platinum .clip-text.speaker-headding {
+    text-align: center;
+  }
+
+  .section.platinum .slide-image,
+  .section.platinum .slide-photo {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Make the image the primary visible layer and ensure sizing */
+  .section.platinum .slide-image { position: relative; }
+  .section.platinum .slide-photo {
+    position: absolute; inset: 0; display: block;
+    width: 100%; height: 100%; object-fit: cover; /* fill while preserving aspect */
+  }
+  /* Force overlay hidden on mobile to avoid covering the photo */
+  .section.platinum .speaker-image-cover { display: none !important; }
+}
+
+/* Tablet: same overlay layout, slightly wider card */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .section.platinum .speaker-info {
+    position: absolute !important;
+    inset: auto auto -26px 50% !important; /* top right bottom left */
+    transform: translateX(-50%) !important; /* center horizontally */
+    width: clamp(220px, 36vw, 300px);
+    max-width: 70vw;
+    height: auto;
+    padding: clamp(8px, 1.8vw, 12px);
+    border-radius: clamp(10px, 1.8vw, 14px);
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .section.platinum .speaker-info .speaker-name {
+    font-size: clamp(15px, 2.4vw, 19px);
+    line-height: 1.2;
+  }
+  .section.platinum .speaker-info, .section.platinum .speaker-info * {
+    font-size: clamp(12px, 2.2vw, 16px);
+  }
+}
+
 .section.platinum .clip-text.speaker-headding {
   text-align: right;
 }
@@ -118,8 +191,34 @@ html[dir="rtl"] body {
 .section.platinum .speaker-arrow.left { left: 16px; right: auto; }
 .section.platinum .speaker-arrow:not(.left) { right: 16px; left: auto; }
 
+/* Move arrows closer to center on larger screens */
+@media screen and (min-width: 768px) {
+  .section.platinum .speaker-arrow.left { left: 175px; }
+  .section.platinum .speaker-arrow:not(.left) { right: 175px; }
+}
+
 /* Add breathing room below the slider so the button is visible */
-.section.platinum .center-align-div.carousel { margin-top: 16px; }
+.section.platinum .center-align-div.carousel {
+  margin-top: 140px; /* push CTA further down */
+  text-align: center; /* center the button */
+  position: relative; /* ensure proper stacking */
+  z-index: 1; /* above slider overlays/arrows */
+}
+
+/* Ensure slider doesn't overlap CTA and allows space below */
+.section.platinum .speaker-slider-wrapper {
+  margin-bottom: 190px; /* add breathing room below slider */
+  overflow: visible; /* prevent transforms from clipping */
+}
+
+/* Gentle zoom on the active slide (progressive enhancement, no behavior change) */
+.section.platinum .speaker-slider.w-slider .w-slide .speaker-slide-content {
+  transition: transform 350ms ease;
+  transform: scale(1);
+}
+.section.platinum .speaker-slider.w-slider .w-slide.is-active .speaker-slide-content {
+  transform: scale(1.02);
+}
 
 /* Arabic Projects page: spacing and slider direction fixes */
 html[dir="rtl"] .commercial-project-details-wrapper.arabic {
@@ -207,13 +306,13 @@ html[dir="rtl"] .footer .w-container {
 /* --- Mobile refinements for Platinum section slider --- */
 @media screen and (max-width: 767px) {
   .section.platinum .speaker-slide-content {
-    flex-direction: column; /* stack image + text vertically */
+    flex-direction: row-reverse !important;
     align-items: center;
   }
 
   .section.platinum .speaker-info {
     text-align: center;
-    padding: 12px 16px 0;
+    padding: 0; /* sizing handled in earlier mobile block */
   }
 
   .section.platinum .speaker-slider-wrapper {
@@ -221,7 +320,10 @@ html[dir="rtl"] .footer .w-container {
   }
 
   .section.platinum .center-align-div.carousel {
-    margin-top: 20px; /* extra breathing room for CTA */
+    margin-top: 40px; /* extra breathing room for CTA on mobile */
+  }
+  .section.platinum .speaker-slider-wrapper {
+    margin-bottom: 40px;
   }
 }
 
@@ -255,4 +357,29 @@ html[dir="rtl"] .footer .w-container {
 /* Elevate Arabic overlay above header while open to ensure clickability */
 .mobile-nav-content-wrapper.arabic.open {
   z-index: 1000001 !important; /* above header (1000000), below preloader (2000000) */
+}
+.section.platinum .speaker-image-cover { display: none !important; }
+
+/* Performance hints to reduce jank */
+.section.platinum .speaker-slide-content,
+.section.platinum .slide-photo {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Anchor Arabic mobile nav overlay to viewport on small screens */
+@media screen and (max-width: 991px) {
+  .mobile-nav-content-wrapper.arabic {
+    position: fixed !important; /* anchor to viewport */
+    inset: 0 !important; /* top right bottom left */
+    left: 0 !important; right: 0 !important;
+    transform: translate3d(-100%, 0, 0) !important; /* start offscreen left */
+    transition: transform 280ms ease-out !important;
+    will-change: transform;
+    overflow-y: auto; /* scroll inside drawer */
+  }
+  .mobile-nav-content-wrapper.arabic.open {
+    transform: translate3d(0, 0, 0) !important; /* visible and fixed */
+  }
 }
