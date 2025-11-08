@@ -1277,6 +1277,17 @@
   inset: 0%;
 }
 
+/* Inline image for slider, easier to swap per project */
+.slide-photo {
+  position: absolute;
+  inset: 0%;
+  width: 101%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  display: block;
+}
+
 .member-image.four {
   background-image: url('../images/Projects/SA230 الصفا/نسخة من 01.png');
   background-position: 50% 0;
@@ -6010,4 +6021,24 @@
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+}
+/* Responsive adjustments for CEO section layout */
+@media (max-width: 767px) {
+  /* Stack CEO content and card vertically on small screens */
+  .ceo-quickstack {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ceo-content-wrapper {
+    order: 1;
+  }
+  .ceo-name-wrapper {
+    order: 2;
+    width: 100%;
+    align-self: stretch;
+  }
+  /* Keep the internal info layout tidy on mobile */
+  .ceo-info-wrapper {
+    flex-wrap: wrap;
+  }
 }

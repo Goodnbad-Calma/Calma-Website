@@ -69,6 +69,10 @@ html[dir="rtl"] body {
   text-align: right !important;
 }
 
+/* Ensure mobile overlay sits above everything when open */
+/* Ensure overlay stacking only when open; base handled below */
+/* Removed low z-index to avoid conflicting with nav/header stacking rules */
+
 /* Fix for slider elements */
 .about-slider.w-slider,
 .speaker-slider.w-slider {
@@ -84,30 +88,38 @@ html[dir="rtl"] body {
 /* Projects section specific fixes */
 .section.platinum .speaker-slide-content {
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: row-reverse; /* Arabic: image on right, text on left */
+  align-items: center; /* original vertical alignment */
+  justify-content: space-between; /* original spacing behavior */
 }
 
 .section.platinum .speaker-info {
   text-align: right;
-  padding-right: 20px;
+  padding-right: 20px; /* original offset spacing */
 }
 
 .section.platinum .clip-text.speaker-headding {
   text-align: right;
 }
 
-/* Fix slider navigation arrows position */
-.speaker-arrow.left {
-  left: auto;
-  right: 10px;
-}
+/* Remove compact typography overrides to restore original sizes */
 
-.speaker-arrow:not(.left) {
-  right: auto;
-  left: 10px;
+/* Restore original section spacing managed by Webflow styles */
+
+/* Fix slider navigation arrows position */
+/* Ongoing projects slider (Arabic): robust arrow placement */
+.section.platinum .speaker-slider { position: relative; }
+.section.platinum .speaker-arrow {
+  position: absolute; /* ensure anchoring to slider */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* above image overlay */
 }
+.section.platinum .speaker-arrow.left { left: 16px; right: auto; }
+.section.platinum .speaker-arrow:not(.left) { right: 16px; left: auto; }
+
+/* Add breathing room below the slider so the button is visible */
+.section.platinum .center-align-div.carousel { margin-top: 16px; }
 
 /* Arabic Projects page: spacing and slider direction fixes */
 html[dir="rtl"] .commercial-project-details-wrapper.arabic {
@@ -145,6 +157,16 @@ html[dir="rtl"] .section.pastel-gray .w-container {
   padding-bottom: 24px;
 }
 
+/* Tighten spacing in Arabic Ongoing Projects section */
+html[dir="rtl"] .section.platinum > .w-container:first-of-type {
+  /* Reduce extra padding below the heading/paragraph block */
+  padding-bottom: 8px;
+}
+html[dir="rtl"] .section.platinum .container.carousel {
+  /* Reduce large gap between text and slider (was 6rem in base) */
+  margin-top: 2rem;
+}
+
 html[dir="rtl"] .section .section-name-wrapper,
 html[dir="rtl"] .section .heading-wrapper,
 html[dir="rtl"] .section .center-para-wrapper {
@@ -170,4 +192,67 @@ html[dir="rtl"] .container.carousel .center-align-div.carousel {
 html[dir="rtl"] .footer .w-container {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+/* --- Mobile nav trigger (lottie) UX improvements --- */
+.mobile-lottie-wrapper {
+  position: relative;
+  z-index: 9999; /* keep above regular content, below open overlay */
+  cursor: pointer; /* obvious tap target */
+}
+.mobile-lottie-wrapper svg {
+  display: block; /* ensure SVG occupies wrapper bounds */
+}
+
+/* --- Mobile refinements for Platinum section slider --- */
+@media screen and (max-width: 767px) {
+  .section.platinum .speaker-slide-content {
+    flex-direction: column; /* stack image + text vertically */
+    align-items: center;
+  }
+
+  .section.platinum .speaker-info {
+    text-align: center;
+    padding: 12px 16px 0;
+  }
+
+  .section.platinum .speaker-slider-wrapper {
+    overflow: visible; /* prevent content clipping from transforms */
+  }
+
+  .section.platinum .center-align-div.carousel {
+    margin-top: 20px; /* extra breathing room for CTA */
+  }
+}
+
+/* --- Arabic mobile overlay: hard-lock transform to prevent overshoot --- */
+.mobile-nav-content-wrapper.arabic {
+  transform: translateX(-100%) !important; /* start hidden offscreen to the left */
+  transition: transform 300ms ease !important;
+  will-change: transform;
+}
+.mobile-nav-content-wrapper:not(.arabic) {
+  transform: translateX(100%) !important; /* start hidden offscreen to the right for LTR */
+  transition: transform 300ms ease !important;
+  will-change: transform;
+}
+.mobile-nav-content-wrapper.open {
+  transform: translateX(0) !important; /* visible and fixed in place */
+  transition: transform 300ms ease !important;
+}
+
+/* --- Mobile menu header and overlay stacking --- */
+.mobile-menu,
+.mobile-menu-content-wrapper,
+.mobile-lottie-wrapper {
+  z-index: 1000000 !important; /* ensure header and trigger stay above overlay */
+}
+
+.mobile-nav-content-wrapper.open {
+  z-index: 999999 !important; /* overlay sits below header but above page */
+}
+
+/* Elevate Arabic overlay above header while open to ensure clickability */
+.mobile-nav-content-wrapper.arabic.open {
+  z-index: 1000001 !important; /* above header (1000000), below preloader (2000000) */
 }
