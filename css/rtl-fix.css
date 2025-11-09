@@ -132,14 +132,12 @@ html[dir="rtl"] body {
     text-align: center;
   }
 
-  .section.platinum .slide-image,
-  .section.platinum .slide-photo {
-    width: 100%;
-    height: auto;
-  }
+  /* Ensure the slide container has height on mobile so absolute image fills it */
+  .section.platinum .slide-image { width: 100%; height: 30vh; min-height: 220px; }
+  .section.platinum .slide-photo { width: 100%; }
 
   /* Make the image the primary visible layer and ensure sizing */
-  .section.platinum .slide-image { position: relative; }
+  .section.platinum .slide-image { position: relative; overflow: hidden; }
   .section.platinum .slide-photo {
     position: absolute; inset: 0; display: block;
     width: 100%; height: 100%; object-fit: cover; /* fill while preserving aspect */
@@ -150,6 +148,8 @@ html[dir="rtl"] body {
 
 /* Tablet: same overlay layout, slightly wider card */
 @media screen and (min-width: 768px) and (max-width: 991px) {
+  /* Ensure tablet slide container has visible height */
+  .section.platinum .slide-image { width: 100%; height: 40vh; min-height: 260px; }
   .section.platinum .speaker-info {
     position: absolute !important;
     inset: auto auto -26px 50% !important; /* top right bottom left */
