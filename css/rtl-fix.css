@@ -248,6 +248,62 @@ html[dir="rtl"] .commercial-slider .w-slide {
   direction: rtl;
   text-align: right;
 }
+
+/* Global navbar safe-area padding to avoid hugging edges */
+.navbar-container {
+  padding-inline: clamp(16px, 4vw, 48px) !important;
+}
+
+/* Add breathing room around brand and links */
+.w-nav-brand { padding-inline: clamp(8px, 2vw, 16px) !important; }
+.w-nav-menu .navlink { padding-inline: clamp(6px, 1.2vw, 14px); }
+
+/* Ensure desktop nav items inside the bar have safe padding */
+.navbar .w-nav-menu { padding-inline: clamp(12px, 4vw, 36px); }
+
+/* Mobile overlay menu safe padding and box-sizing */
+[data-nav-menu-open] {
+  padding-inline: clamp(16px, 6vw, 56px);
+  box-sizing: border-box;
+}
+
+/* Arabic FAQ accordion: place icon on the left, text on the right */
+.accordion-content---brix.arabic {
+  display: flex !important;
+  flex-direction: row-reverse !important; /* RTL: put text on right, icon on left */
+  align-items: center !important;
+  gap: 12px; /* spacing between icon and text */
+}
+
+/* Neutralize absolute positioning from base styles for Arabic layout */
+.accordion-content---brix.arabic .faq-icon-wrapper {
+  position: static !important;
+  width: 64px; /* reasonable icon size */
+  flex-shrink: 0;
+}
+
+.accordion-content---brix.arabic .faq-paragraph-wrapper {
+  flex: 1 1 auto;
+}
+
+/* Responsive refinements */
+@media screen and (max-width: 767px) {
+  .accordion-content---brix.arabic {
+    gap: 10px;
+  }
+  .accordion-content---brix.arabic .faq-icon-wrapper {
+    width: 48px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .accordion-content---brix.arabic {
+    gap: 12px;
+  }
+  .accordion-content---brix.arabic .faq-icon-wrapper {
+    width: 56px;
+  }
+}
 /* Arabic compact spacing to mirror English density */
 html[dir="rtl"] .section.dark-green .w-container,
 html[dir="rtl"] .section.platinum .w-container,
@@ -344,19 +400,24 @@ html[dir="rtl"] .footer .w-container {
 }
 
 /* --- Mobile menu header and overlay stacking --- */
+/* Keep header (logo + toggle) above the overlay when open */
 .mobile-menu,
 .mobile-menu-content-wrapper,
 .mobile-lottie-wrapper {
-  z-index: 1000000 !important; /* ensure header and trigger stay above overlay */
+  z-index: 10000 !important; /* header sits above overlay */
 }
 
-.mobile-nav-content-wrapper.open {
-  z-index: 999999 !important; /* overlay sits below header but above page */
+/* Ensure the actual clickable toggle (SVG/Lottie) is on top */
+.mobile-lottie-wrapper .lottie {
+  position: relative;
+  z-index: 10001 !important;
+  pointer-events: auto;
 }
 
-/* Elevate Arabic overlay above header while open to ensure clickability */
+/* Overlay stays below header but above page content */
+.mobile-nav-content-wrapper.open,
 .mobile-nav-content-wrapper.arabic.open {
-  z-index: 1000001 !important; /* above header (1000000), below preloader (2000000) */
+  z-index: 9998 !important;
 }
 .section.platinum .speaker-image-cover { display: none !important; }
 
@@ -382,4 +443,24 @@ html[dir="rtl"] .footer .w-container {
   .mobile-nav-content-wrapper.arabic.open {
     transform: translate3d(0, 0, 0) !important; /* visible and fixed */
   }
+  /* Anchor LTR (non-Arabic) mobile nav overlay similarly */
+  .mobile-nav-content-wrapper:not(.arabic) {
+    position: fixed !important; /* anchor to viewport */
+    inset: 0 !important; /* top right bottom left */
+    right: 0 !important; left: 0 !important;
+    transform: translate3d(100%, 0, 0) !important; /* start offscreen right */
+    transition: transform 280ms ease-out !important;
+    will-change: transform;
+    overflow-y: auto; /* scroll inside drawer */
+  }
+  .mobile-nav-content-wrapper:not(.arabic).open {
+    transform: translate3d(0, 0, 0) !important; /* visible and fixed */
+  }
+}
+
+/* Disable page scroll while mobile menu is open (applies globally) */
+html.menu-open,
+body.menu-open {
+  overflow: hidden !important;
+  touch-action: none !important;
 }

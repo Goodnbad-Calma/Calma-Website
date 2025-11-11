@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
       // Keep overlay visible to allow slide-in/out animation; disable interaction when closed
       ov.style.pointerEvents = open ? 'auto' : 'none';
     });
+    // Lock page scroll while menu is open
+    document.documentElement.classList.toggle('menu-open', open);
+    document.body.classList.toggle('menu-open', open);
   }
 
   function toggleOpen() {

@@ -6,6 +6,12 @@
       "use": "@vercel/static"
     }
   ],
+  "rewrites": [
+    {
+      "source": "/:path((?!en/).*)",
+      "destination": "/:path.html"
+    }
+  ],
   "headers": [
     {
       "source": "/images/(.*)",
