@@ -15,7 +15,11 @@
         FALLBACK_CLASS: 'has-fallback',
         WEBP_CHECK: true,
         MOBILE_BREAKPOINT: 768,
-        TABLET_BREAKPOINT: 1024
+        TABLET_BREAKPOINT: 1024,
+        PRELOAD_FONTS: [
+            '/fonts/SpicaArabic-Book.otf',
+            '/fonts/BluteauArabicSans-Regular.otf'
+        ]
     };
 
     // WebP support detection
@@ -178,13 +182,19 @@
             });
         }
         
-        // Optimize image sizes based on viewport
+        // Optimize image sizes based on viewport for images using srcset
         document.querySelectorAll('img').forEach(img => {
-            if (img.dataset.srcset) {
-                const srcset = img.dataset.srcset;
-                const sizes = isMobile ? '100vw' : isTablet ? '80vw' : 'auto';
+            const hasSrcset = img.hasAttribute('srcset') || !!img.dataset.srcset;
+            if (!hasSrcset) return;
+
+            // Only adjust if sizes is missing; avoid overriding author intent
+            const currentSizes = img.getAttribute('sizes');
+            if (!currentSizes || currentSizes.trim() === '') {
+                const sizes = isMobile ? '100vw' : isTablet ? '80vw' : '50vw';
                 img.setAttribute('sizes', sizes);
             }
+            // Always ensure async decoding for faster paint
+            img.decoding = 'async';
         });
     }
 
@@ -192,12 +202,27 @@
     function init() {
         // Process critical images first
         processCriticalImages();
-        
+
         // Setup lazy loading
         setupLazyLoading();
-        
+
         // Mobile optimizations
         optimizeForMobile();
+
+        // Preload critical fonts to reduce FOUT/FOIT on mobile
+        try {
+            CONFIG.PRELOAD_FONTS.forEach((href) => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'font';
+                link.href = href;
+                link.type = 'font/otf';
+                link.crossOrigin = 'anonymous';
+                document.head.appendChild(link);
+            });
+        } catch (e) {
+            // Silent fail if preload is unsupported
+        }
         
         // Handle dynamic content
         const observer = new MutationObserver((mutations) => {
@@ -229,6 +254,11 @@
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(optimizeForMobile, 250);
+        });
+
+        // Ensure all images default to async decoding
+        document.querySelectorAll('img').forEach((img) => {
+            if (!img.decoding) img.decoding = 'async';
         });
     }
 
