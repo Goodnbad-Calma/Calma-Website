@@ -6,7 +6,9 @@
   "scripts": {
     "build": "echo 'Static site - no build needed'",
     "dev": "echo 'Use live server or similar for development'",
-    "image:optimize": "node tools/image_pipeline.js"
+    "image:optimize": "node tools/image_pipeline.js",
+    "structure:check": "node tools/enforce_structure.js",
+    "structure:organize": "node tools/enforce_structure.js --organize --dry=false"
   },
   "keywords": [
     "real-estate",
