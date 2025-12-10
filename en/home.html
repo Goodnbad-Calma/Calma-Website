@@ -16,6 +16,7 @@
   <!-- Preload hero images for reliable above-the-fold rendering -->
   <link rel="preload" as="image" href="../images/Hero-1.JPG">
   <link rel="preload" as="image" href="../images/Hero-2.JPG">
+  <link rel="preload" as="image" href="../images/BRANDMARK_2.png">
   <script type="module">
     import { inject } from '@vercel/analytics';
     inject();
@@ -63,6 +64,7 @@
 ScrollTrigger.addEventListener("refresh", () => {});
   ScrollTrigger.refresh();
 </script>
+  <script defer src="../js/interactive.js"></script>
   <style>
     /* Stabilize EN mobile nav: hard-anchor overlay to viewport */
     @media screen and (max-width: 991px) {
