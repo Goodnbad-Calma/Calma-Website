@@ -281,7 +281,7 @@
 }
 
 .hero-left-div._1 {
-  background-image: url('../images/HeroVideo-ezgif.com-optimize.gif');
+  background-image: url('../images/herovideo-ezgif.com-optimize.gif');
   background-position: 63% 0;
   background-size: cover;
   top: 0;
@@ -395,7 +395,7 @@
 
 .section.dark-green {
   z-index: 20;
-  background-image: url('../images/Excellence-in-every-square-foot-video-ezgif.com-optimize.gif');
+  background-image: url('../images/excellence-in-every-square-foot-video-ezgif.com-optimize.gif');
   background-position: 50%;
   background-size: cover;
   padding-top: 6rem;
@@ -404,7 +404,7 @@
 }
 
 .section.dark-green.alt {
-  background-image: url('../images/Corporate-Culture-BG.jpg');
+  background-image: url('../images/corporate-culture-bg.jpg');
   background-position: 50%;
   background-size: cover;
   padding-top: 8rem;
@@ -422,7 +422,7 @@
 .section.pastel-gray {
   z-index: 20;
   background-color: #d4cfbd;
-  background-image: url('../images/Vision-BG.JPG');
+  background-image: url('../images/cta-bg.jpg');
   background-position: 50%;
   background-size: cover;
   padding-top: 8rem;
@@ -436,7 +436,7 @@
 
 .section.pastel-gray._2nd {
   background-color: #d4cfbd00;
-  background-image: url('../images/About-BG.jpg');
+  background-image: url('../images/about-bg.jpg');
 }
 
 .section.pastel-gray.white {
@@ -461,7 +461,7 @@
 
 .section.footer {
   z-index: 20;
-  background-image: url('../images/Footer-BG.jpg');
+  background-image: url('../images/footer-bg.jpg');
   background-position: 50%;
   background-size: cover;
   padding-top: 8rem;
@@ -485,7 +485,7 @@
 }
 
 .section.ceo {
-  background-image: url('../images/CEO-Message-BG.jpg');
+  background-image: url('../images/ceo-message-bg.jpg');
   background-position: 50%;
   background-size: cover;
   padding-top: 0;
@@ -493,7 +493,7 @@
 }
 
 .section.leadership {
-  background-image: url('../images/Leadership-BG.jpg');
+  background-image: url('../images/ceo-message-bg-2.jpg');
   background-position: 50%;
   background-size: cover;
   padding-top: 8rem;
@@ -513,7 +513,7 @@
 }
 
 .section.principals {
-  background-image: url('../images/HeroVideo-ezgif.com-optimize.gif');
+  background-image: url('../images/herovideo-ezgif.com-optimize.gif');
   background-position: 50%;
   background-size: cover;
   padding-top: 6rem;
@@ -521,7 +521,7 @@
 }
 
 .section.projects {
-  background-image: url('../images/Residential-BG.jpg');
+  background-image: none;
   background-position: 50% 0;
   background-size: auto;
   padding-top: 8rem;
@@ -529,7 +529,7 @@
 }
 
 .section.commercial {
-  background-image: url('../images/Commercial-BG.jpg');
+  background-image: url('../images/commercial-bg.jpg');
   background-position: 50%;
   background-size: cover;
   padding-top: 8rem;
@@ -1092,7 +1092,7 @@
 
 .speaker-info {
   z-index: 200;
-  background-image: url('../images/Home_Projects_infobox.png');
+  background-image: url('../images/group-270.png');
   background-position: 50%;
   background-size: cover;
   border-radius: 6px;
@@ -1112,7 +1112,7 @@
   z-index: 10;
   opacity: 1;
   cursor: pointer;
-  background-image: url('../images/Rectangle-23.png');
+  background-image: url('../images/group-270.png');
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1289,47 +1289,47 @@
 }
 
 .member-image.four {
-  background-image: url('../images/Projects/SA230 الصفا/نسخة من 01.png');
+  background-image: url('../images/projects/projectssa230/01.png');
   background-position: 50% 0;
 }
 
 .member-image.six {
-  background-image: url('../images/Projects/GH220 الغدير/IMG_1621.jpg');
+  background-image: url('../images/projects/projectsgh220/img_1621.jpg');
   background-position: 50%;
 }
 
 .member-image.two {
-  background-image: url('../images/Projects/RM240 الرمال/01.png');
+  background-image: url('../images/projects/projectsrm240/01.png');
 }
 
 .member-image.three {
-  background-image: url('../images/Projects/النــخـيل NK250/nk250-1.png');
+  background-image: url('../images/projects/projects-nk250/nk250-1.png');
   background-position: 50%;
   margin-right: 0;
 }
 
 .member-image.one {
-  background-image: url('../images/Projects/HT210 حطين/HT210_-__1_Page_1.png');
+  background-image: url('../images/projects/projectsht210/ht210_-__1_page_1.png');
 }
 
 /* Additional slides for ongoing projects */
 .member-image.five {
-  background-image: url('../images/Projects/YS190 اداور الياسمين/Artboard 1.png');
+  background-image: url('../images/rectangle-6.png');
   background-position: 50%;
 }
 
 .member-image.seven {
-  background-image: url('../images/Projects/الياسـمين YS200/KALMA DAY (4)-3.png');
+  background-image: url('../images/ys200-kalma-2-1-1.jpg');
   background-position: 50%;
 }
 
 .member-image.eight {
-  background-image: url('../images/Projects/JN130 الجنادرية/jn130-1.png');
+  background-image: url('../images/projects/projectsjn130/jn130-1.png');
   background-position: 50%;
 }
 
 .member-image.nine {
-  background-image: url('../images/Projects/HT260 ادوار حطين/حطين - HT260-1 copy.jpg');
+  background-image: url('../images/projects/projectsht260/ht260-1-copy.jpg');
   background-position: 50%;
 }
 
@@ -1486,7 +1486,7 @@
 }
 
 .cta-right-grid {
-  background-image: url('../images/CTA-BG.JPG');
+  background-image: url('../images/cta-bg.jpg');
   background-position: 50%;
   background-size: cover;
   flex-flow: column;
@@ -1781,7 +1781,7 @@
 .page-hero-content-wrapper {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  background-image: url('../images/HeroVideo-ezgif.com-optimize.gif');
+  background-image: url('../images/herovideo-ezgif.com-optimize.gif');
   background-position: 100%;
   background-size: cover;
   flex-flow: column;
@@ -4427,14 +4427,14 @@
     height: 100%;
   }
 
-  .mobile-nav-content-wrapper {
-    z-index: 99;
-    background-image: url('../images/Mobile-Menu-BG.jpg');
-    background-position: 50%;
-    background-size: cover;
-    flex-flow: column;
-    justify-content: center;
-    align-items: flex-start;
+.mobile-nav-content-wrapper {
+  z-index: 99;
+  background-image: url('../images/mobile-menu-bg.jpg');
+  background-position: 50%;
+  background-size: cover;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
     width: 100%;
     height: 100vh;
     display: flex;

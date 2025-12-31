@@ -46,7 +46,7 @@ Author: @Goodnbad.exe
           // Faster, more responsive scrolling
           duration: 0.7,
           easing: function(t){ return t; }, // linear easing for speed
-          smooth: true,
+          smooth: false,
           smoothWheel: false, // disable wheel smoothing
           smoothTouch: false,
           touchMultiplier: 1.2
@@ -147,6 +147,21 @@ ScrollTrigger.addEventListener('refresh', function(){});
     });
   });
 </script>
+    <script>
+      (function(){
+        var preloader = document.getElementById("preloader");
+        var logo = document.getElementById("preloader-logo");
+        if (typeof window.gsap === "undefined") {
+          if (logo) {
+            logo.style.opacity = "1";
+            logo.style.transform = "scale(1)";
+          }
+          setTimeout(function(){
+            if (preloader) preloader.style.display = "none";
+          }, 1200);
+        }
+      })();
+    </script>
   </div>
   <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
     <div class="navbar-container w-container">

@@ -106,3 +106,12 @@ body.no-scroll { overflow: hidden; }
   object-fit: contain;
   box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
+
+.section.page-hero,
+.page-hero-content-wrapper {
+  background-color: #d4cfbc;
+}
+
+.section.projects {
+  background-color: #d4cfbc;
+}
