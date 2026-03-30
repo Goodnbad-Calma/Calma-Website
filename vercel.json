@@ -7,6 +7,37 @@
     }
   ],
   "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/app",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*([aA]ndroid).*"
+        }
+      ],
+      "destination": "https://play.google.com/store/apps/details?id=sa.calma.realestate",
+      "permanent": false
+    },
+    {
+      "source": "/app",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*([iI][pP]ad|[iI][pP]hone|[iI][pP]od).*"
+        }
+      ],
+      "destination": "https://apps.apple.com/us/app/calma-real-estate/id6755458800",
+      "permanent": false
+    },
+    {
+      "source": "/app",
+      "destination": "https://calma.sa",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/:path((?!en/|images/|css/|js/|fonts/|videos/|esign/).*)",
